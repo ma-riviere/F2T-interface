@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Target.java&apos; to &apos;drawingPath/src/(default package)&apos;&#x0A;- Original project: &apos;tablet_forceV10_optic_interface&apos;&#x0A;- Destination element: &apos;drawingPath/src/(default package)&apos;&#x0A;- Original element: &apos;main.Target.java&apos;" description="Copy compilation unit" destination="=drawingPath/src&lt;" element1="/src&lt;main{Target.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1537457279456" units="1" version="1.0"/>
+</session>
