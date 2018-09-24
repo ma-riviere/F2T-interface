@@ -9,8 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Main {
 
-	public static String FILES="/home/simon/Bureau/F2T_images/";	// path to images
-	//public static String FILES="./";
+	public static String FILES="../../F2T_images/";	// path to images
 	public static String IMG="img/";								// sub paths to image types
 	public static String AREA="area/";
 	
