@@ -1,0 +1,22 @@
+package main;
+
+public class SoundSource {
+
+	public int px=0;
+	public int py=0;
+	
+	public boolean active=false;
+	
+	public SoundSource(int x, int y){
+		
+		px=x;
+		py=y;
+		
+	}
+	
+	
+	public void activate(boolean activity){
+		active=activity;
+	}
+	
+}

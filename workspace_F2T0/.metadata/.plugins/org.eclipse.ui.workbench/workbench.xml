@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="769" maximized="true" width="1020" x="186" y="52">
 <fastViewData fastViewLocation="1024"/>
@@ -18,6 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -35,17 +36,17 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/workspace_F2T0/drawingPath/src/Main.java" title="Main.java" tooltip="drawingPath/src/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/drawingPath/src/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="304" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Interface.java" partName="Interface.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV10_optic_interface/src/main/Interface.java" title="Interface.java" tooltip="tablet_forceV10_optic_interface/src/main/Interface.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV10_optic_interface/src/main/Interface.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1828" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PictureFrame.java" partName="PictureFrame.java" path="/home/simon/Bureau/workspace_F2T0/drawingPath/src/PictureFrame.java" title="PictureFrame.java" tooltip="drawingPath/src/PictureFrame.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/drawingPath/src/PictureFrame.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="311" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV10_optic_interface/src/main/Main.java" title="Main.java" tooltip="tablet_forceV10_optic_interface/src/main/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV10_optic_interface/src/main/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6699" selectionTopPixel="4264"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PicturePanel.java" partName="PicturePanel.java" path="/home/simon/Bureau/workspace_F2T0/drawingPath/src/PicturePanel.java" title="PicturePanel.java" tooltip="drawingPath/src/PicturePanel.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/drawingPath/src/PicturePanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4983" selectionTopPixel="2283"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CameraPanel.java" partName="CameraPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV10_optic_interface/src/display/CameraPanel.java" title="CameraPanel.java" tooltip="tablet_forceV10_optic_interface/src/display/CameraPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV10_optic_interface/src/display/CameraPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1523" selectionTopPixel="367"/>
 </editor>
 </editors>
 <views>
@@ -156,172 +157,169 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/PicturePanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingPath/src/PicturePanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/RenderFrame.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/PicturePanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/Main.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingPath/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/RenderFrame.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/PictureFrame.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/Main.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/RenderPanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/RenderFrame.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/PictureFrame.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/PicturePanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingPath/src/PictureFrame.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV10_optic_interface/src/main/Main.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=tablet_forceV10_optic_interface/\/home\/simon\/Bureau\/LITIS\/workspace_tactibelt\/jSSC-2.7.0-Release\/jssc.jar&lt;jssc(SerialPort.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV10_optic_interface/src/main/Interface.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV10_optic_interface/src/main/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV10_optic_interface/src/display/CameraPanel.java"/>
 </editors>
-<item historyLabel="PicturePanel.java" index="0">
-<position/>
-</item>
-<item historyLabel="PicturePanel.java" index="1">
-<position info="not_deleted" x="933" y="36"/>
-</item>
-<item historyLabel="PicturePanel.java" index="0">
-<position/>
-</item>
-<item historyLabel="PicturePanel.java" index="1">
-<position info="not_deleted" x="6993" y="20"/>
-</item>
-<item historyLabel="PicturePanel.java" index="0">
-<position/>
-</item>
-<item historyLabel="PicturePanel.java" index="0">
-<position/>
-</item>
-<item historyLabel="PicturePanel.java" index="1">
-<position info="not_deleted" x="6993" y="20"/>
-</item>
-<item historyLabel="Main.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
 <item historyLabel="RenderFrame.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="6606" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="3195" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="3109" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="3114" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="3195" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="3103" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="4">
-<position info="not_deleted" x="7647" y="0"/>
-</item>
-<item historyLabel="Main.java" index="5">
-<position info="not_deleted" x="277" y="32"/>
-</item>
-<item historyLabel="Main.java" index="2">
-<position info="not_deleted" x="644" y="0"/>
-</item>
-<item historyLabel="Main.java" index="5">
-<position info="not_deleted" x="277" y="0"/>
-</item>
-<item historyLabel="Main.java" index="2">
-<position info="not_deleted" x="277" y="0"/>
-</item>
-<item historyLabel="Main.java" index="5">
-<position info="not_deleted" x="275" y="2"/>
-</item>
-<item historyLabel="Main.java" index="2">
-<position info="not_deleted" x="275" y="2"/>
-</item>
-<item historyLabel="Main.java" index="6">
-<position/>
-</item>
-<item historyLabel="Main.java" index="2">
-<position info="not_deleted" x="275" y="34"/>
-</item>
-<item historyLabel="Main.java" index="6">
-<position/>
-</item>
-<item historyLabel="RenderFrame.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="PictureFrame.java" index="8">
-<position info="not_deleted" x="286" y="0"/>
-</item>
-<item historyLabel="Main.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="PicturePanel.java" index="0">
-<position info="not_deleted" x="6692" y="0"/>
-</item>
-<item historyLabel="Main.java" index="9">
-<position info="not_deleted" x="275" y="2"/>
-</item>
-<item historyLabel="PicturePanel.java" index="0">
-<position info="not_deleted" x="6692" y="0"/>
-</item>
-<item historyLabel="Main.java" index="10">
-<position/>
-</item>
-<item historyLabel="RenderPanel.java" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="RenderFrame.java" index="12">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="PictureFrame.java" index="13">
+<item historyLabel="PictureFrame.java" index="4">
 <position info="not_deleted" x="311" y="0"/>
 </item>
-<item historyLabel="PicturePanel.java" index="14">
+<item historyLabel="PicturePanel.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="10">
+<item historyLabel="Main.java" index="2">
 <position/>
 </item>
-<item historyLabel="PicturePanel.java" index="14">
+<item historyLabel="PicturePanel.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="6">
+<item historyLabel="Main.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="10">
+<item historyLabel="Main.java" index="2">
 <position/>
 </item>
-<item historyLabel="Main.java" index="6">
+<item historyLabel="Main.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="10">
+<item historyLabel="Main.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="6">
+<item historyLabel="Main.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="PictureFrame.java" index="15">
+<item historyLabel="PictureFrame.java" index="6">
 <position info="not_deleted" x="311" y="0"/>
 </item>
-<item historyLabel="PicturePanel.java" index="1">
+<item historyLabel="PicturePanel.java" index="0">
 <position info="not_deleted" x="4996" y="0"/>
 </item>
-<item historyLabel="Main.java" index="6">
+<item historyLabel="Main.java" index="1">
 <position info="not_deleted" x="306" y="0"/>
 </item>
-<item historyLabel="PictureFrame.java" index="15">
+<item historyLabel="PictureFrame.java" index="6">
 <position info="not_deleted" x="311" y="0"/>
 </item>
-<item historyLabel="PicturePanel.java" index="1">
+<item historyLabel="PicturePanel.java" index="0">
 <position info="not_deleted" x="4983" y="0"/>
 </item>
-<item active="true" historyLabel="Main.java" index="6">
-<position info="not_deleted" x="306" y="0"/>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="304" y="2"/>
+</item>
+<item historyLabel="Main.java" index="7">
+<position info="not_deleted" x="738" y="0"/>
+</item>
+<item historyLabel="Main.java" index="8">
+<position info="not_deleted" x="1244" y="0"/>
+</item>
+<item historyLabel="SerialPort.class" index="9">
+<position/>
+</item>
+<item historyLabel="Main.java" index="8">
+<position info="not_deleted" x="1244" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1943" y="31"/>
+</item>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="304" y="2"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1943" y="31"/>
+</item>
+<item historyLabel="Main.java" index="7">
+<position info="not_deleted" x="738" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1943" y="31"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="862" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1943" y="31"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="845" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="705" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="4460" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="705" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="2075" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="4460" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="4053" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="4088" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="5502" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="5473" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="5627" y="23"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="5586" y="0"/>
+</item>
+<item historyLabel="CameraPanel.java" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CameraPanel.java" index="12">
+<position info="not_deleted" x="1523" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1825" y="0"/>
+</item>
+<item historyLabel="Main.java" index="11">
+<position info="not_deleted" x="6760" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1434" y="34"/>
+</item>
+<item historyLabel="SerialPort.class" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Interface.java" index="10">
+<position info="not_deleted" x="1828" y="0"/>
+</item>
+<item active="true" historyLabel="Main.java" index="11">
+<position info="not_deleted" x="6747" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -329,10 +327,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="bottomLeft"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -340,11 +334,25 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomRight"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="SerialPort.class" tooltip="jssc.SerialPort">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=tablet_forceV10_optic_interface/\/home\/simon\/Bureau\/LITIS\/workspace_tactibelt\/jSSC-2.7.0-Release\/jssc.jar&lt;jssc(SerialPort.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CameraPanel.java" tooltip="tablet_forceV10_optic_interface/src/display/CameraPanel.java">
+<persistable path="/tablet_forceV10_optic_interface/src/display/CameraPanel.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="tablet_forceV10_optic_interface/src/main/Main.java">
+<persistable path="/tablet_forceV10_optic_interface/src/main/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Interface.java" tooltip="tablet_forceV10_optic_interface/src/main/Interface.java">
+<persistable path="/tablet_forceV10_optic_interface/src/main/Interface.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingFlow/src/Main.java">
+<persistable path="/drawingFlow/src/Main.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PicturePanel.java" tooltip="drawingPath/src/PicturePanel.java">
 <persistable path="/drawingPath/src/PicturePanel.java"/>
 </file>
@@ -353,9 +361,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingPath/src/Main.java">
 <persistable path="/drawingPath/src/Main.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingFlow/src/Main.java">
-<persistable path="/drawingFlow/src/Main.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PicturePanel.java" tooltip="drawingFlow/src/PicturePanel.java">
 <persistable path="/drawingFlow/src/PicturePanel.java"/>
@@ -377,18 +382,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PictureFrame.java" tooltip="drawingArea/src/PictureFrame.java">
 <persistable path="/drawingArea/src/PictureFrame.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RenderFrame.java" tooltip="drawingArea/src/RenderFrame.java">
-<persistable path="/drawingArea/src/RenderFrame.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RenderPanel.java" tooltip="drawingArea/src/RenderPanel.java">
-<persistable path="/drawingArea/src/RenderPanel.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="tablet_forceV10_optic_interface/src/main/Main.java">
-<persistable path="/tablet_forceV10_optic_interface/src/main/Main.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CameraPanel.java" tooltip="tablet_forceV10_optic_interface/src/display/CameraPanel.java">
-<persistable path="/tablet_forceV10_optic_interface/src/display/CameraPanel.java"/>
 </file>
 </mruList>
 </workbench>

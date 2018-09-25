@@ -1,0 +1,10 @@
+package main;
+
+public class SounSource {
+
+	public int px=0;
+	public int py=0;
+	
+	
+	
+}

@@ -59,8 +59,7 @@ public class TouchPanel extends JPanel implements MouseListener{
 			}
 		}
 	
-		float val=Math.max(0, main.contactPression);
-		g.setColor(new Color(val, 1, 0));
+		g.setColor(new Color(0, 1, 0));
 		g.fillOval(620+(int)((main.contactX*12)+12)*20, 20+(int)((main.contactY*12)+12)*20, 20, 20);
 		
 		g.setColor(Color.gray);
