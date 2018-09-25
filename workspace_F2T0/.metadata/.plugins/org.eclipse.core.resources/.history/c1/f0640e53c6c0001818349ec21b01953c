@@ -8,13 +8,17 @@ import jssc.SerialPortException;
 
 public class Interface  implements SerialPortEventListener {
 
-	private boolean F2T_connected=true;
+	
 	
 	private SerialPort serialPort;
 	
+	private Main main;
+	
+	int previous=-1;
+	
 	private ArrayList<Character> message;
 	
-	private int message_type=0;  // 0 waiting, 1 : x, 2 : y , 3 : mx , 4 : my
+	int message_type=0;  // 0 waiting, 1 : x, 2 : y , 3 : mx , 4 : my
 	
 	private String posx="";
 	private String posy="";
@@ -30,15 +34,17 @@ public class Interface  implements SerialPortEventListener {
 	public int movementX=0;
 	public int movementY=0;
 	
-	public Interface(){
+	public Interface(Main m){
+		
+		main=m;
 		
 		message=new ArrayList<Character>();
 		
 		int port=0;
-		F2T_connected=false;
+		boolean connected=false;
 		
 		
-		while (!F2T_connected && port<6){
+		while (!connected && port<6){
 		try {
 			serialPort = new SerialPort(Main.PORT+port);
 			serialPort.openPort();
@@ -50,7 +56,7 @@ public class Interface  implements SerialPortEventListener {
 			serialPort.addEventListener(this, SerialPort.MASK_RXCHAR);
 			
 			System.out.println("port opened");
-			F2T_connected=true;
+			connected=true;
 			
 		} catch (SerialPortException e) {
 				//e.printStackTrace();
@@ -62,35 +68,27 @@ public class Interface  implements SerialPortEventListener {
 	
 	public void close(){
 		try {
-			if (serialPort.isOpened()){
-				serialPort.writeString("f000");
-				serialPort.writeString("s000");
-				serialPort.writeString("g500");
-				serialPort.writeString("h500");
-				
-				serialPort.writeString("o500");
-				serialPort.writeString("p500");
-				
-				serialPort.writeString("m0");
-				
-				System.out.println("Port closed: " + serialPort.closePort());
-			}
+			
+			serialPort.writeString("f000");
+			serialPort.writeString("s000");
+			serialPort.writeString("g500");
+			serialPort.writeString("h500");
+			
+			serialPort.writeString("o500");
+			serialPort.writeString("p500");
+			
+			serialPort.writeString("m0");
+			
+			System.out.println("Port closed: " + serialPort.closePort());
 		} catch (SerialPortException e) {e.printStackTrace();}
 	}
 	
 	public void sendMsg(String msg){
 
 		//System.out.println("sent : "+msg);
-		
-		
-		if (F2T_connected){
-			try {
-				serialPort.writeString(msg);
-			} catch (SerialPortException e) {e.printStackTrace();}
-		}
-		else{
-			System.out.println("message : "+msg);
-		}
+		try {
+			serialPort.writeString(msg);
+		} catch (SerialPortException e) {e.printStackTrace();}
 	}
 
 	

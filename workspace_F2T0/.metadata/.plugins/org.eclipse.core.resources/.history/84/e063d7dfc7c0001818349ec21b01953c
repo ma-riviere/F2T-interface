@@ -56,15 +56,13 @@ public class CameraPanel extends JPanel implements MouseListener{
 	public void paintComponent(Graphics g){
 		
 		// draw image camera
-		if (Main.CAMERA_CONNECTED){
-			Graphics2D g2d = (Graphics2D) g.create();
-			AffineTransform at = new AffineTransform();
-	        at.setToRotation(Math.PI, main.webcam.width()/2, main.webcam.height()/2);
-	        g2d.setTransform(at);
-	        Image image = Main.Mat2bufferedImage(main.webcam);
-	        g2d.drawImage(image, 5, 5, this);
-		}
-		
+		Graphics2D g2d = (Graphics2D) g.create();
+		AffineTransform at = new AffineTransform();
+        at.setToRotation(Math.PI, main.webcam.width()/2, main.webcam.height()/2);
+        g2d.setTransform(at);
+        Image image = Main.Mat2bufferedImage(main.webcam);
+        g2d.drawImage(image, 5, 5, this);
+        
         // draw joystick position
  		g.setColor(Color.gray);
  		g.drawOval(325+(int)(main.x_prev*0.5+35), 245-(int)(main.y_prev*0.5-35), 50, 50);

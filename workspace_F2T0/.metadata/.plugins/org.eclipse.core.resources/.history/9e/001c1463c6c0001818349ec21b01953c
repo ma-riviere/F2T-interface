@@ -18,7 +18,6 @@ import java.io.PrintWriter;
 import javax.imageio.ImageIO;
 
 import org.opencv.core.Core;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.core.Size;
@@ -170,16 +169,16 @@ public class Main {
 	///////////////////////////////////////////////////////////////
 	public Main(){
 		
-		if (CAMERA_CONNECTED){
-			camera=new VideoCapture(1);
-			
-			Size sz = new Size(640,480);
-			
-			// get first frame
-			camera.read(webcam);
-			Imgproc.resize( webcam, webcam, sz );
-			Imgproc.resize( webcam, map, sz );
-		}
+		
+		camera=new VideoCapture(1);
+		
+		Size sz = new Size(640,480);
+		
+		// get first frame
+		camera.read(webcam);
+		Imgproc.resize( webcam, webcam, sz );
+		Imgproc.resize( webcam, map, sz );
+		
 		
 		time=0;
 		count=0;
@@ -191,7 +190,7 @@ public class Main {
 
 		image=new Image();
 
-		inter=new Interface();
+		inter=new Interface(this);
 		
 		script=new Script(this);
 		
@@ -235,69 +234,63 @@ public class Main {
 			
 			///////////////////////////////////////////////////////////
 			// get position
-			if (CAMERA_CONNECTED){
-				camera.read(webcam);
-	
-				
-				// vertical
-				for (int i=610;i<624;i+=2){
-					for (int j=20;j<320;j++){
-						double[] color=webcam.get(j, i);
-						if (color[0]>100){
-							double val=color[0]-Math.max(color[2],color[1]);
-							if (val>20){
-								color[0]=val;
-								color[1]=val;
-								color[2]=val;
-								map.put(j, i, color);
-								map.put(j, i+1, color);
-								for (int g=-4;g<4;g++){
-									histogram_Y[j+g]+=val*gauss[g+4];
-								}
-							}
-						}
-						else{
-							color[0]=0;
-							color[1]=0;
-							color[2]=250;
+			camera.read(webcam);
+			
+			// vertical
+			for (int i=610;i<624;i+=2){
+				for (int j=20;j<320;j++){
+					double[] color=webcam.get(j, i);
+					if (color[0]>100){
+						double val=color[0]-Math.max(color[2],color[1]);
+						if (val>20){
+							color[0]=val;
+							color[1]=val;
+							color[2]=val;
 							map.put(j, i, color);
 							map.put(j, i+1, color);
-						}
-					}
-				}
-				
-				// horizontal
-				for (int i=120;i<520;i++){
-					for (int j=440;j<460;j+=2){
-						double[] color=webcam.get(j, i);
-						if (color[0]>100){
-							double val=color[0]-Math.max(color[2],color[1]);
-							if (val>20){
-								color[0]=val;
-								color[1]=val;
-								color[2]=val;
-								map.put(j, i, color);
-								map.put(j+1, i, color);
-								for (int g=-4;g<4;g++){
-									histogram_X[i+g]+=val*gauss[g+4];
-								}
+							for (int g=-4;g<4;g++){
+								histogram_Y[j+g]+=val*gauss[g+4];
 							}
 						}
-						else{
-							color[0]=0;
-							color[1]=0;
-							color[2]=250;
-							map.put(j, i, color);
-							map.put(j+1, i, color);;
-						}
+					}
+					else{
+						color[0]=0;
+						color[1]=0;
+						color[2]=250;
+						map.put(j, i, color);
+						map.put(j, i+1, color);
 					}
 				}
+			}
 			
+			// horizontal
+			for (int i=120;i<520;i++){
+				for (int j=440;j<460;j+=2){
+					double[] color=webcam.get(j, i);
+					if (color[0]>100){
+						double val=color[0]-Math.max(color[2],color[1]);
+						if (val>20){
+							color[0]=val;
+							color[1]=val;
+							color[2]=val;
+							map.put(j, i, color);
+							map.put(j+1, i, color);
+							for (int g=-4;g<4;g++){
+								histogram_X[i+g]+=val*gauss[g+4];
+							}
+						}
+					}
+					else{
+						color[0]=0;
+						color[1]=0;
+						color[2]=250;
+						map.put(j, i, color);
+						map.put(j+1, i, color);;
+					}
+				}
 			}
-			else{
-				try {Thread.sleep(100) ;
-				}  catch (InterruptedException e) {}
-			}
+			
+			
 			
 			
 			double max_X=20;

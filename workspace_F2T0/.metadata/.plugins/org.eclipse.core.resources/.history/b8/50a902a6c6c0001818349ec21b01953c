@@ -62,35 +62,27 @@ public class Interface  implements SerialPortEventListener {
 	
 	public void close(){
 		try {
-			if (serialPort.isOpened()){
-				serialPort.writeString("f000");
-				serialPort.writeString("s000");
-				serialPort.writeString("g500");
-				serialPort.writeString("h500");
-				
-				serialPort.writeString("o500");
-				serialPort.writeString("p500");
-				
-				serialPort.writeString("m0");
-				
-				System.out.println("Port closed: " + serialPort.closePort());
-			}
+			
+			serialPort.writeString("f000");
+			serialPort.writeString("s000");
+			serialPort.writeString("g500");
+			serialPort.writeString("h500");
+			
+			serialPort.writeString("o500");
+			serialPort.writeString("p500");
+			
+			serialPort.writeString("m0");
+			
+			System.out.println("Port closed: " + serialPort.closePort());
 		} catch (SerialPortException e) {e.printStackTrace();}
 	}
 	
 	public void sendMsg(String msg){
 
 		//System.out.println("sent : "+msg);
-		
-		
-		if (F2T_connected){
-			try {
-				serialPort.writeString(msg);
-			} catch (SerialPortException e) {e.printStackTrace();}
-		}
-		else{
-			System.out.println("message : "+msg);
-		}
+		try {
+			serialPort.writeString(msg);
+		} catch (SerialPortException e) {e.printStackTrace();}
 	}
 
 	
