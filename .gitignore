@@ -22,3 +22,11 @@ hs_err_pid*
 .DS_Store
 .idea
 *.iml
+*.iws
+*.ipr
+
+# Eclipse
+.metadata
+.settings/
+.classpath
+.project
