@@ -22,7 +22,7 @@ public class CameraFrame extends JFrame{
 		main=m;
 		
 		this.setTitle("Image");
-    	this.setSize(1600, 850);
+    	this.setSize(1400, 850);
     	this.setLocationRelativeTo(null);               
     	this.setVisible(true);
     	panel=new CameraPanel(m);

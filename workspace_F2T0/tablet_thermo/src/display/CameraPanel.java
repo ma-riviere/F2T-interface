@@ -29,7 +29,8 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
 	
 	private static int PRESET=850;
 	private static int IMG=980;
-	private static int SCRIPT=1430;
+	private static int SOURCE=1110;
+	private static int SCRIPT=1240;
 	
 	public int x=0;
 	public int y=0;
@@ -91,11 +92,13 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
  		g.drawLine((int)(main.x+405   ), (int)(405-main.y   ), (int)(main.x+405)+(int)main.dx, (int)(405-main.y)-(int)main.dy);
     
  		// draw trace
-		g.setColor(Color.cyan);
 		for (int t=0;t<Main.LENGTH-1;t++){
 			if (t+1!=main.time){
-			g.drawLine((int)main.trace[t][0]+405, 405-(int)main.trace[t][1],
-					   (int)main.trace[t+1][0]+405, 405-(int)main.trace[t+1][1]);
+				if (main.trace[t][2]>0) g.setColor(Color.cyan);
+				else g.setColor(Color.lightGray);
+					
+				g.drawLine((int)main.trace[t][0]+405, 405-(int)main.trace[t][1],
+						   (int)main.trace[t+1][0]+405, 405-(int)main.trace[t+1][1]);
 			}
 		}
  		
@@ -117,6 +120,12 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
             g.drawString(main.listImages[i], IMG+15, 40+20*i);
         }
 	
+        
+        g.setColor(Color.black);
+        for (int i=0;i<main.listSource.length;i++){
+            g.fillRect(SOURCE, 10+i*20, 10, 10);
+            g.drawString(main.listSource[i], SOURCE+15, 20+20*i);
+        }
  
         
         g.setColor(Color.black);
@@ -170,6 +179,13 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
 			if (e.getX()>SCRIPT-5 && e.getX()<SCRIPT+15 && e.getY()>5+i*20 && e.getY()<25+i*20) selected=i;
 		}
 		if (selected>-1) main.setScript(selected);
+		
+		// source
+		selected=-1;
+		for (int i=0;i<main.listSource.length;i++){
+			if (e.getX()>SOURCE-5 && e.getX()<SOURCE+15 && e.getY()>5+i*20 && e.getY()<25+i*20) selected=i;
+		}
+		if (selected>-1) main.setSource(selected);
 
 		// picture
 		if (e.getX()>IMG-5 && e.getX()<IMG+15 && e.getY()>5 && e.getY()<25){
@@ -186,13 +202,30 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
 	
 	
 	public void mousePressed(MouseEvent e) {
-
+		if (e.getX()>10 && e.getX()<795 && e.getY()>10 && e.getY()<795){
+			
+			main.clicked=true;
+			main.frame_counter=0;
+			
+			x=e.getX()-405;
+			y=405-e.getY();
+		}
+		else{
+			main.clicked=false;
+			main.frame_counter=0;
+		}
+		
+		//System.out.println(main.x+" , "+main.x_prev+" , "+main.x_prev2);
 	}
 	public void mouseReleased(MouseEvent e) {
-
+		main.clicked=false;
+		main.frame_counter=0;	
 	}
 	public void mouseEntered(MouseEvent e) {}
-	public void mouseExited(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {
+		main.clicked=false;
+		main.frame_counter=0;	
+	}
 
 	public void mouseDragged(MouseEvent e) {
 		
@@ -200,6 +233,8 @@ public class CameraPanel extends JPanel implements MouseListener, MouseMotionLis
 			x=e.getX()-405;
 			y=405-e.getY();
 		}
+		
+		//System.out.println(main.x+" , "+main.x_prev+" , "+main.x_prev2);
 	}
 
 	public void mouseMoved(MouseEvent e) {}

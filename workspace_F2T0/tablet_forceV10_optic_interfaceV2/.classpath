@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/simon/Bureau/LITIS/workspace_tactibelt/jSSC-2.7.0-Release/jssc.jar"/>
+	<classpathentry kind="lib" path="/home/simon/opencv/release/bin/opencv-331.jar" sourcepath="/home/simon/opencv/release/bin/opencv-331.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/home/simon/opencv/release/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

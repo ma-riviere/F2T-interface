@@ -89,7 +89,7 @@ public class Script {
 				
 				//////////////////////////////////////////
 				// case image file
-				if (elements[0].equals("img")){
+				if (elements[0].equals("image")){
 					if (elements.length==2){
 						if (elements[1].equals("none")) image=null;
 						else image=elements[1];

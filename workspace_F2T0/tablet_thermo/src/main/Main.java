@@ -29,13 +29,14 @@ public class Main {
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static String FILES="/home/simon/Bureau/F2T_images/";	// path to images
+	public static String FILES="/home/simon/Bureau/thermoformed_images/";	// path to images
 	//public static String FILES="./";
 	public static String IMG="img/";								// sub paths to image types
 	public static String PRESET="preset/";
 	public static String AREA="area/";
 	public static String SCRIPT="script/";
 	public static String SOUND="sound/";
+	public static String SOURCE="source/";
 	
 	public static int LENGTH=500;									// length of the trace
 	
@@ -78,6 +79,9 @@ public class Main {
 	public int time;
 	public int count;
 
+	public boolean clicked=false;
+	public int frame_counter=0;
+	
 		
 	// list of sound sources
 	public ArrayList<SoundSource> soundSources;
@@ -95,6 +99,7 @@ public class Main {
 	public String[] listPreset;
 	public String[] listArea;
 	public String[] listScript;
+	public String[] listSource;
 	
 	public int selected_img=-1;
 	
@@ -104,7 +109,7 @@ public class Main {
 		
 		time=0;
 		count=0;
-		trace=new float[LENGTH][2];
+		trace=new float[LENGTH][3];
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -194,6 +199,12 @@ public class Main {
 		}
 		else System.out.println("Script file directory does not exist");
 		
+		repertoire = new File(FILES+SOURCE);
+		if (repertoire.exists()){
+			listSource=repertoire.list();
+		}
+		else System.out.println("Source file directory does not exist");
+		
 		// get a name to save a preset
 		boolean found=false;
 		
@@ -247,6 +258,7 @@ public class Main {
 		String[] elements;
 		
 		String img_file=null;
+		String source_file=null;
 		
 		try {
 			InputStream ips=new FileInputStream(fileName); 
@@ -260,6 +272,7 @@ public class Main {
 				elements=line.split(" ");
 				if (elements.length>0){
 					if (elements[0].equals("image")) img_file=elements[1];
+					else if (elements[0].equals("source")) source_file=elements[1];
 					else System.out.println("ERROR : wrong keyword");
 				}
 				line=br.readLine();
@@ -267,6 +280,7 @@ public class Main {
 			br.close();
 			
 			setPicture(img_file);
+			setSource(source_file);
 		}
 		catch (Exception e) {
 			System.out.println("no file found");
@@ -282,11 +296,16 @@ public class Main {
 		setPicture(null);
 	}
 	
-	
+	public void setSource(int id){
+		System.out.println("Source "+id+" : "+listSource[id]);
+		
+		setSource(listSource[id]);
+		
+		setPicture(null);
+	}
 	
 	public void setPicture(String img_file){
 		image.setPicture(img_file);
-		
 		
 		selected_img=-1;
 		if (img_file!=null){
@@ -307,31 +326,65 @@ public class Main {
 		}
 	}
 	
+	public void setSource(String name){
+		
+		if (name.equals("clear")) soundSources.clear();
+		else{
+			
+			String fileName = Main.FILES+SOURCE+name;
+			String[] elements;
+			
+			try {
+				InputStream ips=new FileInputStream(fileName); 
+				InputStreamReader ipsr=new InputStreamReader(ips);
+				BufferedReader br=new BufferedReader(ipsr);
+				String line;
+				
+				line=br.readLine();
+				
+				while (line!=null){
+					elements=line.split(" ");
+					if (elements.length>=3 && elements[0].equals("s")){
+						soundSources.add(new SoundSource(elements ));
+					}
+					line=br.readLine();
+				}
+				
+				br.close();
+			}
+			catch (Exception e) {
+				System.out.println("no file found");
+			}
+		}
+	}
+	
 	
 	///////////////////////////////////////////////////////////
 	
 	public void getTouchedPosition(){
 		
-		x=cameraFrame.getTouchX();
-		y=cameraFrame.getTouchY();
-		
-	}
-	
-	
-	public void getUserMovement(){
-
-		dx=x-x_prev2;
-		dy=y-y_prev2;
-		
 		x_prev2=x_prev;
 		y_prev2=y_prev;
 		
 		x_prev=x;
-		y_prev=y;
-
+		y_prev=y;	
 		
-		System.out.println(dx+" , "+dy);
+		x=cameraFrame.getTouchX();
+		y=cameraFrame.getTouchY();
 		
+		if (clicked && frame_counter<3) frame_counter++;
+	}
+	
+	
+	public void getUserMovement(){
+		if (frame_counter>=3){
+			dx=x-x_prev2;
+			dy=y-y_prev2;
+		}
+		else{
+			dx=0;
+			dy=0;
+		}
 	}
 	
 	
@@ -339,6 +392,10 @@ public class Main {
 	public void updateTrace(){
 		trace[time][0]=x;
 		trace[time][1]=y;
+		
+		if (frame_counter>0) trace[time][2]=1;
+		else trace[time][2]=0;
+		
 		time++;
 		if (time>=LENGTH) time=0;
 	}

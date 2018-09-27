@@ -17,6 +17,13 @@ public class SoundSource {
 		
 	}
 	
+	public SoundSource(String[] args){
+		
+		px=Float.parseFloat(args[1]);
+		py=Float.parseFloat(args[2]);
+		
+	}
+	
 	
 	public void compute(float x, float y){
 		rx=px-x;
