@@ -149,9 +149,10 @@ public class Main {
 	
 	///////////////////////////////////////////////////////////////
 	
-	public String presetName;
-	public String pathName;
-	public String sourceName;
+	// name for save files
+	public String presetName="preset";
+	public String pathName="path";
+	public String sourceName="source";
 	
 	public String[] listImages;
 	public String[] listTactile;
@@ -168,6 +169,7 @@ public class Main {
 	public int selected_tactile=-1;
 	public int selected_flow=-1;
 	public int selected_rail=-1;
+	public int selected_area=-1;
 	
 	
 	///////////////////////////////////////////////////////////////
@@ -189,19 +191,17 @@ public class Main {
 		trace=new float[LENGTH][2];
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////
-		
+
+		// F2T interface
 		inter=new Interface();
-		
+
+		// sequence of Ages
 		script=new Script(this);
-		
-		currentAge=script.getAge();
-		
+
+		// detection of available files
 		listFiles();
-		
+
 		///////////////////////////////////////////////////////////////////////////////////////////////
-		//target=new ArrayList<Target>();
-		
-		//soundSources=new ArrayList<SoundSource>();
 		
 		gauss=new float[9];
 		gauss[0]=0.018f;//-4
@@ -227,9 +227,13 @@ public class Main {
 		histogram_X=new double[640];
 		histogram_Y=new double[480];
 		
+		//////////////////////////////////////////////////////////////////////////////////////////
+		// initialization of main display panels
 		cameraFrame=new CameraFrame(this);
 		//touchFrame=new TouchFrame(this);
 		sourceFrame=new SourceFrame(this);
+		
+		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////
 		while (true){
@@ -253,10 +257,8 @@ public class Main {
 			
 			///////////////////////////////////////////////////////////
 			// define edges
-
 			contactX=0;
 			contactY=0;
-			
 			boolean wall=false;
 
 			// Height of touched point
@@ -265,17 +267,16 @@ public class Main {
 			for (int i=-12;i<=12;i++){
 				for (int j=-12;j<=12;j++){
 					if (350+x+i*2>=0 && 270-y+j*2>=0 && i*i+j*j<=144){
-						heighMap[i+12][j+12]= currentAge.image.tactile_mat[350+(int)(x)+i*2][270-(int)(y)+j*2][1]/255;
+						heighMap[i+12][j+12]= (float)currentAge.image.tactile_mat[350+(int)(x)+i*2][270-(int)(y)+j*2][1]/255;
 						contactMap[i+12][j+12]= heighMap[i+12][j+12]-sphere[i+12][j+12] -contactHeight;
 						if (contactMap[i+12][j+12]>0) wall=true;
 					}
 				}
 			}
-			
 			float jx2=(jx/1.6f);
 			float jy2=(jy/1.6f);
 			
-			// detect maximums to add repulsion
+			// detect maximums to add repulsion effects
 			float rep_X=0;
 			float rep_Y=0;
 			for (int i=-11;i<=11;i++){
@@ -298,7 +299,6 @@ public class Main {
 					}
 				}
 			}
-			
 
 			boolean jump=false;
 			
@@ -390,7 +390,6 @@ public class Main {
 			}
 			
 			
-			
 			///////////////////////////////////////////////////////////
 			// define flow
 			flowX=500;
@@ -412,22 +411,17 @@ public class Main {
 				
 				float railX=currentAge.image.rail_mat[350+(int)(x+dx)][270-(int)(y+dy)][0]*4-12-500;
 				float railY=currentAge.image.rail_mat[350+(int)(x+dx)][270-(int)(y+dy)][1]*4-12-500;
-				
 				float railX2=-railY;
 				float railY2=-railX;
-				
 				float scalar=jx2*railX2 + jy2*(-railY2);
 				float norm2=railX2*railX2+railY2*railY2;
-				
 				
 				if (norm2>0){
 					
 					float offX=  scalar * railX2/norm2;
 					float offY= -scalar * railY2/norm2;
-					
 					float norm=(float)Math.sqrt(norm2)/500;
 					if (norm>1) norm=1;
-					
 					flowX-=offX* norm *1.6f;
 					flowY-=offY* norm *1.6f;
 					
@@ -435,7 +429,6 @@ public class Main {
 					if (flowX>999) flowX=999;
 					if (flowY<0) flowY=0;
 					if (flowY>999) flowY=999;
-					
 				}
 			}
 			
@@ -476,7 +469,9 @@ public class Main {
 			}
 
 			
-			//////////////////////////////
+			
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			// update display panels
 			if (viewPort!=null) viewPort.repaint();
 			if (tactileDisplay!=null) tactileDisplay.repaint();
@@ -494,14 +489,11 @@ public class Main {
 			updateTrace();
 			
 			
-			
-			
 			//////////////////////////////
-			// story script
+			// update script
 			script.detect(350+(int)(x+dx),270-(int)(y+dy));
 			
 			
-
 			//////////////////////////////
 			// compute sound sources positions
 			script.computeSources(x,y);
@@ -514,66 +506,66 @@ public class Main {
 	// file lister
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public void listFiles(){
-		
+
 		setPicture(null);
 		setTactile(null);
 		setFlow(null);
 		setRail(null);
-		
+
 		File repertoire = new File(FILES+IMG);
 		if (repertoire.exists()){
 			listImages=repertoire.list();
 		}
 		else System.out.println("Image file directory does not exist");
-		
+
 		repertoire = new File(FILES+TACTILE);
 		if (repertoire.exists()){
 			listTactile=repertoire.list();
 		}
 		else System.out.println("Tactile file directory does not exist");
-		
+
 		repertoire = new File(FILES+FLOW);
 		if (repertoire.exists()){
 			listFlow=repertoire.list();
 		}
 		else System.out.println("Flow file directory does not exist");
-		
+
 		repertoire = new File(FILES+RAIL);
 		if (repertoire.exists()){
 			listRail=repertoire.list();
 		}
 		else System.out.println("Rail file directory does not exist");
-		
+
 		repertoire = new File(FILES+PATH);
 		if (repertoire.exists()){
 			listPath=repertoire.list();
 		}
 		else System.out.println("Path file directory does not exist");
-		
+
 		repertoire = new File(FILES+PRESET);
 		if (repertoire.exists()){
 			listPreset=repertoire.list();
 		}
 		else System.out.println("Preset file directory does not exist");
-		
+
 		repertoire = new File(FILES+PATH);
 		if (repertoire.exists()){
 			listPath=repertoire.list();
 		}
 		else System.out.println("Path file directory does not exist");
-		
+
 		repertoire = new File(FILES+SCRIPT);
 		if (repertoire.exists()){
 			listScript=repertoire.list();
 		}
 		else System.out.println("Script file directory does not exist");
-		
+
 		repertoire = new File(FILES+SOURCE);
 		if (repertoire.exists()){
 			listSource=repertoire.list();
 		}
 		else System.out.println("Source file directory does not exist");
-		
+
 		// get a name to save a preset
 		boolean found=false;
 		int i=0;
@@ -588,7 +580,7 @@ public class Main {
 			}
 			i++;
 		}
-		
+
 		// get a name to save a path
 		found=false;
 		i=0;
@@ -603,7 +595,7 @@ public class Main {
 			}
 			i++;
 		}
-		
+
 		// get a name to save a sound source list
 		found=false;
 		i=0;
@@ -618,6 +610,7 @@ public class Main {
 			}
 			i++;
 		}
+
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -688,12 +681,146 @@ public class Main {
 	public void setScript(int id){
 		System.out.println("Script "+id+" : "+listScript[id]);
 		
-		script.setScript(listScript[id]);
-		
 		setPicture(null);
 		setTactile(null);
 		setFlow(null);
 		setRail(null);
+		setArea(null);
+		
+		setScript(listScript[id]);
+	}
+
+	public void setScript(String file){
+		
+		script.reinitialize();
+
+		int age_index=0;
+		System.out.println("Read script "+Main.FILES+Main.SCRIPT+file);
+		
+		String fileName = FILES+SCRIPT+file;
+		String[] elements;
+		
+		try {
+			InputStream ips=new FileInputStream(fileName); 
+			InputStreamReader ipsr=new InputStreamReader(ips);
+			BufferedReader br=new BufferedReader(ipsr);
+			String line;
+			
+			// read first line
+			line=br.readLine();
+			
+			while (line!=null){
+				
+				System.out.println(line);
+				elements=line.split(" ");
+				
+				
+				//////////////////////////////////////////
+				// case image file
+				if (elements.length>=2 && elements[0].equals("image")){
+					if (elements[1].equals("none")) script.setPicture(age_index,null);
+					else script.setPicture(age_index,elements[1]);
+				}
+				
+				// case tactile file
+				if (elements.length>=2 && elements[0].equals("tactile")){
+					if (elements[1].equals("none")) script.setTactile(age_index,null);
+					else script.setTactile(age_index,elements[1]);
+				}	
+		
+				// case flow file
+				if (elements.length>=2 && elements[0].equals("flow")){
+					if (elements[1].equals("none")) script.setFlow(age_index,null);
+					else script.setFlow(age_index,elements[1]);
+				}
+				
+				// case rail file
+				if (elements.length>=2 && elements[0].equals("rail")){
+					if (elements[1].equals("none")) script.setRail(age_index,null);
+					else script.setRail(age_index,elements[1]);
+				}
+
+				// case area descriptor file
+				if (elements.length>=2 && elements[0].equals("area")){
+					if (elements[1].equals("none")) script.setArea(age_index,null);
+					else script.setArea(age_index,elements[1]);
+				}
+				
+
+				//////////////////////////////////////////
+				// case target
+				if (elements.length>=5 && elements[0].equals("t")){
+					script.addTarget(age_index,elements);
+				}
+	
+				// case area-sound association
+				if (elements.length>=5 && elements[0].equals("a")){
+					script.addArea(age_index,elements);
+				}
+				
+				// case sound source
+				if (elements.length>=3 && elements[0].equals("s")){
+					script.addSource(age_index,elements);
+				}
+				
+				
+				///////////////////////////////////////////
+				// case load preset
+				if (elements.length>=2 && elements[0].equals("preset")){
+					script.setPreset(age_index,elements[1], Integer.parseInt(elements[2]));
+				}
+				
+				// case add path
+				if (elements.length>=2 && elements[0].equals("path")){
+					script.setPath(age_index,elements[1]);
+				}
+				
+				// case add path
+				if (elements.length>=2 && elements[0].equals("source")){
+					script.setSource(age_index,elements[1]);
+				}
+
+				
+				//////////////////////////////////////////
+				// case erase path
+				if (elements.length>=1 && elements[0].equals("clearPath")){
+					script.clearPath(age_index);
+				}
+				
+				// case erase sources
+				if (elements.length>=1 && elements[0].equals("clearSources")){
+					script.clearSource(age_index);
+				}
+				
+				// case default play
+				if (elements.length>=1 && elements[0].equals("play")){
+					script.setDefaultPlay(age_index, true);
+				}
+				if (elements.length>=1 && elements[0].equals("stop")){
+					script.setDefaultPlay(age_index, false);
+				}
+				
+				//////////////////////////////////////////
+				// case age exit condition
+				else if (elements[0].equals("newage")){
+					for (int c=1;c<elements.length;c++){
+						if (elements[c].equals("t")) script.setConditionTarget(age_index);
+						else if (elements[c].equals("s")) script.setConditionSound(age_index);
+						else script.addConditionArea(age_index,Integer.parseInt(elements[c]));
+					}
+					
+					age_index++;
+					script.addNewAge();
+				}
+				
+				line=br.readLine();
+			}
+			br.close();
+		}
+		catch (Exception e) {System.out.println("no file found");}
+
+		updateAge(script.getCurrentAge());
+		target_pause=false;
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -705,13 +832,14 @@ public class Main {
 	}
 	
 	public void setPreset(String file, int erase){	
-		String fileName = Main.FILES+PRESET+file;
+		String fileName = FILES+PRESET+file;
 		String[] elements;
 
 		String img_file=null;
 		String tactile_file=null;
 		String flow_file=null;
 		String rail_file=null;
+		String area_file=null;
 		
 		if (erase==1){
 			currentAge.targetSequence.clear();
@@ -732,8 +860,11 @@ public class Main {
 					else if (elements[0].equals("tactile")) tactile_file=elements[1];
 					else if (elements[0].equals("flow")) flow_file=elements[1];
 					else if (elements[0].equals("rail")) rail_file=elements[1];
+					else if (elements[0].equals("area")) area_file=elements[1];
 					else if (elements[0].equals("path")) setPath(elements[1]);
 					else if (elements[0].equals("source")) setSource(elements[1]);
+					else if (elements[0].equals("play")) target_pause=false;
+					else if (elements[0].equals("stop")) target_pause=true;
 					else System.out.println("ERROR : wrong keyword");
 				}
 				line=br.readLine();
@@ -744,6 +875,7 @@ public class Main {
 			if (tactile_file!=null || erase==1) setTactile(tactile_file);
 			if (flow_file!=null    || erase==1) setFlow(flow_file);
 			if (rail_file!=null    || erase==1) setRail(rail_file);
+			if (area_file!=null    || erase==1) setArea(area_file);
 		}
 		catch (Exception e) {System.out.println("no file found");}
 	}
@@ -755,7 +887,7 @@ public class Main {
 	}
 	
 	public void setPath(String file){
-		String fileName = Main.FILES+PATH+file;
+		String fileName = FILES+PATH+file;
 		String[] elements;
 		
 		try {
@@ -784,7 +916,7 @@ public class Main {
 	}
 
 	public void setSource(String file){
-		String fileName = Main.FILES+SOURCE+file;
+		String fileName = FILES+SOURCE+file;
 		String[] elements;
 		
 		try {
@@ -814,7 +946,6 @@ public class Main {
 	// picture
 	public void setPicture(String img_file){
 		currentAge.image.setPicture(img_file);
-		
 		if (currentAge.image.view   !=null && viewPort==null) viewPort=new ViewPortFrame(this, currentAge.image.view_img);
 		else if (currentAge.image.view!=null && viewPort!=null) viewPort.setImage(currentAge.image.view_img);
 		else if (currentAge.image.view   ==null && viewPort!=null){
@@ -832,7 +963,6 @@ public class Main {
 	// tactile image
 	public void setTactile(String tactile_file){
 		currentAge.image.setTactile(tactile_file);
-		
 		if (currentAge.image.tactile!=null && tactileDisplay==null) tactileDisplay=new ViewPortFrame(this, currentAge.image.tactile_img);
 		else if (currentAge.image.tactile!=null && tactileDisplay!=null) tactileDisplay.setImage(currentAge.image.tactile_img);
 		else if (currentAge.image.tactile==null && tactileDisplay!=null){
@@ -850,7 +980,6 @@ public class Main {
 	// flow file
 	public void setFlow(String flow_file){
 		currentAge.image.setFlow(flow_file);
-		
 		if (currentAge.image.flow   !=null && flowDisplay==null) flowDisplay =new ViewPortFrame(this, currentAge.image.flow_img);
 		else if (currentAge.image.flow!=null && flowDisplay!=null) flowDisplay.setImage(currentAge.image.flow_img);
 		else if (currentAge.image.flow==null && flowDisplay!=null){
@@ -868,14 +997,12 @@ public class Main {
 	// rail file
 	public void setRail(String rail_file){
 		currentAge.image.setRail(rail_file);
-		
 		if (currentAge.image.rail   !=null && railDisplay==null) railDisplay =new ViewPortFrame(this, currentAge.image.rail_img);
 		else if (currentAge.image.rail!=null && railDisplay!=null) railDisplay.setImage(currentAge.image.rail_img);
 		else if (currentAge.image.rail==null && railDisplay!=null){
 			railDisplay.dispose();
 			railDisplay=null;
 		}
-		
 		selected_rail=-1;
 		if (rail_file!=null){
 			for (int i=0;i<listRail.length;i++){
@@ -887,14 +1014,90 @@ public class Main {
 	// area descriptor file
 	public void setArea(String area_file){
 		currentAge.image.setArea(area_file);
+		if (currentAge.image.area   !=null && areaDisplay==null) areaDisplay =new ViewPortFrame(this, currentAge.image.area_img);
+		else if (currentAge.image.area   ==null && areaDisplay!=null){
+			areaDisplay.dispose();
+			areaDisplay=null;
+		}
+		selected_area=-1;
+		if (area_file!=null){
+			for (int i=0;i<listRail.length;i++){
+				if (area_file.equals(listRail[i])) selected_rail=i;
+			}
+		}
+	}
+	
+	
+	public void updateAge(Age age){
+		currentAge=age;
+		
+		target_pause=!currentAge.default_play;
+		
+		// update display panels
+		if (currentAge.image.view   !=null && viewPort==null) viewPort=new ViewPortFrame(this, currentAge.image.view_img);
+		else if (currentAge.image.view!=null && viewPort!=null) viewPort.setImage(currentAge.image.view_img);
+		else if (currentAge.image.view   ==null && viewPort!=null){
+			viewPort.dispose();
+			viewPort=null;
+		}
+		selected_img=-1;
+		if (currentAge.image.view!=null){
+			for (int i=0;i<listImages.length;i++){
+				if (currentAge.image.view.equals(listImages[i])) selected_img=i;
+			}
+		}
+		
+		if (currentAge.image.tactile!=null && tactileDisplay==null) tactileDisplay=new ViewPortFrame(this, currentAge.image.tactile_img);
+		else if (currentAge.image.tactile!=null && tactileDisplay!=null) tactileDisplay.setImage(currentAge.image.tactile_img);
+		else if (currentAge.image.tactile==null && tactileDisplay!=null){
+			tactileDisplay.dispose();
+			tactileDisplay=null;
+		}
+		selected_tactile=-1;
+		if (currentAge.image.tactile!=null){
+			for (int i=0;i<listTactile.length;i++){
+				if (currentAge.image.tactile.equals(listTactile[i])) selected_tactile=i;
+			}
+		}
+		
+		if (currentAge.image.flow   !=null && flowDisplay==null) flowDisplay =new ViewPortFrame(this, currentAge.image.flow_img);
+		else if (currentAge.image.flow!=null && flowDisplay!=null) flowDisplay.setImage(currentAge.image.flow_img);
+		else if (currentAge.image.flow==null && flowDisplay!=null){
+			flowDisplay.dispose();
+			flowDisplay=null;
+		}
+		selected_flow=-1;
+		if (currentAge.image.flow!=null){
+			for (int i=0;i<listFlow.length;i++){
+				if (currentAge.image.flow.equals(listFlow[i])) selected_flow=i;
+			}
+		}
+		
+		if (currentAge.image.rail   !=null && railDisplay==null) railDisplay =new ViewPortFrame(this, currentAge.image.rail_img);
+		else if (currentAge.image.rail!=null && railDisplay!=null) railDisplay.setImage(currentAge.image.rail_img);
+		else if (currentAge.image.rail==null && railDisplay!=null){
+			railDisplay.dispose();
+			railDisplay=null;
+		}
+		selected_rail=-1;
+		if (currentAge.image.rail!=null){
+			for (int i=0;i<listRail.length;i++){
+				if (currentAge.image.rail.equals(listRail[i])) selected_rail=i;
+			}
+		}
 		
 		if (currentAge.image.area   !=null && areaDisplay==null) areaDisplay =new ViewPortFrame(this, currentAge.image.area_img);
 		else if (currentAge.image.area   ==null && areaDisplay!=null){
 			areaDisplay.dispose();
 			areaDisplay=null;
 		}
+		selected_area=-1;
+		if (currentAge.image.area!=null){
+			for (int i=0;i<listRail.length;i++){
+				if (currentAge.image.area.equals(listRail[i])) selected_rail=i;
+			}
+		}
 	}
-	
 	
 	///////////////////////////////////////////////////////////
 	

@@ -54,7 +54,7 @@ public class Script {
 			
 			System.out.println(line);
 			elements=line.split(" ");
-			if (elements[0].equals("desc") && elements.length==2){
+			if (elements[0].equals("area") && elements.length==2){
 				
 				// initialize first Age
 				descript=elements[1];
