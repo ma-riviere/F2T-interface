@@ -1,0 +1,291 @@
+package display;
+
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+
+import main.Main;
+
+
+
+/**
+ * Display the probe input
+ * @author simon gay
+ */
+
+/* - inherited from EnvPanel :
+ *   Agent agent      : pointer to the agent
+ */
+public class DisplayFilePanel extends JPanel implements ActionListener{
+	
+	private static final long serialVersionUID = 1L;
+
+
+	public Main main;
+	
+	
+	private JComboBox<String> list_image;
+	private JComboBox<String> list_tactile;
+	private JComboBox<String> list_flow;
+	private JComboBox<String> list_rail;
+	private JComboBox<String> list_area;
+	
+	private JComboBox<String> list_preset;
+	private JComboBox<String> list_path;
+	private JComboBox<String> list_source;
+	
+	private JButton preset;
+	private JButton path;
+	private JButton source;
+	
+	private JComboBox<String> list_script;
+	private JButton script;
+	
+	private JButton rescan;
+	private JButton savePreset;
+	
+	
+	//private boolean guide_mode=false;
+	
+	public DisplayFilePanel(Main m){
+		main=m;
+		
+		this.setLayout(null);
+		
+		
+		list_image=new JComboBox<String>();
+		list_image.addItem("none");
+		for (int i=0;i<main.listImages.length;i++) list_image.addItem(main.listImages[i]);
+		list_image.addActionListener(this);
+		this.add(list_image);
+		list_image.setBounds(70, 5, 150, 30);
+		
+		list_tactile=new JComboBox<String>();
+		list_tactile.addItem("none");
+		for (int i=0;i<main.listTactile.length;i++) list_tactile.addItem(main.listTactile[i]);
+		list_tactile.addActionListener(this);
+		this.add(list_tactile);
+		list_tactile.setBounds(70, 35, 150, 30);
+		
+		list_flow=new JComboBox<String>();
+		list_flow.addItem("none");
+		for (int i=0;i<main.listFlow.length;i++) list_flow.addItem(main.listFlow[i]);
+		list_flow.addActionListener(this);
+		this.add(list_flow);
+		list_flow.setBounds(70,65, 150, 30);
+		
+		list_rail=new JComboBox<String>();
+		list_rail.addItem("none");
+		for (int i=0;i<main.listRail.length;i++) list_rail.addItem(main.listRail[i]);
+		list_rail.addActionListener(this);
+		this.add(list_rail);
+		list_rail.setBounds(70,95, 150, 30);
+		
+		list_area=new JComboBox<String>();
+		list_area.addItem("none");
+		for (int i=0;i<main.listArea.length;i++) list_area.addItem(main.listArea[i]);
+		list_area.addActionListener(this);
+		this.add(list_area);
+		list_area.setBounds(70,125, 150, 30);
+		
+		
+		list_preset=new JComboBox<String>();
+		for (int i=0;i<main.listPreset.length;i++) list_preset.addItem(main.listPreset[i]);
+		list_preset.addActionListener(this);
+		this.add(list_preset);
+		list_preset.setBounds(70,175, 170, 30);
+		
+		list_path=new JComboBox<String>();
+		for (int i=0;i<main.listPath.length;i++) list_path.addItem(main.listPath[i]);
+		list_path.addActionListener(this);
+		this.add(list_path);
+		list_path.setBounds(70,205, 170, 30);
+		
+		list_source=new JComboBox<String>();
+		for (int i=0;i<main.listSource.length;i++) list_source.addItem(main.listSource[i]);
+		list_source.addActionListener(this);
+		this.add(list_source);
+		list_source.setBounds(70,235, 170, 30);
+		
+		preset=new JButton("Load");
+		preset.addActionListener(this);
+		this.add(preset);
+		preset.setBounds(265, 175, 80, 30);
+		
+		path=new JButton("Load");
+		path.addActionListener(this);
+		this.add(path);
+		path.setBounds(265, 205, 80, 30);
+		
+		source=new JButton("Load");
+		source.addActionListener(this);
+		this.add(source);
+		source.setBounds(265, 235, 80, 30);
+		
+		
+		list_script=new JComboBox<String>();
+		for (int i=0;i<main.listScript.length;i++) list_script.addItem(main.listScript[i]);
+		list_script.addActionListener(this);
+		this.add(list_script);
+		list_script.setBounds(70,285, 170, 30);
+		
+		script=new JButton("Load");
+		script.addActionListener(this);
+		this.add(script);
+		script.setBounds(265, 285, 80, 30);
+		
+		
+		rescan=new JButton("Rescan");
+		rescan.addActionListener(this);
+		this.add(rescan);
+		rescan.setBounds(245, 20, 120, 50);
+		
+		savePreset=new JButton("<html><center> Save<br>preset</center></html>");
+		savePreset.addActionListener(this);
+		this.add(savePreset);
+		savePreset.setBounds(245, 90, 120, 50);
+		
+	}
+	
+	
+	
+	
+	public void paintComponent(Graphics g){
+
+		g.setColor(Color.black);
+		
+		// draw list names
+		g.drawRect(0, 0, 225, 160);
+		g.drawString("Image", 10, 25);
+		g.drawString("Tactile", 10, 55);
+		g.drawString("Flow", 10, 85);
+		g.drawString("Rails", 10, 115);
+		g.drawString("Areas", 10, 145);
+		
+		g.drawRect(0, 170, 375, 100);
+		g.drawString("Preset", 10, 195);
+		g.drawString("Path", 10, 225);
+		g.drawString("Sources", 10, 255);
+		
+		g.drawRect(0, 280, 375, 40);
+		g.drawString("Script", 10, 305);
+		
+		
+		// preset bloc
+		g.drawRect(235, 0, 140, 160);
+
+		
+
+    
+        
+ 		//list_image.setSelectedIndex(main.selected_img+1);
+ 		//list_tactile.setSelectedIndex(main.selected_tactile+1);
+ 		//list_flow.setSelectedIndex(main.selected_flow+1);
+ 		//list_rail.setSelectedIndex(main.selected_rail+1);
+ 		//list_area.setSelectedIndex(main.selected_area+1);
+
+        
+
+        
+        try {Thread.sleep(20);
+		} catch (InterruptedException e) {e.printStackTrace();}
+	}
+
+	
+
+	
+	
+	public void rescan(){
+		list_image.removeAllItems();
+		list_image.addItem("none");
+		for (int i=0;i<main.listImages.length;i++) list_image.addItem(main.listImages[i]);
+		
+		list_tactile.removeAllItems();
+		list_tactile.addItem("none");
+		for (int i=0;i<main.listTactile.length;i++) list_tactile.addItem(main.listTactile[i]);
+		
+		list_flow.removeAllItems();
+		list_flow.addItem("none");
+		for (int i=0;i<main.listFlow.length;i++) list_flow.addItem(main.listFlow[i]);
+		
+		list_rail.removeAllItems();
+		list_rail.addItem("none");
+		for (int i=0;i<main.listRail.length;i++) list_rail.addItem(main.listRail[i]);
+		
+		list_area.removeAllItems();
+		list_area.addItem("none");
+		for (int i=0;i<main.listArea.length;i++) list_area.addItem(main.listArea[i]);
+		
+		
+		list_preset.removeAllItems();
+		for (int i=0;i<main.listPreset.length;i++) list_preset.addItem(main.listPreset[i]);
+		
+		list_path.removeAllItems();
+		for (int i=0;i<main.listPath.length;i++) list_path.addItem(main.listPath[i]);
+		
+		list_source.removeAllItems();
+		for (int i=0;i<main.listSource.length;i++) list_source.addItem(main.listSource[i]);
+		
+		list_script.removeAllItems();
+		for (int i=0;i<main.listScript.length;i++) list_script.addItem(main.listScript[i]);
+	}
+	
+
+
+	public void actionPerformed(ActionEvent e) {
+		
+		///////////////////////////////////////////////////////////////////////
+		if (e.getSource()==list_image){
+			if (list_image.getSelectedIndex()==0) main.setPicture(null);
+			else main.setPicture((String)list_image.getSelectedItem());
+		}
+		if (e.getSource()==list_tactile){
+			if (list_tactile.getSelectedIndex()==0) main.setTactile(null);
+			else main.setTactile((String)list_tactile.getSelectedItem());
+		}
+		if (e.getSource()==list_flow){
+			if (list_flow.getSelectedIndex()==0) main.setFlow(null);
+			else main.setFlow((String)list_flow.getSelectedItem());
+		}
+		if (e.getSource()==list_rail){
+			if (list_rail.getSelectedIndex()==0) main.setRail(null);
+			else main.setRail((String)list_rail.getSelectedItem());
+		}
+		if (e.getSource()==list_area){
+			if (list_area.getSelectedIndex()==0) main.setArea(null);
+			else main.setArea((String)list_area.getSelectedItem());
+		}
+		
+		///////////////////////////////////////////////////////////////////////
+		if (e.getSource()==preset){
+			main.setPreset((String)list_preset.getSelectedItem(),1);
+			updateIndex(-1);
+		}
+		if (e.getSource()==path  ) main.setPath((String)list_path.getSelectedItem());
+		if (e.getSource()==source) main.setSource((String)list_source.getSelectedItem());
+		
+		///////////////////////////////////////////////////////////////////////
+		if (e.getSource()==script) main.setScript((String)list_script.getSelectedItem());
+		
+		///////////////////////////////////////////////////////////////////////
+		if (e.getSource()==rescan) main.listFiles();
+		if (e.getSource()==savePreset) main.savePreset();
+		
+		this.repaint();
+	}
+	
+	public void updateIndex(int id){
+		if (id==0 || id==-1) list_image.setSelectedIndex(main.selected_img+1);
+		if (id==1 || id==-1) list_tactile.setSelectedIndex(main.selected_tactile+1);
+		if (id==2 || id==-1) list_flow.setSelectedIndex(main.selected_flow+1);
+		if (id==3 || id==-1) list_rail.setSelectedIndex(main.selected_rail+1);
+		if (id==4 || id==-1) list_area.setSelectedIndex(main.selected_area+1);
+	}
+
+}

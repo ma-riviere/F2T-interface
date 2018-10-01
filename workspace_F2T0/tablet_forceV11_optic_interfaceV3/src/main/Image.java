@@ -1,4 +1,6 @@
 package main;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +24,12 @@ public class Image {
 	public BufferedImage flow_img;
 	public BufferedImage rail_img;
 	public BufferedImage area_img;
+	
+	public BufferedImage view_img_miniature;
+	public BufferedImage tactile_img_miniature;
+	public BufferedImage flow_img_miniature;
+	public BufferedImage rail_img_miniature;
+	public BufferedImage area_img_miniature;
 	
 	public int[][][] tactile_mat;
 	
@@ -82,6 +90,7 @@ public class Image {
 		if (view!=null){
 			try {
 				view_img = ImageIO.read(new File(Main.FILES+Main.IMG+view));
+				view_img_miniature=scale(view_img,0.25);
 			} catch (IOException e) {System.out.print(e);}
 		}
 	}
@@ -93,6 +102,7 @@ public class Image {
 		if (tactile!=null){
 			try {
 				tactile_img = ImageIO.read(new File(Main.FILES+Main.TACTILE+tactile));
+				tactile_img_miniature=scale(tactile_img, 0.25);
 			} catch (IOException e) {System.out.print(e);}
 		
 			for (int i=0;i<SIZE;i++){
@@ -122,6 +132,7 @@ public class Image {
 		if (flow!=null){
 			try {
 				flow_img = ImageIO.read(new File(Main.FILES+Main.FLOW+flow));
+				flow_img_miniature=scale(flow_img, 0.25);
 			} catch (IOException e) {System.out.print(e);}
 
 		
@@ -149,6 +160,7 @@ public class Image {
 		if (rail!=null){
 			try {
 				rail_img = ImageIO.read(new File(Main.FILES+Main.RAIL+rail));
+				rail_img_miniature=scale(rail_img, 0.25);
 			} catch (IOException e) {System.out.print(e);}
 
 		
@@ -176,6 +188,7 @@ public class Image {
 		if (area!=null){
 			try {
 				area_img = ImageIO.read(new File(Main.FILES+Main.AREA+area));
+				area_img_miniature=scale(area_img, 0.25);
 			} catch (IOException e) {System.out.print(e);}
 
 		
@@ -200,5 +213,13 @@ public class Image {
 			}
 		}
 	}
+	
+	 public static BufferedImage scale(BufferedImage bi, double scaleValue) {
+        AffineTransform tx = new AffineTransform();
+        tx.scale(scaleValue, scaleValue);
+        AffineTransformOp op = new AffineTransformOp(tx,AffineTransformOp.TYPE_BILINEAR);
+        BufferedImage biNew = new BufferedImage( (int) (bi.getWidth() * scaleValue),(int) (bi.getHeight() * scaleValue), bi.getType());
+        return op.filter(bi, biNew);
+	 }
 	
 }

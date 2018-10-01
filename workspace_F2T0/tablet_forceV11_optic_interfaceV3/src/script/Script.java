@@ -202,9 +202,16 @@ public class Script {
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	public void detect(int i, int j){
 		
+		int x=i;
+		int y=j;
+		if (x<0) x=0;
+		if (x>=700) x=699;
+		if (y<0) y=0;
+		if (y>=700) y=699;
+		
 		if (sequence.size()>0 && sequence_index>=0 && sequence_index<sequence.size()){
 			
-			sequence.get(sequence_index).detect(i, j);
+			sequence.get(sequence_index).detect(x, y);
 			
 			if (sequence.get(sequence_index).isComplete()){
 				System.out.println("change Age to "+(sequence_index+1));

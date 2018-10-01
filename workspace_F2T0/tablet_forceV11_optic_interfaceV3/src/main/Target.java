@@ -27,7 +27,7 @@ public class Target {
 		
 		float dist=(float) Math.sqrt( (x-px)*(x-px) + (y-py)*(y-py) );
 		
-		if (dist<=10){
+		if (dist<=20){
 			reached=true;
 			offsetX=0;
 			offsetY=0;

@@ -20,6 +20,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
+import main.Target;
 
 
 
@@ -51,12 +52,7 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 	
 
 	public Main main;
-	
 
-	private JButton mode1;
-	private JButton mode2;
-	private JButton mode3;
-	private JButton mode4;
 	
 	private JComboBox<String> list_image;
 	private JComboBox<String> list_tactile;
@@ -102,25 +98,6 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 		
 		this.setLayout(null);
 		
-		mode1=new JButton("setup");
-		mode1.addActionListener(this);
-		this.add(mode1);
-		mode1.setBounds(5, 5, 100, 40);
-		
-		mode2=new JButton("images");
-		mode2.addActionListener(this);
-		this.add(mode2);
-		mode2.setBounds(110, 5, 100, 40);
-		
-		mode3=new JButton("sources");
-		mode3.addActionListener(this);
-		this.add(mode3);
-		mode3.setBounds(215, 5, 100, 40);
-		
-		mode4=new JButton("story");
-		mode4.addActionListener(this);
-		this.add(mode4);
-		mode4.setBounds(320, 5, 100, 40);
 		
 		
 		list_image=new JComboBox<String>();
@@ -271,11 +248,11 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 	public void paintComponent(Graphics g){
 		
 		if (display_mode==0){
-			list_image.setVisible(true);
+			/*list_image.setVisible(true);
 			list_tactile.setVisible(true);
 			list_flow.setVisible(true);
 			list_rail.setVisible(true);
-			list_area.setVisible(true);
+			list_area.setVisible(true);*/
 			
 			// draw image
 			g.setColor(Color.black);
@@ -389,6 +366,38 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 		 		g.setColor(Color.red);
 		 		g.drawOval(IMAGE_X+325+(int)(main.x_next*0.5+35), IMAGE_Y+245-(int)(main.y_next*0.5-35), 50, 50);
 			}
+			
+			
+			// draw path
+			if (selected_image>=0){
+				if (main.currentAge.targetSequence.size()>0){
+					if (main.currentAge.targetSequence.get(0).control==0) g.setColor(Color.yellow);
+					else g.setColor(Color.magenta);
+					g.fillOval(IMAGE_X+348+(int)main.currentAge.targetSequence.get(0).x, IMAGE_Y+268-(int)main.currentAge.targetSequence.get(0).y, 5, 5);
+					for (int i=1;i<main.currentAge.targetSequence.size();i++){
+						if (main.currentAge.targetSequence.get(i).control==0) g.setColor(Color.yellow);
+						else g.setColor(Color.magenta);
+						g.drawLine(IMAGE_X+350+(int)main.currentAge.targetSequence.get(i-1).x, IMAGE_Y+270-(int)main.currentAge.targetSequence.get(i-1).y,
+								   IMAGE_X+350+(int)main.currentAge.targetSequence.get(i  ).x, IMAGE_Y+270-(int)main.currentAge.targetSequence.get(i  ).y);
+						g.fillOval(IMAGE_X+349+(int)main.currentAge.targetSequence.get(i).x, IMAGE_Y+269-(int)main.currentAge.targetSequence.get(i).y, 3, 3);
+					}
+				}
+			}
+			else{
+				if (main.currentAge.targetSequence.size()>0){
+					if (main.currentAge.targetSequence.get(0).control==0) g.setColor(Color.yellow);
+					else g.setColor(Color.magenta);
+					g.fillOval(IMAGE_X+348+(int)(main.currentAge.targetSequence.get(0).x*0.5), IMAGE_Y+268-(int)(main.currentAge.targetSequence.get(0).y*0.5), 5, 5);
+					for (int i=1;i<main.currentAge.targetSequence.size();i++){
+						if (main.currentAge.targetSequence.get(i).control==0) g.setColor(Color.yellow);
+						else g.setColor(Color.magenta);
+						g.drawLine(IMAGE_X+350+(int)(main.currentAge.targetSequence.get(i-1).x*0.5), IMAGE_Y+270-(int)(main.currentAge.targetSequence.get(i-1).y*0.5),
+								   IMAGE_X+350+(int)(main.currentAge.targetSequence.get(i  ).x*0.5), IMAGE_Y+270-(int)(main.currentAge.targetSequence.get(i  ).y*0.5));
+						g.fillOval(IMAGE_X+349+(int)(main.currentAge.targetSequence.get(i).x*0.5), IMAGE_Y+269-(int)(main.currentAge.targetSequence.get(i).y*0.5), 3, 3);
+					}
+				}
+			}
+			
 		}
 		
 		if (display_mode==1){
@@ -422,7 +431,7 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
         
 
         
-        try {Thread.sleep(50);
+        try {Thread.sleep(20);
 		} catch (InterruptedException e) {e.printStackTrace();}
 	}
 
@@ -477,7 +486,13 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 		if (x>=IMAGE_X+890 && x<IMAGE_X+1065 && y>=IMAGE_Y+180 && y<IMAGE_Y+355) selected_image=3;
 		if (x>=IMAGE_X+710 && x<IMAGE_X+885  && y>=IMAGE_Y+360 && y<IMAGE_Y+535) selected_image=4;
 		if (x>=IMAGE_X+900 && x<IMAGE_X+1055 && y>=IMAGE_Y+380 && y<IMAGE_Y+500) selected_image=-1;
-
+		
+		
+		if (selected_image>=0){
+			if (x>IMAGE_X && x<IMAGE_X+700 && y>IMAGE_Y && y<IMAGE_Y+700){
+				main.currentAge.targetSequence.add(new Target(-350+(int)e.getX()-IMAGE_X, 270-(int)e.getY()+IMAGE_Y,main.target_speed, main.target_type));
+			}
+		}
 	}
 	
 	
@@ -494,11 +509,6 @@ public class DisplayPanel extends JPanel implements MouseListener, ActionListene
 
 	public void actionPerformed(ActionEvent e) {
 		
-		///////////////////////////////////////////////////////////////////////
-		if (e.getSource()==mode1) display_mode=0;
-		if (e.getSource()==mode2) display_mode=0;
-		if (e.getSource()==mode3) display_mode=1;
-		if (e.getSource()==mode4) display_mode=2;
 		
 		///////////////////////////////////////////////////////////////////////
 		if (e.getSource()==list_image){

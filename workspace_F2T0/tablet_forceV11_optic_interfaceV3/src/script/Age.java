@@ -161,6 +161,8 @@ public class Age {
 			msg+="("+sourceList.get(s).px+", "+sourceList.get(s).py+"), ";
 		}
 		
+		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
+		
 		return msg;
 	}
 	

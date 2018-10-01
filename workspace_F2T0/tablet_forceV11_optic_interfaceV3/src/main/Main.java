@@ -58,18 +58,18 @@ public class Main {
 	
 	
 	// main display frames
-	public CameraFrame cameraFrame;
+	//public CameraFrame cameraFrame;
 	public TouchFrame touchFrame;
 	public SourceFrame sourceFrame;
 	
 	public DisplayFrame display;
 	
 	// four display frames
-	private ViewPortFrame viewPort;
-	private ViewPortFrame tactileDisplay;
-	private ViewPortFrame flowDisplay;
-	private ViewPortFrame railDisplay;
-	private ViewPortFrame areaDisplay;
+	//private ViewPortFrame viewPort;
+	//private ViewPortFrame tactileDisplay;
+	//private ViewPortFrame flowDisplay;
+	//private ViewPortFrame railDisplay;
+	//private ViewPortFrame areaDisplay;
 	
 	// pointer to current age
 	public Age currentAge;
@@ -143,8 +143,15 @@ public class Main {
 	
 	public VideoCapture camera;
 	
-	public Mat webcam=new Mat();
+	public Mat webcam1=new Mat();
+	public Mat webcam =new Mat();
+	public Mat webcam_display =new Mat();
+	public Mat webcam_display1=new Mat();
+	public Mat webcam_miniature=new Mat();
 	public Mat map=new Mat();
+	
+	private Size sz = new Size(640,480);
+	private Size sz_miniature = new Size(160,120);
 	
 	public double[] histogram_X;
 	public double[] histogram_Y;
@@ -180,12 +187,11 @@ public class Main {
 		if (CAMERA_CONNECTED){
 			camera=new VideoCapture(1);
 			
-			Size sz = new Size(640,480);
-			
 			// get first frame
-			camera.read(webcam);
-			Imgproc.resize( webcam, webcam, sz );
-			Imgproc.resize( webcam, map, sz );
+			camera.read(webcam1);
+			Imgproc.resize( webcam1, webcam, sz );
+			Imgproc.resize( webcam1, webcam_display, sz );
+			Imgproc.resize( webcam1, map, sz );
 		}
 		
 		time=0;
@@ -231,7 +237,7 @@ public class Main {
 		
 		//////////////////////////////////////////////////////////////////////////////////////////
 		// initialization of main display panels
-		cameraFrame=new CameraFrame(this);
+		//cameraFrame=new CameraFrame(this);
 		touchFrame=new TouchFrame(this);
 		sourceFrame=new SourceFrame(this);
 		
@@ -244,17 +250,15 @@ public class Main {
 			////////////////////////////////////////////////////////////////////////
 			// get position : get x, y, x_prev, y_prev and predict x_next and y_next
 			getTouchedPosition();
-			
 
 			///////////////////////////////////////////////////////////
 			// get user speed dx and dy
 			getUserMovement();
-			
-			
+
 			///////////////////////////////////////////////////////////
 			// get friction values (fluid and solid) and send value
-			friction_fluid=(float)currentAge.image.tactile_mat[350+(int)(x+dx)][270-(int)(y+dy)][0]/255;
-			friction_solid=(float)currentAge.image.tactile_mat[350+(int)(x+dx)][270-(int)(y+dy)][2]/255;
+			friction_fluid=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]/255;
+			friction_solid=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][2]/255;
 			sendFriction();
 			
 			
@@ -265,12 +269,12 @@ public class Main {
 			boolean wall=false;
 
 			// Height of touched point
-			contactHeight=(float)currentAge.image.tactile_mat[350+(int)(x)][270-(int)(y)][1]/255;
+			contactHeight=(float)currentAge.image.tactile_mat[350+(int)(x)][350-(int)(y)][1]/255;
 
 			for (int i=-12;i<=12;i++){
 				for (int j=-12;j<=12;j++){
-					if (350+x+i*2>=0 && 270-y+j*2>=0 && i*i+j*j<=144){
-						heighMap[i+12][j+12]= (float)currentAge.image.tactile_mat[350+(int)(x)+i*2][270-(int)(y)+j*2][1]/255;
+					if (350+(int)(x+i)>=0 && 350+(int)(x+i)<700 && 350-(int)(y-j)>=0 && 350-(int)(y-j)<700 && i*i+j*j<=144){
+						heighMap[i+12][j+12]= (float)currentAge.image.tactile_mat[350+(int)(x+i)][350-(int)(y-j)][1]/255;
 						contactMap[i+12][j+12]= heighMap[i+12][j+12]-sphere[i+12][j+12] -contactHeight;
 						if (contactMap[i+12][j+12]>0) wall=true;
 					}
@@ -397,9 +401,9 @@ public class Main {
 			// define flow
 			flowX=500;
 			flowY=500;
-			if (currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause){
-				flowX=currentAge.image.flow_mat[350+(int)(x+dx)][270-(int)(y+dy)][0]*4-12;
-				flowY=currentAge.image.flow_mat[350+(int)(x+dx)][270-(int)(y+dy)][1]*4-12;
+			if ( currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause ){
+				flowX=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]*4-12;
+				flowY=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1]*4-12;
 
 				if (flowX<0) flowX=0;
 				if (flowX>999) flowX=999;
@@ -410,10 +414,10 @@ public class Main {
 			
 			///////////////////////////////////////////////////////////
 			// define rail
-			if (currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause){
+			if ( currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause ){
 				
-				float railX=currentAge.image.rail_mat[350+(int)(x+dx)][270-(int)(y+dy)][0]*4-12-500;
-				float railY=currentAge.image.rail_mat[350+(int)(x+dx)][270-(int)(y+dy)][1]*4-12-500;
+				float railX=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]*4-12-500;
+				float railY=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1]*4-12-500;
 				float railX2=-railY;
 				float railY2=-railX;
 				float scalar=jx2*railX2 + jy2*(-railY2);
@@ -476,11 +480,6 @@ public class Main {
 			
 			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			// update display panels
-			if (viewPort!=null) viewPort.repaint();
-			if (tactileDisplay!=null) tactileDisplay.repaint();
-			if (flowDisplay   !=null) flowDisplay.repaint();
-			if (railDisplay   !=null) railDisplay.repaint();
-			if (areaDisplay   !=null) areaDisplay.repaint();
 			
 			//cameraFrame.repaint();
 			touchFrame.repaint();
@@ -494,17 +493,16 @@ public class Main {
 			
 			
 			//////////////////////////////
-			// update script
-			script.detect(350+(int)(x+dx),270-(int)(y+dy));
+			// update script			
+			script.detect(Math.min(699,Math.max(0,350+(int)(x+dx))),Math.min(699,Math.max(0,350-(int)(y+dy))));
 			
 			
 			//////////////////////////////
 			// compute sound sources positions
 			script.computeSources(x,y);
 			
-			
-			/*try {Thread.sleep(5);
-			} catch (InterruptedException e) {e.printStackTrace();}*/
+			try {Thread.sleep(10);
+			} catch (InterruptedException e) {e.printStackTrace();}
 			
 		}
 	}
@@ -829,6 +827,8 @@ public class Main {
 		updateAge(script.getCurrentAge());
 		target_pause=false;
 		
+		display.updateMiniatures(-1);
+		
 		System.out.println("++++ "+currentAge.image.area);
 	}
 	
@@ -887,6 +887,8 @@ public class Main {
 			if (area_file!=null    || erase==1) setArea(area_file);
 		}
 		catch (Exception e) {System.out.println("no file found");}
+		
+		//display.updateMiniatures();
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////
@@ -955,12 +957,9 @@ public class Main {
 	// picture
 	public void setPicture(String img_file){
 		currentAge.image.setPicture(img_file);
-		if (currentAge.image.view   !=null && viewPort==null) viewPort=new ViewPortFrame(this, currentAge.image.view_img);
-		else if (currentAge.image.view!=null && viewPort!=null) viewPort.setImage(currentAge.image.view_img);
-		else if (currentAge.image.view   ==null && viewPort!=null){
-			viewPort.dispose();
-			viewPort=null;
-		}
+		
+		display.updateMiniatures(0);
+
 		selected_img=-1;
 		if (img_file!=null){
 			for (int i=0;i<listImages.length;i++){
@@ -972,12 +971,9 @@ public class Main {
 	// tactile image
 	public void setTactile(String tactile_file){
 		currentAge.image.setTactile(tactile_file);
-		if (currentAge.image.tactile!=null && tactileDisplay==null) tactileDisplay=new ViewPortFrame(this, currentAge.image.tactile_img);
-		else if (currentAge.image.tactile!=null && tactileDisplay!=null) tactileDisplay.setImage(currentAge.image.tactile_img);
-		else if (currentAge.image.tactile==null && tactileDisplay!=null){
-			tactileDisplay.dispose();
-			tactileDisplay=null;
-		}
+
+		display.updateMiniatures(1);
+		
 		selected_tactile=-1;
 		if (tactile_file!=null){
 			for (int i=0;i<listTactile.length;i++){
@@ -989,12 +985,9 @@ public class Main {
 	// flow file
 	public void setFlow(String flow_file){
 		currentAge.image.setFlow(flow_file);
-		if (currentAge.image.flow   !=null && flowDisplay==null) flowDisplay =new ViewPortFrame(this, currentAge.image.flow_img);
-		else if (currentAge.image.flow!=null && flowDisplay!=null) flowDisplay.setImage(currentAge.image.flow_img);
-		else if (currentAge.image.flow==null && flowDisplay!=null){
-			flowDisplay.dispose();
-			flowDisplay=null;
-		}
+
+		display.updateMiniatures(2);
+
 		selected_flow=-1;
 		if (flow_file!=null){
 			for (int i=0;i<listFlow.length;i++){
@@ -1006,12 +999,9 @@ public class Main {
 	// rail file
 	public void setRail(String rail_file){
 		currentAge.image.setRail(rail_file);
-		if (currentAge.image.rail   !=null && railDisplay==null) railDisplay =new ViewPortFrame(this, currentAge.image.rail_img);
-		else if (currentAge.image.rail!=null && railDisplay!=null) railDisplay.setImage(currentAge.image.rail_img);
-		else if (currentAge.image.rail==null && railDisplay!=null){
-			railDisplay.dispose();
-			railDisplay=null;
-		}
+
+		display.updateMiniatures(3);
+		
 		selected_rail=-1;
 		if (rail_file!=null){
 			for (int i=0;i<listRail.length;i++){
@@ -1023,12 +1013,9 @@ public class Main {
 	// area descriptor file
 	public void setArea(String area_file){
 		currentAge.image.setArea(area_file);
-		if (currentAge.image.area   !=null && areaDisplay==null) areaDisplay =new ViewPortFrame(this, currentAge.image.area_img);
-		else if (currentAge.image.area!=null && areaDisplay!=null) areaDisplay.setImage(currentAge.image.area_img);
-		else if (currentAge.image.area==null && areaDisplay!=null){
-			areaDisplay.dispose();
-			areaDisplay=null;
-		}
+		
+		display.updateMiniatures(4);
+		
 		selected_area=-1;
 		if (area_file!=null){
 			for (int i=0;i<listArea.length;i++){
@@ -1043,13 +1030,6 @@ public class Main {
 		
 		target_pause=!currentAge.default_play;
 		
-		// update display panels
-		if (currentAge.image.view   !=null && viewPort==null) viewPort=new ViewPortFrame(this, currentAge.image.view_img);
-		else if (currentAge.image.view!=null && viewPort!=null) viewPort.setImage(currentAge.image.view_img);
-		else if (currentAge.image.view   ==null && viewPort!=null){
-			viewPort.dispose();
-			viewPort=null;
-		}
 		selected_img=-1;
 		if (currentAge.image.view!=null){
 			for (int i=0;i<listImages.length;i++){
@@ -1057,51 +1037,27 @@ public class Main {
 			}
 		}
 		
-		if (currentAge.image.tactile!=null && tactileDisplay==null) tactileDisplay=new ViewPortFrame(this, currentAge.image.tactile_img);
-		else if (currentAge.image.tactile!=null && tactileDisplay!=null) tactileDisplay.setImage(currentAge.image.tactile_img);
-		else if (currentAge.image.tactile==null && tactileDisplay!=null){
-			tactileDisplay.dispose();
-			tactileDisplay=null;
-		}
 		selected_tactile=-1;
 		if (currentAge.image.tactile!=null){
 			for (int i=0;i<listTactile.length;i++){
 				if (currentAge.image.tactile.equals(listTactile[i])) selected_tactile=i;
 			}
 		}
-		
-		if (currentAge.image.flow   !=null && flowDisplay==null) flowDisplay =new ViewPortFrame(this, currentAge.image.flow_img);
-		else if (currentAge.image.flow!=null && flowDisplay!=null) flowDisplay.setImage(currentAge.image.flow_img);
-		else if (currentAge.image.flow==null && flowDisplay!=null){
-			flowDisplay.dispose();
-			flowDisplay=null;
-		}
+
 		selected_flow=-1;
 		if (currentAge.image.flow!=null){
 			for (int i=0;i<listFlow.length;i++){
 				if (currentAge.image.flow.equals(listFlow[i])) selected_flow=i;
 			}
 		}
-		
-		if (currentAge.image.rail   !=null && railDisplay==null) railDisplay =new ViewPortFrame(this, currentAge.image.rail_img);
-		else if (currentAge.image.rail!=null && railDisplay!=null) railDisplay.setImage(currentAge.image.rail_img);
-		else if (currentAge.image.rail==null && railDisplay!=null){
-			railDisplay.dispose();
-			railDisplay=null;
-		}
+
 		selected_rail=-1;
 		if (currentAge.image.rail!=null){
 			for (int i=0;i<listRail.length;i++){
 				if (currentAge.image.rail.equals(listRail[i])) selected_rail=i;
 			}
 		}
-		
-		if (currentAge.image.area   !=null && areaDisplay==null) areaDisplay =new ViewPortFrame(this, currentAge.image.area_img);
-		else if (currentAge.image.area!=null && areaDisplay!=null) areaDisplay.setImage(currentAge.image.area_img);
-		else if (currentAge.image.area==null && areaDisplay!=null){
-			areaDisplay.dispose();
-			areaDisplay=null;
-		}
+
 		selected_area=-1;
 		if (currentAge.image.area!=null){
 			for (int i=0;i<listArea.length;i++){
@@ -1116,6 +1072,12 @@ public class Main {
 		
 		if (CAMERA_CONNECTED){
 			camera.read(webcam);
+
+			//Imgproc.resize( webcam1, webcam, sz);
+			Core.flip( webcam, webcam_display1, 0);
+			Core.flip( webcam_display1, webcam_display, 1);
+			
+			Imgproc.resize( webcam1, webcam_miniature, sz_miniature );
 
 			
 			// vertical
@@ -1205,12 +1167,21 @@ public class Main {
 			x_prev=x;
 			y_prev=y;
 			
-			x=-(imax-280)*2;
-			y=(jmax-160)*2;
+			//System.out.println(imax+" , "+jmax);
+			
+			x=-(imax-270)*3;
+			y=(jmax-157)*2.56f;
+			
+			if (x<-349) x=-349;
+			if (x> 349) x= 349;
+			if (y<-349) y=-349;
+			if (y> 349) y= 349;
 			
 			x_next=x + (x-x_prev);
 			y_next=y + (y-y_prev);
 		}
+		
+		//System.out.println(x+" , "+y);
 	}
 	
 	
@@ -1227,8 +1198,8 @@ public class Main {
 		
 		while (350+(int)(x+dx)>700) x-=2; 
 		while (350+(int)(x+dx)<  0) x+=2; 
-		while (270-(int)(y+dy)>700) y-=2;
-		while (270-(int)(y+dy)<  0) y+=2;
+		while (350-(int)(y+dy)>700) y+=2;
+		while (350-(int)(y+dy)<  0) y-=2;
 	}
 	
 	
