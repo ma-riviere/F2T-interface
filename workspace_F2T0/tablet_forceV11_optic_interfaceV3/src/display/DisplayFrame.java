@@ -15,18 +15,20 @@ public class DisplayFrame extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	
 	private static int IMAGE_X=5;
-	private static int IMAGE_Y=50;
+	private static int IMAGE_Y=60;
 	
 	private static int LISTS_X=1100;
-	private static int LISTS_Y=50;
+	private static int LISTS_Y=60;
 	
 	private static int PATH_X=1100;
-	private static int PATH_Y=380;
+	private static int PATH_Y=390;
 	
 	
 	private Main main;
 	
-	//private DisplayPanel panel;
+	private DisplayValuesPanel valuesPanel;
+	
+	private DisplaySettingsPanel settingsPanel;
 	
 	private DisplayImagePanel imagePanel;
 	private DisplayMiniaturesPanel miniaturePanel;
@@ -43,6 +45,10 @@ public class DisplayFrame extends JFrame implements ActionListener{
 	
 	public int display_mode=0;
 	public int selected_image=-1;
+	
+	public boolean displayValues=true;
+	public boolean displayTrace=true;
+	public boolean displayJoystick=true;
 	
 	public int posx=0;
 	public int posy=0;
@@ -71,19 +77,26 @@ public class DisplayFrame extends JFrame implements ActionListener{
     	mode1=new JButton("setup");
 		mode1.addActionListener(this);
 		this.add(mode1);
-		mode1.setBounds(5, 5, 100, 40);
+		mode1.setBounds(5, 5, 100, 50);
 		
 		mode2=new JButton("sources");
 		mode2.addActionListener(this);
 		this.add(mode2);
-		mode2.setBounds(110, 5, 100, 40);
+		mode2.setBounds(110, 5, 100, 50);
 		
 		mode3=new JButton("story");
 		mode3.addActionListener(this);
 		this.add(mode3);
-		mode3.setBounds(215, 5, 100, 40);
+		mode3.setBounds(215, 5, 100, 50);
     	
     	
+		valuesPanel=new DisplayValuesPanel(main, this);
+		this.add(valuesPanel);
+		valuesPanel.setBounds(575, 5, 1000, 51);
+		
+		settingsPanel=new DisplaySettingsPanel(main, this);
+		this.add(settingsPanel);
+		settingsPanel.setBounds(LISTS_X, 620, 380, 121);
 		
 		imagePanel=new DisplayImagePanel(main, this);
 		this.add(imagePanel);
@@ -136,6 +149,8 @@ public class DisplayFrame extends JFrame implements ActionListener{
 	
 	public void repaint(){
 		
+		if (displayValues) valuesPanel.repaint();
+		
 		if (display_mode==0){
 			imagePanel.repaint();
 			miniaturePanel.repaint();
@@ -152,11 +167,6 @@ public class DisplayFrame extends JFrame implements ActionListener{
 	
 	public void updateMiniatures(int id){
 		miniaturePanel.update();
-
-		//miniaturePanel.setVisible(false);
-		//miniaturePanel.setVisible(true);
-		
-		//filePanel.updateIndex(id);
 	}
 	
 	public void updatePathPanel(int x, int y){
@@ -176,9 +186,13 @@ public class DisplayFrame extends JFrame implements ActionListener{
 	}
 	
 	
+	public String getSourceParameters(){
+		return sourceSettingPanel.getParameters();
+	}
+	
+	
 	public void rescan(){
-		//panel.rescan();
-		
+
 		filePanel.rescan();
 	}
 	
@@ -187,6 +201,7 @@ public class DisplayFrame extends JFrame implements ActionListener{
 		display_mode=mode;
 		
 		if (mode==0){
+			settingsPanel.setVisible(true);
 			imagePanel.setVisible(true);
 			miniaturePanel.setVisible(true);
 			filePanel.setVisible(true);
@@ -199,6 +214,7 @@ public class DisplayFrame extends JFrame implements ActionListener{
 			ageMiniaturesPanel.setVisible(false);
 		}
 		else if (mode==1){
+			settingsPanel.setVisible(true);
 			imagePanel.setVisible(false);
 			miniaturePanel.setVisible(false);
 			filePanel.setVisible(true);
@@ -211,6 +227,7 @@ public class DisplayFrame extends JFrame implements ActionListener{
 			ageMiniaturesPanel.setVisible(false);
 		}
 		else if (mode==2){
+			settingsPanel.setVisible(true);
 			imagePanel.setVisible(false);
 			miniaturePanel.setVisible(false);
 			filePanel.setVisible(true);
@@ -223,6 +240,20 @@ public class DisplayFrame extends JFrame implements ActionListener{
 			ageMiniaturesPanel.setVisible(true);
 		}
 	}
+	
+	
+	
+	public void setDisplayTrace(boolean set){
+		displayTrace=set;
+	}
+	public void setDisplayJoystick(boolean set){
+		displayJoystick=set;
+	}
+	public void setDisplayValues(boolean set){
+		displayValues=set;
+		valuesPanel.setVisible(set);
+	}
+	
 
 	public void actionPerformed(ActionEvent e) {
 		
@@ -230,7 +261,6 @@ public class DisplayFrame extends JFrame implements ActionListener{
 		if (e.getSource()==mode1) setMode(0);
 		if (e.getSource()==mode2) setMode(1);
 		if (e.getSource()==mode3) setMode(2);
-		
 		///////////////////////////////////////////////////////////////////////
 	}
 	

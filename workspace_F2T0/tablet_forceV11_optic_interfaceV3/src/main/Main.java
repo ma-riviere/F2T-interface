@@ -36,7 +36,8 @@ public class Main {
 	
 	public static String PORT="/dev/ttyUSB";						// name of the port, without number
 	
-	public static String FILES="/home/simon/Bureau/F2T_images/";	// path to images
+	//public static String FILES="/home/simon/Bureau/F2T_images/";	// path to images
+	public static String FILES="../../F2T_images/";	// path to images
 	//public static String FILES="./";
 	public static String IMG="img/";								// sub paths to image types
 	public static String TACTILE="tactile/";
@@ -58,18 +59,9 @@ public class Main {
 	
 	
 	// main display frames
-	//public CameraFrame cameraFrame;
-	public TouchFrame touchFrame;
-	public SourceFrame sourceFrame;
-	
+	//public TouchFrame touchFrame;
 	public DisplayFrame display;
 	
-	// four display frames
-	//private ViewPortFrame viewPort;
-	//private ViewPortFrame tactileDisplay;
-	//private ViewPortFrame flowDisplay;
-	//private ViewPortFrame railDisplay;
-	//private ViewPortFrame areaDisplay;
 	
 	// pointer to current age
 	public Age currentAge;
@@ -99,21 +91,34 @@ public class Main {
 	public float dy=0;
 	
 	// tactile property values
-	public float friction_fluid=0;
-	public int previous_fluid=0;
+	public float friction_fluid_read=0;
+	public float friction_solid_read=0;
 	
-	public float friction_solid=0;
-	public int previous_solid=0;
+	private float friction_fluid=0;
+	private int previous_fluid=0;
+	
+	private float friction_solid=0;
+	private int previous_solid=0;
 	
 	public float gx=0;
 	public float gy=0;
 	public int previous_gx=0;
 	public int previous_gy=0;
 	
-	public int flowX=0;
-	public int flowY=0;
-	public int previous_flowX=0;
-	public int previous_flowY=0;
+	public int flowX_read=0;
+	public int flowY_read=0;
+	
+	public int railX_read=0;
+	public int railY_read=0;
+	
+	private int flowX=0;
+	private int flowY=0;
+	private int previous_flowX=0;
+	private int previous_flowY=0;
+	
+	public int area_red_read=0;
+	public int area_green_read=0;
+	public int area_blue_read=0;
 	
 	public boolean control_mode=false;	// direct or indirect control loop
 	
@@ -184,6 +189,7 @@ public class Main {
 	///////////////////////////////////////////////////////////////
 	public Main(){
 		
+		
 		if (CAMERA_CONNECTED){
 			camera=new VideoCapture(1);
 			
@@ -237,10 +243,7 @@ public class Main {
 		
 		//////////////////////////////////////////////////////////////////////////////////////////
 		// initialization of main display panels
-		//cameraFrame=new CameraFrame(this);
-		touchFrame=new TouchFrame(this);
-		sourceFrame=new SourceFrame(this);
-		
+		//touchFrame=new TouchFrame(this);
 		display=new DisplayFrame(this);
 		
 		
@@ -257,8 +260,8 @@ public class Main {
 
 			///////////////////////////////////////////////////////////
 			// get friction values (fluid and solid) and send value
-			friction_fluid=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]/255;
-			friction_solid=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][2]/255;
+			friction_fluid_read=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]/255;
+			friction_solid_read=(float)currentAge.image.tactile_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][2]/255;
 			sendFriction();
 			
 			
@@ -402,9 +405,12 @@ public class Main {
 			flowX=500;
 			flowY=500;
 			if ( currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause ){
-				flowX=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]*4-12;
-				flowY=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1]*4-12;
+				flowX_read=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0];
+				flowY_read=currentAge.image.flow_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1];
 
+				flowX=flowX_read*4-12;
+				flowY=flowY_read*4-12;
+				
 				if (flowX<0) flowX=0;
 				if (flowX>999) flowX=999;
 				if (flowY<0) flowY=0;
@@ -416,10 +422,10 @@ public class Main {
 			// define rail
 			if ( currentAge.targetSequence.size()==0 || currentAge.targetSequence.get(0).control==0 || target_pause ){
 				
-				float railX=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0]*4-12-500;
-				float railY=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1]*4-12-500;
-				float railX2=-railY;
-				float railY2=-railX;
+				railX_read=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0];
+				railY_read=currentAge.image.rail_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1];
+				float railX2=-(railY_read*4-12-500);
+				float railY2=-(railX_read*4-12-500);
 				float scalar=jx2*railX2 + jy2*(-railY2);
 				float norm2=railX2*railX2+railY2*railY2;
 				
@@ -477,14 +483,16 @@ public class Main {
 
 			
 			
+			/////////////////////////////////////////////////////////////////////////////
+			// detect areas
+			area_red_read=currentAge.image.area_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][0];
+			area_green_read=currentAge.image.area_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][1];
+			area_blue_read=currentAge.image.area_mat[Math.min(699,Math.max(0,350+(int)(x+dx)))][Math.min(699,Math.max(0,350-(int)(y+dy)))][2];
 			
 			///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			// update display panels
 			
-			//cameraFrame.repaint();
-			touchFrame.repaint();
-			//sourceFrame.repaint();
-
+			//touchFrame.repaint();
 			display.repaint();
 			
 			//////////////////////////////
@@ -1077,7 +1085,7 @@ public class Main {
 			Core.flip( webcam, webcam_display1, 0);
 			Core.flip( webcam_display1, webcam_display, 1);
 			
-			Imgproc.resize( webcam1, webcam_miniature, sz_miniature );
+			Imgproc.resize( webcam_display, webcam_miniature, sz_miniature );
 
 			
 			// vertical
@@ -1204,7 +1212,7 @@ public class Main {
 	
 	
 	public void sendFriction(){
-		friction_fluid=(int)(friction_fluid*490);
+		friction_fluid=(int)(friction_fluid_read*490);
 		if (friction_fluid!=previous_fluid){
 			String msg="f";
 			if (friction_fluid<10) msg+="00";
@@ -1215,7 +1223,7 @@ public class Main {
 			previous_fluid=(int) friction_fluid;
 		}
 		
-		friction_solid=(int)(friction_solid*490);;
+		friction_solid=(int)(friction_solid_read*490);;
 		if (friction_solid!=previous_solid){
 			String msg="s";
 			if (friction_solid<10) msg+="00";

@@ -139,12 +139,7 @@ public class DisplayPathSettingPanel extends JPanel implements ActionListener{
  		if (main.target_type==1) controlMode.setSelected(true);
  		else attractorMode.setSelected(true);
  		
-
-  
-        //try {Thread.sleep(20);
-		//} catch (InterruptedException e) {e.printStackTrace();}
 	}
-
 	
 
 	public void actionPerformed(ActionEvent e) {

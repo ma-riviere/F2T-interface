@@ -2,6 +2,7 @@ package display;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -34,6 +35,12 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 		g.setColor(Color.black);
 		g.drawRect(0, 0, 999, 699);
 		
+		if (Main.CAMERA_CONNECTED){
+			Image image = Main.Mat2bufferedImage(main.webcam_miniature);
+		    g.drawImage(image, 415, 270, this);
+		    
+		}
+		
 		if (frame.selected_image==0){
 			if (main.currentAge.image.view!=null) g.drawImage(main.currentAge.image.view_img_miniature, 413, 263, this);
 			else{
@@ -46,7 +53,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 			}
 		}
 		
-		if (frame.selected_image==1){
+		else if (frame.selected_image==1){
 			if (main.currentAge.image.tactile!=null) g.drawImage(main.currentAge.image.tactile_img_miniature, 413, 263, this);
 			else{
 				g.setColor(Color.gray);
@@ -58,7 +65,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 			}
 		}
 		
-		if (frame.selected_image==2){
+		else if (frame.selected_image==2){
 			if (main.currentAge.image.flow!=null) g.drawImage(main.currentAge.image.flow_img_miniature, 413, 263, this);
 			else{
 				g.setColor(Color.gray);
@@ -70,7 +77,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 			}
 		}
 		
-		if (frame.selected_image==3){
+		else if (frame.selected_image==3){
 			if (main.currentAge.image.rail!=null) g.drawImage(main.currentAge.image.rail_img_miniature, 413, 263, this);
 			else{
 				g.setColor(Color.gray);
@@ -82,7 +89,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 			}
 		}
 		
-		if (frame.selected_image==4){
+		else if (frame.selected_image==4){
 			if (main.currentAge.image.area!=null) g.drawImage(main.currentAge.image.area_img_miniature, 413, 263, this);
 			else{
 				g.setColor(Color.gray);
@@ -93,8 +100,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 				g.drawLine(500, 263, 500, 438);
 			}
 		}
-		
-		if (frame.selected_image<0){
+		else if (frame.selected_image<0){
 			g.setColor(Color.gray);
 			g.fillRect(413, 263, 175, 175);
 			g.setColor(Color.black);
@@ -120,6 +126,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 		
 	}
 
+
 	public void mouseClicked(MouseEvent e) {
 		
 		int x=(int)(e.getX()-500)*4;
@@ -135,8 +142,7 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 			}
 		}
 		
-		
-		if (!found) main.currentAge.sourceList.add(new SoundSource(x, y ));
+		if (!found) main.currentAge.sourceList.add(new SoundSource("t "+x+" "+y+" "+frame.getSourceParameters() ));
 	}
 	
 	

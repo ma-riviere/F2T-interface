@@ -123,30 +123,40 @@ public class DisplayImagePanel extends JPanel implements MouseListener, MouseMot
 	        // draw joystick position
 			if (frame.selected_image>=0){
 				
-				g.setColor(Color.cyan);
-				for (int t=0;t<Main.LENGTH-1;t++){
-					if (t+1!=main.time){
-					g.drawLine(350+(int)main.trace[t  ][0], 350-(int)main.trace[t][1],
-							   350+(int)main.trace[t+1][0], 350-(int)main.trace[t+1][1]);
+				if (frame.displayTrace){
+					g.setColor(Color.cyan);
+					for (int t=0;t<Main.LENGTH-1;t++){
+						if (t+1!=main.time){
+						g.drawLine(350+(int)main.trace[t  ][0], 350-(int)main.trace[t][1],
+								   350+(int)main.trace[t+1][0], 350-(int)main.trace[t+1][1]);
+						}
 					}
 				}
 				
-				g.setColor(Color.gray);
-		 		g.drawOval(325+(int)(main.x_prev), 325-(int)(main.y_prev), 50, 50);
+				if (frame.displayJoystick){
+					g.setColor(Color.gray);
+					g.drawOval(325+(int)(main.x_prev), 325-(int)(main.y_prev), 50, 50);
+				}
 		 		g.setColor(Color.white);
 		 		g.drawOval(325+(int)(main.x), 325-(int)(main.y), 50, 50);
 		 		g.drawLine(350+(int)(main.x), 350-(int)(main.y),350+(int)(main.x)+(int)main.dx*5, 350-(int)(main.y)-(int)main.dy*5);
-		 		g.setColor(Color.red);
-		 		g.drawOval(325+(int)(main.x_next), 325-(int)(main.y_next), 50, 50);
+		 		if (frame.displayJoystick){
+		 			g.setColor(Color.red);
+		 			g.drawOval(325+(int)(main.x_next), 325-(int)(main.y_next), 50, 50);
+		 		}
 			}
 			else{
-		 		g.setColor(Color.gray);
-		 		g.drawOval(425+(int)(main.x_prev/3)-25, 420-(int)(main.y_prev/2.56)-25, 50, 50);
+				if (frame.displayJoystick){
+					g.setColor(Color.gray);
+		 			g.drawOval(425+(int)(main.x_prev/3)-25, 420-(int)(main.y_prev/2.56)-25, 50, 50);
+				}
 		 		g.setColor(Color.white);
 		 		g.drawOval(425+(int)(main.x/3)-25, 420-(int)(main.y/2.56)-25, 50, 50);
 		 		g.drawLine(425+(int)(main.x/3), 420-(int)(main.y/2.56),425+(int)(main.x/3)+(int)main.dx*5, 420-(int)(main.y/2.56)-(int)main.dy*5);
-		 		g.setColor(Color.red);
-		 		g.drawOval(425+(int)(main.x_next/3)-25, 420-(int)(main.y_next/2.56)-25, 50, 50);
+		 		if (frame.displayJoystick){
+		 			g.setColor(Color.red);
+		 			g.drawOval(425+(int)(main.x_next/3)-25, 420-(int)(main.y_next/2.56)-25, 50, 50);
+		 		}
 			}
 			
 			
@@ -169,20 +179,16 @@ public class DisplayImagePanel extends JPanel implements MouseListener, MouseMot
 				if (main.currentAge.targetSequence.size()>0){
 					if (main.currentAge.targetSequence.get(0).control==0) g.setColor(Color.yellow);
 					else g.setColor(Color.magenta);
-					g.fillOval(378+(int)(main.currentAge.targetSequence.get(0).x/3), 378-(int)(main.currentAge.targetSequence.get(0).y/2.56), 5, 5);
+					g.fillOval(423+(int)(main.currentAge.targetSequence.get(0).x/3), 418-(int)(main.currentAge.targetSequence.get(0).y/2.56), 5, 5);
 					for (int i=1;i<main.currentAge.targetSequence.size();i++){
 						if (main.currentAge.targetSequence.get(i).control==0) g.setColor(Color.yellow);
 						else g.setColor(Color.magenta);
-						g.drawLine(370+(int)(main.currentAge.targetSequence.get(i-1).x/3), 380-(int)(main.currentAge.targetSequence.get(i-1).y/2.56),
-								   370+(int)(main.currentAge.targetSequence.get(i  ).x/3), 380-(int)(main.currentAge.targetSequence.get(i  ).y/2.56));
-						g.fillOval(379+(int)(main.currentAge.targetSequence.get(i).x/3), 379-(int)(main.currentAge.targetSequence.get(i).y/2.56), 3, 3);
+						g.drawLine(425+(int)(main.currentAge.targetSequence.get(i-1).x/3), 420-(int)(main.currentAge.targetSequence.get(i-1).y/2.56),
+								   425+(int)(main.currentAge.targetSequence.get(i  ).x/3), 420-(int)(main.currentAge.targetSequence.get(i  ).y/2.56));
+						g.fillOval(424+(int)(main.currentAge.targetSequence.get(i).x/3), 419-(int)(main.currentAge.targetSequence.get(i).y/2.56), 3, 3);
 					}
 				}
 			}
-		
-        
-        //try {Thread.sleep(2);
-		//} catch (InterruptedException e) {e.printStackTrace();}
 	}
 
 	
@@ -208,8 +214,6 @@ public class DisplayImagePanel extends JPanel implements MouseListener, MouseMot
 	public void mouseDragged(MouseEvent e) {}
 
 	public void mouseMoved(MouseEvent e) {
-		//System.out.println(e.getX()+" , "+e.getY());
-		
 		frame.updatePathPanel(e.getX()-350, e.getY()-350);
 	}
 

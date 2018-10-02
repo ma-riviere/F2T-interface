@@ -1,18 +1,21 @@
-desc RGB.png
-img starry.jpg
+area RGB.png
+image starry.jpg
 a 25 0 1 cat.wav
 a 50 1 0 cat.wav
 a 75 1 0 bird.wav
 t 65 -115 400 0
 t -135 -110 200 0
 t -140 120 200 0
+source source1
 newage 25 25 50 50 75 75 s
-img scream.jpg
+area RGB.png
+image scream.jpg
 a 25 0 1 parrot.wav
 a 50 1 0 gibbon.wav
 a 75 1 0 raccoon.wav
 t 65 -115 400 0
 t -135 -110 200 0
 t -140 120 200 0
+stop
 newage 25 50 75 s
-img none
+image none

@@ -123,16 +123,18 @@ public class Age {
 	// display functions
 	public String getImages(){
 		String msg="";
-		if (image.view!=null) msg+="img : "+image.view;
-		else  msg+="image : none";
-		if (image.tactile!=null) msg+=", tact : "+image.tactile;
-		else  msg+=", tactile : none";
-		if (image.flow!=null) msg+=", flow : "+image.flow;
-		else  msg+=", flow : none";
-		if (image.rail!=null) msg+=", rail : "+image.rail;
-		else  msg+=", rail : none";
-		if (image.area!=null) msg+=", area : "+image.area;
-		else  msg+=", area map : none";
+		if (image.view!=null) msg+="img: "+image.view;
+		else  msg+="img: none";
+		if (image.tactile!=null) msg+=", tact: "+image.tactile;
+		else  msg+=", tactile: none";
+		if (image.flow!=null) msg+=", flow: "+image.flow;
+		else  msg+=", flow: none";
+		if (image.rail!=null) msg+=", rail: "+image.rail;
+		else  msg+=", rail: none";
+		if (image.area!=null) msg+=", area: "+image.area;
+		else  msg+=", area: none";
+		
+		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		
 		return msg;
 	}
@@ -143,24 +145,26 @@ public class Age {
 			msg+="("+areas.areas.get(a)+", "+areas.soundFiles.get(a)+"), ";
 		}
 		
+		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
+		
 		return msg;
 	}
 	
 	public String getPath(){
-		String msg="Path sequence : ";
+		String msg="Path : ("+targetSequence.size()+" points), ";
 		for (int t=0;t<targetSequence.size();t++){
 			msg+="("+targetSequence.get(t).x+", "+targetSequence.get(t).y+")-";
 		}
+		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		
 		return msg;
 	}
 	
 	public String getSources(){
-		String msg="Sound sources : ";
+		String msg="Sound : ("+sourceList.size()+" sources), ";
 		for (int s=0;s<sourceList.size();s++){
-			msg+="("+sourceList.get(s).px+", "+sourceList.get(s).py+"), ";
+			msg+="("+(int)sourceList.get(s).px+", "+(int)sourceList.get(s).py+"), ";
 		}
-		
 		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		
 		return msg;
@@ -173,6 +177,8 @@ public class Age {
 		}
 		if (condition_sound) msg+="s ";
 		if (condition_target)msg+="t";
+		
+		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		
 		return msg;
 	}

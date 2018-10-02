@@ -9,6 +9,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import main.Main;
 
@@ -22,6 +23,8 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 	private JButton remLast;
 	private JButton clearSources;
 	private JButton saveSources;
+	
+	private JTextField parameters;
 	
 	public DisplaySourceSettingPanel(Main m, DisplayFrame f){
 		main=m;
@@ -44,7 +47,13 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 		saveSources=new JButton("<html><center> Save current<br>source list</center></html>");
 		saveSources.addActionListener(this);
 		this.add(saveSources);
-		saveSources.setBounds(192, 70, 172, 50);
+		saveSources.setBounds(192, 65, 172, 50);
+		
+		
+		parameters = new JTextField();
+		this.add(parameters);
+		parameters.setBounds(192, 130, 170, 30);
+		
 	}
 	
 	public void paintComponent(Graphics g){
@@ -61,49 +70,59 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 			g.drawString("Cursor position :", 30, 90);
 			g.drawString("( "+frame.posx+" , "+frame.posy+" )", 40, 105);
 			
-			g.drawString("Select image :", 30, 170);
+			
+			g.drawString("Source parameters :", 30, 150);
+			
+			
+			
+			g.drawString("Select image :", 30, 200);
 
 			if (frame.selected_image==-1) g.setColor(Color.red);
 			else g.setColor(Color.lightGray);
-			g.fillRect(130, 155, 20, 20);
+			g.fillRect(130, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(130, 155, 20, 20);
+			g.drawRect(130, 185, 20, 20);
 			
 			if (frame.selected_image==0) g.setColor(Color.red);
 			else if (main.currentAge.image.view!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
-			g.fillRect(160, 155, 20, 20);
+			g.fillRect(160, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(160, 155, 20, 20);
+			g.drawRect(160, 185, 20, 20);
 			
 			if (frame.selected_image==1) g.setColor(Color.red);
 			else if (main.currentAge.image.tactile!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
-			g.fillRect(190, 155, 20, 20);
+			g.fillRect(190, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(190, 155, 20, 20);
+			g.drawRect(190, 185, 20, 20);
 			
 			if (frame.selected_image==2) g.setColor(Color.red);
 			else if (main.currentAge.image.flow!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
-			g.fillRect(220, 155, 20, 20);
+			g.fillRect(220, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(220, 155, 20, 20);
+			g.drawRect(220, 185, 20, 20);
 			
 			if (frame.selected_image==3) g.setColor(Color.red);
 			else if (main.currentAge.image.rail!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
-			g.fillRect(250, 155, 20, 20);
+			g.fillRect(250, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(250, 155, 20, 20);
+			g.drawRect(250, 185, 20, 20);
 			
 			if (frame.selected_image==4) g.setColor(Color.red);
 			else if (main.currentAge.image.area!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
-			g.fillRect(280, 155, 20, 20);
+			g.fillRect(280, 185, 20, 20);
 			g.setColor(Color.black);
-			g.drawRect(280, 155, 20, 20);
+			g.drawRect(280, 185, 20, 20);
 		}
+	}
+	
+	
+	public String getParameters(){
+		return parameters.getText();
 	}
 	
 	
@@ -120,7 +139,7 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 	public void mouseClicked(MouseEvent e) {
 		
 		for (int i=-1;i<5;i++){
-			if (e.getX()>160+i*30 && e.getX()<180+i*30 && e.getY()>155 && e.getY()<175) frame.selected_image=i;
+			if (e.getX()>160+i*30 && e.getX()<180+i*30 && e.getY()>185 && e.getY()<205) frame.selected_image=i;
 		}
 		
 		this.repaint();

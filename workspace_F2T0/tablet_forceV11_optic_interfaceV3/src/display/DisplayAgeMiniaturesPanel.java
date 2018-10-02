@@ -5,8 +5,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
@@ -29,20 +27,20 @@ public class DisplayAgeMiniaturesPanel extends JPanel{
 	public Main main;
 	public DisplayFrame frame;
 	
-	
-	//private boolean guide_mode=false;
-	
 	public DisplayAgeMiniaturesPanel(Main m, DisplayFrame f){
 		main=m;
 		frame=f;
 		this.setLayout(null);
-		
 	}
 	
 	
-	
-	
 	public void paintComponent(Graphics g){
+		
+		if (Main.CAMERA_CONNECTED){
+			Image image = Main.Mat2bufferedImage(main.webcam_miniature);
+		    g.drawImage(image, 5, 10, this);
+		    
+		}
 		
 		if (main.currentAge.image.view!=null) g.drawImage(main.currentAge.image.view_img_miniature, 0, 0, this);
 		else{
