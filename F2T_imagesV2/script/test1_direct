@@ -1,0 +1,196 @@
+
+
+age test1
+
+image rivieres.jpg
+tactile fluid_test.png
+area area5.png
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+play
+
+s 500 500
+s -500 400
+s 0 -500
+
+playSound cat.wav
+
+exit 25 test2 1
+
+condition 25 25 50 50 75 75 t
+
+
+clearSources
+
+image none
+tactile solid_test.png
+area RGB.png
+
+a 25 0 1 cat.wav
+a 50 2 0 cat.wav
+a 75 1 0 bird.wav
+
+condition 25 25 50 50 75 75 s
+
+image rivieres.jpg
+tactile none
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+
+stop
+
+a 25 0 1 parrot.wav
+a 50 1 0 gibbon.wav
+a 75 1 0 raccoon.wav
+
+condition 25 50 75 s
+
+
+image rivieres.jpg
+tactile fluid_test.png
+area area5.png
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+play
+
+s 500 500
+s -500 400
+s 0 -500
+
+playSound cat.wav
+
+condition 25 25 50 50 75 75 t
+
+
+clearSources
+
+image none
+tactile solid_test.png
+area RGB.png
+
+a 25 0 1 cat.wav
+a 50 2 0 cat.wav
+a 75 1 0 bird.wav
+
+condition 25 25 50 50 75 75 s
+
+image rivieres.jpg
+tactile none
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+
+stop
+
+a 25 0 1 parrot.wav
+a 50 1 0 gibbon.wav
+a 75 1 0 raccoon.wav
+
+exit 25 test2 1
+
+age test2
+
+image starry.jpg
+area area5.png
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+play
+
+s 500 500
+s -500 400
+s 0 -500
+
+playSound cat.wav
+
+condition 25 25 50 50 75 75 t
+
+
+clearSources
+
+image none
+tactile solid_test.png
+area RGB.png
+
+a 25 0 1 cat.wav
+a 50 2 0 cat.wav
+a 75 1 0 bird.wav
+
+condition 25 25 50 50 75 75 s
+
+image starry.jpg
+tactile none
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+
+stop
+
+a 25 0 1 parrot.wav
+a 50 1 0 gibbon.wav
+a 75 1 0 raccoon.wav
+
+condition 25 50 75 s
+
+
+image rivieres.jpg
+tactile fluid_test.png
+area area5.png
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+play
+
+s 500 500
+s -500 400
+s 0 -500
+
+playSound cat.wav
+
+condition 25 25 50 50 75 75 t
+
+
+clearSources
+
+image none
+tactile solid_test.png
+area RGB.png
+
+a 25 0 1 cat.wav
+a 50 2 0 cat.wav
+a 75 1 0 bird.wav
+
+condition 25 25 50 50 75 75 s
+
+image starry.jpg
+tactile none
+
+t 200 200 300 1
+t -200 200 300 1
+t -200 -200 300 1
+t -200 200 300 1
+
+stop
+
+a 25 0 1 parrot.wav
+a 50 1 0 gibbon.wav
+a 75 1 0 raccoon.wav
+
+

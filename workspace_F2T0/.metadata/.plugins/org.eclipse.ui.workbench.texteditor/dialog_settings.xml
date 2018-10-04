@@ -2,31 +2,34 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="trace" key="selection"/>
+		<item value="setPreset" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="trace"/>
-			<item value="setSource"/>
-			<item value="y+dy"/>
-			<item value="x+dx"/>
-			<item value="IMAGE_Y+"/>
-			<item value="IMAGE_X+"/>
-			<item value="0-"/>
-			<item value="0+"/>
+			<item value="setPreset"/>
+			<item value="setPicture"/>
+			<item value="addArea"/>
+			<item value="equals(&quot;a&quot;)"/>
+			<item value="setArea"/>
+			<item value="play"/>
+			<item value="read input"/>
+			<item value="script.ageList.get(main.script.currentAge)"/>
 		</list>
 		<list key="replacehistory">
+			<item value="currentAge"/>
+			<item value=".script.ageList.get(main.script.currentAge)"/>
 			<item value=""/>
+			<item value="main"/>
 			<item value="0"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="325" key="DIALOG_WIDTH"/>
+		<item value="329" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="448" key="DIALOG_HEIGHT"/>
-		<item value="1414" key="DIALOG_X_ORIGIN"/>
-		<item value="385" key="DIALOG_Y_ORIGIN"/>
+		<item value="450" key="DIALOG_HEIGHT"/>
+		<item value="1495" key="DIALOG_X_ORIGIN"/>
+		<item value="457" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
