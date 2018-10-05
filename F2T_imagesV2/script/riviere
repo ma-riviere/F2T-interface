@@ -1,0 +1,15 @@
+age riviere
+
+image rivieres.jpg
+
+playSound cat.wav
+
+condition s
+
+playSound gibbon.wav
+path rivieres
+
+condition s t
+
+tactile riviere.png
+flow riviere.png

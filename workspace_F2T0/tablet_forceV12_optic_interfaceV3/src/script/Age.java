@@ -20,8 +20,9 @@ public class Age {
 	public String name;
 	
 	// position for display purposes
-	public int px=0;
-	public int py=0;
+	public float px=-1;
+	public float py=-1;
+	public ArrayList<Integer> connections;
 	
 	// sequence of periods
 	public ArrayList<History> history;
@@ -79,6 +80,8 @@ public class Age {
 		history=new ArrayList<History>();
 		history.add(new History());
 		current_period=-1;
+		
+		connections=new ArrayList<Integer>();
 	}
 	
 	
@@ -138,7 +141,7 @@ public class Age {
 		current_period++;
 	
 		// update images
-		if (history.get(0).image  !=null){
+		if (history.get(current_period).image  !=null){
 			if (history.get(current_period).image.equals("none")) setPicture(null);
 			else setPicture(history.get(current_period).image);
 		}
@@ -575,6 +578,16 @@ public class Age {
 		}
 		
 		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
+		
+		return msg;
+	}
+	
+	
+	public String shortName(){
+		String msg="";
+		
+		if (name.length()<=12) msg+=name;
+		else msg=name.substring(0, 9)+"...";
 		
 		return msg;
 	}

@@ -21,6 +21,7 @@ public class Script {
 	
 	private int writing_age=0;
 	private int writing_history=0;
+
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	// initialize a script
@@ -73,6 +74,91 @@ public class Script {
 					
 				}
 			}
+		}
+		
+		// display function
+		if (main.display.display_mode==3){
+
+			for (int a1=0;a1<ageList.size();a1++){
+			
+				if (ageList.get(a1).px==-1 || ageList.get(a1).py==-1){
+					ageList.get(a1).px=100+120*(a1%7)+(a1%50);//50+(float) (Math.random()*870+50);
+					ageList.get(a1).py=100+120*(a1%3)+(a1%50);//(float) (Math.random()*400+50);
+				}
+				
+			}
+			
+			
+			// distance between ages
+			for (int a1=0;a1<ageList.size();a1++){
+				for (int a2=0;a2<ageList.size();a2++){
+					
+					if (a1!=a2){
+						
+						float dist2=(ageList.get(a1).px-ageList.get(a2).px)*(ageList.get(a1).px-ageList.get(a2).px) + (ageList.get(a1).py-ageList.get(a2).py)*(ageList.get(a1).py-ageList.get(a2).py);
+						
+						if (dist2<22500 && dist2>0){ // 200²
+							ageList.get(a2).px-=  50f*(ageList.get(a1).px-ageList.get(a2).px)/dist2;
+							ageList.get(a2).py-=  50f*(ageList.get(a1).py-ageList.get(a2).py)/dist2;
+						}
+					}
+				}
+			}
+			
+			// don't let ages escapes
+			for (int a2=0;a2<ageList.size();a2++){
+				if (ageList.get(a2).px<50) ageList.get(a2).px=50;
+				if (ageList.get(a2).py<50) ageList.get(a2).py=50;
+				
+				if (ageList.get(a2).px>930) ageList.get(a2).px=930;
+				if (ageList.get(a2).py>450) ageList.get(a2).py=450;
+			}
+			
+			// border repulsion
+			for (int a1=0;a1<ageList.size();a1++){
+				
+				// left
+				float dist2=(ageList.get(a1).px-0)*(ageList.get(a1).px-0);
+				if (dist2<40000 && dist2>0){ // 200²
+					ageList.get(a1).px+=  50f*(ageList.get(a1).px-0)/dist2;
+				}
+				
+				// right
+				dist2=(ageList.get(a1).px-980)*(ageList.get(a1).px-980);
+				if (dist2<40000 && dist2>0){ // 200²
+					ageList.get(a1).px+=  50f*(ageList.get(a1).px-980)/dist2;
+				}
+				
+				// top
+				dist2=(ageList.get(a1).py-0)*(ageList.get(a1).py-0);
+				if (dist2<40000 && dist2>0){ // 200²
+					ageList.get(a1).py+=  50f*(ageList.get(a1).py-0)/dist2;
+				}
+				
+				// bottom
+				dist2=(ageList.get(a1).py-500)*(ageList.get(a1).py-500);
+				if (dist2<40000 && dist2>0){ // 200²
+					ageList.get(a1).py+=  50f*(ageList.get(a1).py-500)/dist2;
+				}
+			}
+			
+			// attraction if connected
+			/*for (int a1=0;a1<ageList.size();a1++){
+				for (int c=0;c<ageList.get(a1).connections.size();c++){
+					int a2=ageList.get(a1).connections.get(c);
+					
+					if (a1!=a2){
+						
+						float dist2=(ageList.get(a1).px-ageList.get(a2).px)*(ageList.get(a1).px-ageList.get(a2).px) + (ageList.get(a1).py-ageList.get(a2).py)*(ageList.get(a1).py-ageList.get(a2).py);
+						
+						if (dist2>40000 && dist2>0){ // 200²
+							ageList.get(a2).px+=  0.001f*(ageList.get(a1).px-ageList.get(a2).px);
+							ageList.get(a2).py+=  0.001f*(ageList.get(a1).py-ageList.get(a2).py);
+						}
+					}
+					
+				}
+			}*/
 		}
 	}
 	
@@ -277,6 +363,10 @@ public class Script {
 		
 		// detect missing exits
 		for (int a=0;a<ageList.size();a++){
+			
+			ageList.get(a).connections.clear();
+			
+			
 			for (int p=0;p<ageList.get(a).history.size();p++){
 				
 				for (int e=0;e<ageList.get(a).history.get(p).exitAreasId.size();e++){
@@ -307,12 +397,16 @@ public class Script {
 							if (found){
 								loadAge(listFiles[a2]);
 								System.out.println("load age "+exit+" from files");
+								ageList.get(a).connections.add(ageList.size()-1);
 							}
 							else System.out.println("Missing Age "+exit+" ! ");
 						}
 						else{
 							System.out.println("Missing Age "+exit+" ! ");
 						}
+					}
+					else{
+						ageList.get(a).connections.add(a2);
 					}
 				}
 			}
