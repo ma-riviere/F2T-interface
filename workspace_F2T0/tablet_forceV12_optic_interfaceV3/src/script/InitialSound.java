@@ -51,10 +51,18 @@ public class InitialSound {
 		}
 	}
 	
+	public void reset(){
+		if (soundFile!=null){
+			soundComplete=false;
+			current_playing=false;
+		}
+	}
+	
 	public void addInitialSound(String file){
 		soundFile=file;
 		soundComplete=false;
 		current_playing=false;
+		System.out.println("set initial sound");
 	}
 	
 	public void removeSound(){
@@ -66,8 +74,6 @@ public class InitialSound {
 	private void playSound(String sound){
 		
 		try{
-			//System.out.println(Main.FILES+Main.SOUND+sound);
-			
 			audioFile = new File(Main.FILES+Main.SOUND+sound);
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 			AudioFormat format = audioStream.getFormat();

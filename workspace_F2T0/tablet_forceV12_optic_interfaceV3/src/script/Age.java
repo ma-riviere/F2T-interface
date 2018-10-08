@@ -47,6 +47,7 @@ public class Age {
 	private ArrayList<Integer> condition_areas;
 	private boolean condition_sound=false;
 	private boolean condition_target=false;
+	private boolean condition_button=false;
 	private boolean condition=false;
 	
 	
@@ -96,7 +97,6 @@ public class Age {
 		setRail(null);
 		setArea(null);
 		
-
 		if (history.get(0).image  !=null && !history.get(0).image.equals("none")  ) setPicture(history.get(0).image);
 		if (history.get(0).tactile!=null && !history.get(0).tactile.equals("none")) setTactile(history.get(0).tactile);
 		if (history.get(0).flow   !=null && !history.get(0).flow.equals("none")   ) setFlow(history.get(0).flow);
@@ -117,8 +117,9 @@ public class Age {
 		for (int i=0;i<history.get(0).condition_areas.size();i++) condition_areas.add(history.get(0).condition_areas.get(i));
 		condition_sound=history.get(0).condition_sound;
 		condition_target=history.get(0).condition_target;
-		condition=condition_sound || condition_target || (condition_areas.size()>0);
-		
+		condition_button=history.get(0).condition_button;
+		condition=condition_sound || condition_target || condition_button || (condition_areas.size()>0);
+
 		initialSound.removeSound();
 		if (history.get(0).initialSound!=null) initialSound.addInitialSound(history.get(0).initialSound);
 		
@@ -129,7 +130,6 @@ public class Age {
 		for (int i=0;i<history.get(0).ages.size();i++) ages.add(history.get(0).ages.get(i));
 		for (int i=0;i<history.get(0).reboot.size();i++) reboot.add(history.get(0).reboot.get(i));
 		
-
 		main.target_pause=history.get(0).initialPause;
 		
 		initialized=true;
@@ -137,6 +137,9 @@ public class Age {
 	
 	
 	public void setNextPeriod(){
+		
+		areas.close();
+		initialSound.close();
 		
 		current_period++;
 	
@@ -181,7 +184,8 @@ public class Age {
 		for (int i=0;i<history.get(current_period).condition_areas.size();i++) condition_areas.add(history.get(current_period).condition_areas.get(i));
 		condition_sound=history.get(current_period).condition_sound;
 		condition_target=history.get(current_period).condition_target;
-		condition=condition_sound || condition_target || (condition_areas.size()>0);
+		condition_button=history.get(current_period).condition_button;
+		condition=condition_sound || condition_target || condition_button || (condition_areas.size()>0);
 
 		initialSound.removeSound();
 		if (history.get(current_period).initialSound!=null) initialSound.addInitialSound(history.get(current_period).initialSound);
@@ -222,7 +226,9 @@ public class Age {
 		
 		
 		// remove conditions
-		if (!initialSound.isSoundComplete()) initialSound.playInitial();
+		if (!initialSound.isSoundComplete()){
+			initialSound.playInitial();
+		}
 		else{
 			if (current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
 				if (previous_area_red!=0 || previous_area_green!=0 || previous_area_blue!=0){
@@ -261,6 +267,15 @@ public class Age {
 				else if (current_area_blue>0 && current_area_blue +50==exitAreasId.get(a)) found=true;
 				else a++;
 			}
+			
+			if (!found && current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
+				a=0;
+				while (!found && a<ages.size()){
+					if (exitAreasId.get(a)==0) found=true;
+					else a++;
+				}
+			}
+			
 			if (found) exitIndex=a;
 			else exitIndex=-1;
 		}
@@ -281,26 +296,16 @@ public class Age {
 	}
 	
 	
-	///////////////////////////////////////////////////////////////////////////////////////
-	// set condition
-	public void setConditionSound(){
-		condition_sound=true;
-		condition=true;
-	}
-	public void setConditionTarget(){
-		condition_target=true;
-		condition=true;
-	}
-	public void addConditionArea(int id){
-		condition_areas.add(id);
-		condition=true;
-	}
-	
 	
 	public boolean isComplete(){
+		
+		int key=0;
+		if (condition_button) key=main.display.keyboard.getKeyPressed();
+
 		return ( condition
+			&& (!condition_button || key==96)
 			&&   condition_areas.size()==0 
-		    && (!condition_sound || (areas.isSoundComplete() && initialSound.isSoundComplete())) 
+		    && (!condition_sound || (areas.isSoundComplete() && initialSound.isSoundComplete()))
 		    && (!condition_target || targetSequence.size()==0));
 	}
 	
@@ -440,7 +445,7 @@ public class Age {
 	public void setPicture(String img_file){
 		image.setPicture(img_file);
 		
-		if (main.display!=null) main.display.updateMiniatures(0);
+		if (main.display!=null) main.display.updateMiniatures();
 		
 		main.selected_img=-1;
 		if (img_file!=null){
@@ -453,9 +458,7 @@ public class Age {
 	// tactile image
 	public void setTactile(String tactile_file){
 		image.setTactile(tactile_file);
-
-		if (main.display!=null) main.display.updateMiniatures(1);
-		
+		if (main.display!=null) main.display.updateMiniatures();
 		main.selected_tactile=-1;
 		if (tactile_file!=null){
 			for (int i=0;i<main.listTactile.length;i++){
@@ -468,7 +471,7 @@ public class Age {
 	public void setFlow(String flow_file){
 		image.setFlow(flow_file);
 
-		if (main.display!=null) main.display.updateMiniatures(2);
+		if (main.display!=null) main.display.updateMiniatures();
 
 		main.selected_flow=-1;
 		if (flow_file!=null){
@@ -482,7 +485,7 @@ public class Age {
 	public void setRail(String rail_file){
 		image.setRail(rail_file);
 
-		if (main.display!=null) main.display.updateMiniatures(3);
+		if (main.display!=null) main.display.updateMiniatures();
 		
 		main.selected_rail=-1;
 		if (rail_file!=null){
@@ -496,7 +499,7 @@ public class Age {
 	public void setArea(String area_file){
 		image.setArea(area_file);
 		
-		if (main.display!=null) main.display.updateMiniatures(4);
+		if (main.display!=null) main.display.updateMiniatures();
 		
 		main.selected_area=-1;
 		if (area_file!=null){
@@ -564,7 +567,8 @@ public class Age {
 			msg+=condition_areas.get(a)+", ";
 		}
 		if (condition_sound) msg+="s ";
-		if (condition_target)msg+="t";
+		if (condition_target)msg+="t ";
+		if (condition_button)msg+="b";
 		
 		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		

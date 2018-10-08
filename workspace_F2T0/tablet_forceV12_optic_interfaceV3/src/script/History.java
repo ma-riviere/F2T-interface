@@ -40,6 +40,7 @@ public class History {
 	public ArrayList<Integer> condition_areas;
 	public boolean condition_sound=false;
 	public boolean condition_target=false;
+	public boolean condition_button=false;
 	public boolean condition=false;
 	
 	// exit door
@@ -79,24 +80,42 @@ public class History {
 	
 	
 	public void addExitDoor(String[] args){
-		exitAreasId.add(Integer.parseInt(args[1]));
-		ages.add(args[2]);
-		reboot.add(Integer.parseInt(args[3]));
+		if (!condition_button){
+			exitAreasId.add(Integer.parseInt(args[1]));
+			ages.add(args[2]);
+			reboot.add(Integer.parseInt(args[3]));
+		}
+	}
+
+	public void addConditionArea(int id){
+		if (!condition_button){
+			condition_areas.add(id);
+			condition=true;
+		}
 	}
 
 	public void setConditionSound(){
-		condition_sound=true;
-		condition=true;
+		if (!condition_button){
+			condition_sound=true;
+			condition=true;
+		}
 	}
-	
 	public void setConditionTarget(){
-		condition_target=true;
-		condition=true;
+		if (!condition_button){
+			condition_target=true;
+			condition=true;
+		}
 	}
-	
-	public void addConditionArea(int id){
-		condition_areas.add(id);
+	public void setConditionButton(){
+		condition_button=true;
+		condition_target=false;
+		condition_sound=false;
+		condition_areas.clear();
 		condition=true;
+		
+		exitAreasId.clear();
+		ages.clear();
+		reboot.clear();
 	}
 	
 	
@@ -249,7 +268,9 @@ public class History {
 			msg+=condition_areas.get(a)+", ";
 		}
 		if (condition_sound) msg+="s ";
-		if (condition_target)msg+="t";
+		if (condition_target)msg+="t ";
+		if (condition_button) msg+="b";
+		if (!condition) msg+=("forever");
 		
 		if (msg.length()>140) msg=msg.substring(0, 137)+" ...";
 		

@@ -19,8 +19,6 @@ public class Target {
 		this.y=y;
 		this.speed=speed;
 		this.control=control;
-		
-		//System.out.println(x+" ; "+y);
 	}
 	
 	public Target(String[] args){
@@ -28,8 +26,6 @@ public class Target {
 		this.y=Integer.parseInt(args[2]);
 		this.speed=Integer.parseInt(args[3]);
 		this.control=Integer.parseInt(args[4]);
-		
-		//System.out.println(x+" ; "+y);
 	}
 	
 	public void compute(float px, float py){

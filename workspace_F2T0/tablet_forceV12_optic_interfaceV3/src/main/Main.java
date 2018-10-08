@@ -506,7 +506,6 @@ public class Main {
 			script.play(Math.min(699,Math.max(0,350+(int)(x+dx))),Math.min(699,Math.max(0,350-(int)(y+dy))));
 			
 			
-			
 			try {Thread.sleep(10);
 			} catch (InterruptedException e) {e.printStackTrace();}
 			
@@ -518,6 +517,10 @@ public class Main {
 	// file lister
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public void listFiles(){
+		
+		for (int a=0;a<script.ageList.size();a++) script.ageList.get(a).close();
+		script.ageList.clear();
+		script.ageList.add(new Age(this, "Primary Age"));
 
 		File repertoire = new File(FILES+IMG);
 		if (repertoire.exists()){
@@ -632,7 +635,8 @@ public class Main {
 		if (currentAge.image.view==null 
 		 && currentAge.image.tactile==null 
 		 && currentAge.image.flow==null 
-		 && currentAge.image.rail==null){
+		 && currentAge.image.rail==null
+		 && currentAge.image.area==null){
 			System.out.println("No element selected, pre-set not saved");
 		}
 		else{
@@ -643,6 +647,7 @@ public class Main {
 				if (currentAge.image.tactile!=null) file.println("tactile "+currentAge.image.tactile);
 				if (currentAge.image.flow!=null)    file.println("flow "+currentAge.image.flow);
 				if (currentAge.image.rail!=null)    file.println("rail "+currentAge.image.rail);
+				if (currentAge.image.area!=null)    file.println("area "+currentAge.image.area);
 				file.close();
 				System.out.println("preset saved : "+presetName);
 			}
@@ -684,43 +689,6 @@ public class Main {
 			catch (Exception e) {e.printStackTrace();}
 		}
 	}
-	
-	
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Load a script from interface
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	public void setScript(int id){
-		System.out.println("Script "+id+" : "+listScript[id]);
-		
-		script.loadScript(listScript[id]);
-	}
-
-
-	
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Load elements in current Age : preset, path and source list
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void setPreset(int id){
-		System.out.println("Preset "+id+" : "+listPreset[id]);
-		script.setPreset(listPreset[id], 1);
-	}
-	
-
-	
-	//////////////////////////////////////////////////////////////////////////////
-	public void setPath(int id){
-		System.out.println("Path "+id+" : "+listPath[id]);
-		script.setPath(listPath[id]);
-	}
-	
-	
-	
-	//////////////////////////////////////////////////////////////////////////////
-	public void setSource(int id){
-		System.out.println("Sound source list "+id+" : "+listSource[id]);
-		script.setSources(listSource[id]);
-	}
-
 
 	
 	
@@ -861,9 +829,7 @@ public class Main {
 		else{
 			x_prev=x;
 			y_prev=y;
-			
-			//System.out.println(imax+" , "+jmax);
-			
+
 			x=-(imax-270)*3;
 			y=(jmax-157)*2.56f;
 			
@@ -875,8 +841,6 @@ public class Main {
 			x_next=x + (x-x_prev);
 			y_next=y + (y-y_prev);
 		}
-		
-		//System.out.println(x+" , "+y);
 	}
 	
 	

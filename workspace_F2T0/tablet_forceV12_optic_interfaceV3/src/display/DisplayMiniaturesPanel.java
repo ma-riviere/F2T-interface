@@ -107,7 +107,7 @@ public class DisplayMiniaturesPanel extends JPanel implements MouseListener{
 	
 
 	public void update(){
-		
+
 		image_view.removeAll();
 		image_icon=null;
 		if (main.currentAge.image.view_img_miniature!=null){

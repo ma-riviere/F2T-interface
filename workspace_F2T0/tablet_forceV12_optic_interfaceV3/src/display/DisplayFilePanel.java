@@ -242,6 +242,7 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 		
+
 		///////////////////////////////////////////////////////////////////////
 		if (e.getSource()==list_image){
 			if (list_image.getSelectedIndex()==0) main.setPicture(null);
@@ -267,7 +268,7 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		///////////////////////////////////////////////////////////////////////
 		if (e.getSource()==preset){
 			main.script.setPreset((String)list_preset.getSelectedItem(),1);
-			updateIndex(-1);
+			//updateIndex(-1);
 		}
 		if (e.getSource()==path  ) main.script.setPath((String)list_path.getSelectedItem());
 		if (e.getSource()==source) main.script.setSources((String)list_source.getSelectedItem());

@@ -190,7 +190,7 @@ public class DisplayFrame extends JFrame implements ActionListener{
 		}
 	}
 	
-	public void updateMiniatures(int id){
+	public void updateMiniatures(){
 		miniaturePanel.update();
 	}
 	

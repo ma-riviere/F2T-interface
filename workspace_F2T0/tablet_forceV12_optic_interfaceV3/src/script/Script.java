@@ -32,25 +32,20 @@ public class Script {
 		
 		ageList.add(new Age(main, "Primary Age"));
 		currentAge=0;
-
-		//ageList.get(currentAge).resetAge();
 	}
 	
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	public void play(int x, int y){
+
 		if (currentAge>=0 && currentAge<ageList.size()){
-			
+
 			ageList.get(currentAge).play(x,y);
-			
-			//System.out.println(ageList.get(currentAge).exitIndex);
-			
+
 			if (ageList.get(currentAge).exitIndex>=0){
 				int key=main.display.keyboard.getKeyPressed();
 				
 				if (key==96){
-					System.out.println("move to age "+ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex));
-					
 					boolean reset=(ageList.get(currentAge).reboot.get(ageList.get(currentAge).exitIndex)==1);
 					String name=ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex);
 					
@@ -62,14 +57,14 @@ public class Script {
 					}
 					
 					if (found){
+						ageList.get(currentAge).close();
 						currentAge=a;
-						if (reset) ageList.get(currentAge).resetAge();
-						
+						if (reset){
+							System.out.println("reset from script when changing age with reboot");
+							ageList.get(currentAge).resetAge();
+						}
 						main.currentAge=ageList.get(currentAge);
-						
-						main.display.updateMiniatures(-1);
-						main.display.updateIndex(-1);
-						
+						main.display.updateMiniatures();
 					}
 					
 				}
@@ -182,6 +177,7 @@ public class Script {
 		
 		System.out.println("Read script "+Main.FILES+Main.SCRIPT+file);
 		
+		// remove previous ages
 		for (int a=0;a<ageList.size();a++) ageList.get(a).close();		
 		ageList.clear();
 		currentAge=-1;
@@ -205,7 +201,7 @@ public class Script {
 				line=br.readLine();
 				elements=line.split(" ");
 			}
-			
+
 			// if first line initialize or load an age, remove the default one
 			if (elements.length>=2 && elements[0].equals("age")){
 				ageList.add(new Age(main, elements[1]));	// initialize described age
@@ -213,11 +209,16 @@ public class Script {
 				System.out.println(line+" , new age");
 			}
 			else if (elements.length>=2 && elements[0].equals("loadAge")){
+				ageList.clear();
+				writing_age=-1;
 				boolean valid=loadAge(elements[1]);			// load described age
 				if (!valid){
 					ageList.clear();
 					ageList.add(new Age(main, "Primary Age"));	// if load failed, initialize default age
 					System.out.println(line+" , load age");
+				}
+				else{
+					System.out.println("load age frm file "+elements[1]);
 				}
 				line=br.readLine();							// read next line
 			}
@@ -225,7 +226,6 @@ public class Script {
 				ageList.add(new Age(main, "Primary Age"));	// initialize default age
 				System.out.println(line+" , primary");
 			}
-
 			
 			writing_age=0;
 			writing_history=0;
@@ -313,6 +313,7 @@ public class Script {
 					for (int c=1;c<elements.length;c++){
 						if (elements[c].equals("t")) ageList.get(writing_age).history.get(writing_history).setConditionTarget();
 						else if (elements[c].equals("s")) ageList.get(writing_age).history.get(writing_history).setConditionSound();
+						else if (elements[c].equals("b")) ageList.get(writing_age).history.get(writing_history).setConditionButton();
 						else ageList.get(writing_age).history.get(writing_history).addConditionArea(Integer.parseInt(elements[c]));
 					}
 					
@@ -352,9 +353,7 @@ public class Script {
 				if (read) line=br.readLine();
 			}
 			br.close();
-			
-			
-			currentAge=0;
+
 			writing_age=0;
 			writing_history=0;
 		}
@@ -395,36 +394,36 @@ public class Script {
 							}
 							
 							if (found){
-								loadAge(listFiles[a2]);
+								loadAge(listFiles[a2]);									// load age file
 								System.out.println("load age "+exit+" from files");
 								ageList.get(a).connections.add(ageList.size()-1);
 							}
 							else System.out.println("Missing Age "+exit+" ! ");
 						}
-						else{
-							System.out.println("Missing Age "+exit+" ! ");
-						}
+						else System.out.println("Missing Age "+exit+" ! ");
 					}
-					else{
-						ageList.get(a).connections.add(a2);
-					}
+					else ageList.get(a).connections.add(a2);	// indicate connection for the age display
 				}
 			}
 		}
 		
 		// initialize age
 		currentAge=0;
-		ageList.get(currentAge).resetAge();
+		
+		ageList.get(0).resetAge();
+		
+		main.currentAge=ageList.get(0);
 		
 		// update display
 		main.display.updateIndex(-1);
+		main.display.updateMiniatures();
 	}
 
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	// load age file
 	public boolean loadAge(String file){
-		System.out.println("-------- "+writing_age+" ; "+writing_history);
+
 		System.out.println("Read script "+Main.FILES+Main.AGE+file);
 		
 		boolean ret=true;
@@ -447,9 +446,7 @@ public class Script {
 			
 			
 			while (line!=null){
-				
-				System.out.println("++++++ "+writing_age+" ; "+writing_history);
-				
+
 				System.out.println(line);
 				elements=line.split(" ");
 				
@@ -485,6 +482,8 @@ public class Script {
 				if (elements.length>=5 && elements[0].equals("t")) ageList.get(writing_age).history.get(writing_history).path.add(new Target(elements));
 				if (elements.length>=2 && elements[0].equals("a")) ageList.get(writing_age).history.get(writing_history).addArea(elements);
 				if (elements.length>=3 && elements[0].equals("s")) ageList.get(writing_age).history.get(writing_history).sources.add(new SoundSource(elements));
+				
+				if (elements.length>=2 && elements[0].equals("playSound")) ageList.get(writing_age).history.get(writing_history).addInitialSound(elements[1]);
 				
 				///////////////////////////////////////////
 				// case load preset, path or sources
@@ -527,6 +526,7 @@ public class Script {
 					for (int c=1;c<elements.length;c++){
 						if (elements[c].equals("t")) ageList.get(writing_age).history.get(writing_history).setConditionTarget();
 						else if (elements[c].equals("s")) ageList.get(writing_age).history.get(writing_history).setConditionSound();
+						else if (elements[c].equals("b")) ageList.get(writing_age).history.get(writing_history).setConditionButton();
 						else ageList.get(writing_age).history.get(writing_history).addConditionArea(Integer.parseInt(elements[c]));
 					}
 					

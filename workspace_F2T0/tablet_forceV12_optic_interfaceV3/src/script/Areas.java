@@ -140,8 +140,6 @@ public class Areas {
 	private void playSound(String sound){
 		
 		try{
-			//System.out.println(Main.FILES+Main.SOUND+sound);
-			
 			audioFile = new File(Main.FILES+Main.SOUND+sound);
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 			AudioFormat format = audioStream.getFormat();
