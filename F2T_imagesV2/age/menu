@@ -1,26 +1,40 @@
 
 area menu1.png
-playSound gibbon.wav
+playSound menu2_1.wav
 
-condition s
+condition b
 
 path menu1
-playSound parrot.wav
-a 25 0 1 river.wav
-a 50 0 1 wind.wav
+playSound menu2_2.wav
+
+condition s t
+
+path menu2
+playSound menu2_3.wav
+
+condition s t
+
+path menu3
+playSound menu2_4.wav
+
+condition s t
+
+path menu4
+playSound menu2_5.wav
+
+condition s t
+
+path menu5
+playSound menu2_6.wav
+
+a 25 0 1 wind1.wav
+a 50 0 1 river.wav
 a 75 0 1 creepy.wav
 a 12 0 0 ufo.wav
+tactile menu1.png
 
-condition t
-
-a 25 0 1 river.wav
-a 50 0 1 wind2.wav
-a 75 0 1 creepy.wav
-a 12 0 0 ufo.wav
-tactile menu.png
-
-exit 25 riviere 1
-exit 50 starry 1
+exit 25 starry 1
+exit 50 riviere 1
 exit 75 scream 1
 exit 12 RGB 1
 

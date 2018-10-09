@@ -37,24 +37,13 @@ public class InitialSound {
 	public void playInitial(){
 		
 		if (!soundComplete){
-			
-			if (audioClip!=null && !audioClip.isActive()){
+			if (current_playing && audioClip!=null && !audioClip.isActive()){
 				soundComplete=true;
 			}
-			
 			if (!current_playing){
 				current_playing=true;
 				playSound(soundFile);
 			}
-			
-
-		}
-	}
-	
-	public void reset(){
-		if (soundFile!=null){
-			soundComplete=false;
-			current_playing=false;
 		}
 	}
 	
@@ -62,7 +51,6 @@ public class InitialSound {
 		soundFile=file;
 		soundComplete=false;
 		current_playing=false;
-		System.out.println("set initial sound");
 	}
 	
 	public void removeSound(){
@@ -102,7 +90,6 @@ public class InitialSound {
 		try {
 			if (audioClip!=null && audioClip.isOpen()) audioClip.close();
 			if (audioStream!=null) audioStream.close();
-			soundFile=null;
 			current_playing=false;
 			soundComplete=true;
 			

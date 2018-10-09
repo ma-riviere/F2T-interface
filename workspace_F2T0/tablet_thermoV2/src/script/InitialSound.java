@@ -35,19 +35,15 @@ public class InitialSound {
 	
 	
 	public void playInitial(){
-		
 		if (!soundComplete){
-			
-			if (audioClip!=null && !audioClip.isActive()){
+			if (current_playing && audioClip!=null && !audioClip.isActive()){
 				soundComplete=true;
 			}
-			
 			if (!current_playing){
 				current_playing=true;
 				playSound(soundFile);
+				System.out.println("playsound");
 			}
-			
-
 		}
 	}
 	
@@ -66,8 +62,6 @@ public class InitialSound {
 	private void playSound(String sound){
 		
 		try{
-			//System.out.println(Main.FILES+Main.SOUND+sound);
-			
 			audioFile = new File(Main.FILES+Main.SOUND+sound);
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 			AudioFormat format = audioStream.getFormat();
@@ -94,9 +88,9 @@ public class InitialSound {
 	
 	public void close(){
 		try {
+			//System.out.println("++++ test3");
 			if (audioClip!=null && audioClip.isOpen()) audioClip.close();
 			if (audioStream!=null) audioStream.close();
-			soundFile=null;
 			current_playing=false;
 			soundComplete=true;
 			

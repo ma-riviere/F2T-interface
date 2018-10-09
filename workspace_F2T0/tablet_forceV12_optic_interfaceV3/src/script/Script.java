@@ -37,15 +37,16 @@ public class Script {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	public void play(int x, int y){
-
 		if (currentAge>=0 && currentAge<ageList.size()){
-
+			
 			ageList.get(currentAge).play(x,y);
 
 			if (ageList.get(currentAge).exitIndex>=0){
 				int key=main.display.keyboard.getKeyPressed();
 				
 				if (key==96){
+					System.out.println("move to age "+ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex));
+					
 					boolean reset=(ageList.get(currentAge).reboot.get(ageList.get(currentAge).exitIndex)==1);
 					String name=ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex);
 					
@@ -59,10 +60,8 @@ public class Script {
 					if (found){
 						ageList.get(currentAge).close();
 						currentAge=a;
-						if (reset){
-							System.out.println("reset from script when changing age with reboot");
-							ageList.get(currentAge).resetAge();
-						}
+						if (reset) ageList.get(currentAge).resetAge();
+						
 						main.currentAge=ageList.get(currentAge);
 						main.display.updateMiniatures();
 					}
@@ -201,7 +200,7 @@ public class Script {
 				line=br.readLine();
 				elements=line.split(" ");
 			}
-
+			
 			// if first line initialize or load an age, remove the default one
 			if (elements.length>=2 && elements[0].equals("age")){
 				ageList.add(new Age(main, elements[1]));	// initialize described age
@@ -218,7 +217,7 @@ public class Script {
 					System.out.println(line+" , load age");
 				}
 				else{
-					System.out.println("load age frm file "+elements[1]);
+					System.out.println("load age from file "+elements[1]);
 				}
 				line=br.readLine();							// read next line
 			}

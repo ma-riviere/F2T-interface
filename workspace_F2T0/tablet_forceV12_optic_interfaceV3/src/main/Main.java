@@ -632,7 +632,7 @@ public class Main {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public void savePreset(){
 		
-		if (currentAge.image.view==null 
+		if (currentAge.image.view==null
 		 && currentAge.image.tactile==null 
 		 && currentAge.image.flow==null 
 		 && currentAge.image.rail==null

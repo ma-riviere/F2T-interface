@@ -39,9 +39,7 @@ public class Script {
 		if (currentAge>=0 && currentAge<ageList.size()){
 			
 			ageList.get(currentAge).play(x,y);
-			
-			//System.out.println(ageList.get(currentAge).exitIndex);
-			
+
 			if (ageList.get(currentAge).exitIndex>=0){
 				int key=main.display.keyboard.getKeyPressed();
 				
@@ -59,14 +57,12 @@ public class Script {
 					}
 					
 					if (found){
+						ageList.get(currentAge).close();
 						currentAge=a;
 						if (reset) ageList.get(currentAge).resetAge();
 						
 						main.currentAge=ageList.get(currentAge);
-						
-						main.display.updateMiniatures(-1);
-						main.display.updateIndex(-1);
-						
+						main.display.updateMiniatures();
 					}
 					
 				}
@@ -176,6 +172,7 @@ public class Script {
 		
 		System.out.println("Read script "+Main.FILES+Main.SCRIPT+file);
 		
+		// remove previous ages
 		for (int a=0;a<ageList.size();a++) ageList.get(a).close();		
 		ageList.clear();
 		currentAge=-1;
@@ -207,11 +204,16 @@ public class Script {
 				System.out.println(line+" , new age");
 			}
 			else if (elements.length>=2 && elements[0].equals("loadAge")){
+				ageList.clear();
+				writing_age=-1;
 				boolean valid=loadAge(elements[1]);			// load described age
 				if (!valid){
 					ageList.clear();
 					ageList.add(new Age(main, "Primary Age"));	// if load failed, initialize default age
 					System.out.println(line+" , load age");
+				}
+				else{
+					System.out.println("load age from file "+elements[1]);
 				}
 				line=br.readLine();							// read next line
 			}
@@ -219,7 +221,6 @@ public class Script {
 				ageList.add(new Age(main, "Primary Age"));	// initialize default age
 				System.out.println(line+" , primary");
 			}
-
 			
 			writing_age=0;
 			writing_history=0;
@@ -345,9 +346,7 @@ public class Script {
 				if (read) line=br.readLine();
 			}
 			br.close();
-			
-			
-			currentAge=0;
+
 			writing_age=0;
 			writing_history=0;
 		}
@@ -388,36 +387,36 @@ public class Script {
 							}
 							
 							if (found){
-								loadAge(listFiles[a2]);
+								loadAge(listFiles[a2]);									// load age file
 								System.out.println("load age "+exit+" from files");
 								ageList.get(a).connections.add(ageList.size()-1);
 							}
 							else System.out.println("Missing Age "+exit+" ! ");
 						}
-						else{
-							System.out.println("Missing Age "+exit+" ! ");
-						}
+						else System.out.println("Missing Age "+exit+" ! ");
 					}
-					else{
-						ageList.get(a).connections.add(a2);
-					}
+					else ageList.get(a).connections.add(a2);	// indicate connection for the age display
 				}
 			}
 		}
 		
 		// initialize age
 		currentAge=0;
-		ageList.get(currentAge).resetAge();
+		
+		ageList.get(0).resetAge();
+		
+		main.currentAge=ageList.get(0);
 		
 		// update display
 		main.display.updateIndex(-1);
+		main.display.updateMiniatures();
 	}
 
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	// load age file
 	public boolean loadAge(String file){
-		System.out.println("-------- "+writing_age+" ; "+writing_history);
+
 		System.out.println("Read script "+Main.FILES+Main.AGE+file);
 		
 		boolean ret=true;
@@ -440,9 +439,7 @@ public class Script {
 			
 			
 			while (line!=null){
-				
-				System.out.println("++++++ "+writing_age+" ; "+writing_history);
-				
+
 				System.out.println(line);
 				elements=line.split(" ");
 				
@@ -477,6 +474,8 @@ public class Script {
 				// case target, area-sound association or source
 				if (elements.length>=2 && elements[0].equals("a")) ageList.get(writing_age).history.get(writing_history).addArea(elements);
 				if (elements.length>=3 && elements[0].equals("s")) ageList.get(writing_age).history.get(writing_history).sources.add(new SoundSource(elements));
+				
+				if (elements.length>=2 && elements[0].equals("playSound")) ageList.get(writing_age).history.get(writing_history).addInitialSound(elements[1]);
 				
 				///////////////////////////////////////////
 				// case load preset, path or sources

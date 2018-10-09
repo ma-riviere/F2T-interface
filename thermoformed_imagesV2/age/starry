@@ -1,0 +1,8 @@
+image starry.jpg
+flow starry.png
+area starry.png
+
+a 25 0 1 wind.wav
+a 50 0 1 tornado.wav
+
+exit 0 menu 0

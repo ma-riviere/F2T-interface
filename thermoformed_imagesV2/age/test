@@ -1,0 +1,9 @@
+image starry.jpg
+flow riviere.png
+area RGB.png
+a 25 0 0 cat.wav
+t 50 50 200 1
+condition 25 25
+image scream.jpg
+flow none
+

@@ -226,6 +226,7 @@ public class History {
 		}
 		if (condition_sound) msg+="s ";
 		if (condition_button) msg+="b";
+		if (!condition) msg+=("forever");
 		
 		if (msg.length()>110) msg=msg.substring(0, 107)+" ...";
 		

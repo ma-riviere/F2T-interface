@@ -84,13 +84,14 @@ public class Age {
 	
 	public void resetAge(){
 		
+		initialized=true;
+		
 		current_period=0;
 		
 		// clear age
 		setPicture(null);
 		setArea(null);
 		
-
 		if (history.get(0).image  !=null && !history.get(0).image.equals("none")  ) setPicture(history.get(0).image);
 		if (history.get(0).area   !=null && !history.get(0).area.equals("none")   ) setArea(history.get(0).area);
 		
@@ -107,9 +108,12 @@ public class Age {
 		condition_sound=history.get(0).condition_sound;
 		condition_button=history.get(0).condition_button;
 		condition=condition_sound || condition_button || (condition_areas.size()>0);
-		
+
 		initialSound.removeSound();
-		if (history.get(0).initialSound!=null) initialSound.addInitialSound(history.get(0).initialSound);
+		if (history.get(0).initialSound!=null){
+			System.out.println("++++++++++ test add sound init");
+			initialSound.addInitialSound(history.get(0).initialSound);
+		}
 		
 		exitAreasId.clear();
 		ages.clear();
@@ -118,11 +122,14 @@ public class Age {
 		for (int i=0;i<history.get(0).ages.size();i++) ages.add(history.get(0).ages.get(i));
 		for (int i=0;i<history.get(0).reboot.size();i++) reboot.add(history.get(0).reboot.get(i));
 		
-		initialized=true;
+		
 	}
 	
 	
 	public void setNextPeriod(){
+		
+		areas.close();
+		initialSound.close();
 		
 		current_period++;
 	
@@ -156,7 +163,10 @@ public class Age {
 		condition=condition_sound || condition_button || (condition_areas.size()>0);
 
 		initialSound.removeSound();
-		if (history.get(current_period).initialSound!=null) initialSound.addInitialSound(history.get(current_period).initialSound);
+		if (history.get(current_period).initialSound!=null){
+			System.out.println("++++++++++ test add sound next period");
+			initialSound.addInitialSound(history.get(current_period).initialSound);
+		}
 
 		exitAreasId.clear();
 		ages.clear();
@@ -191,28 +201,30 @@ public class Age {
 		
 		
 		// remove conditions
-		if (!initialSound.isSoundComplete()) initialSound.playInitial();
-		else{
-			if (current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
-				if (previous_area_red!=0 || previous_area_green!=0 || previous_area_blue!=0){
-					removeConditionArea(0);
-				}
-			}
-			else{	// case other areas
-				if (current_area_red!=0 && current_area_red!=previous_area_red){
-					removeConditionArea(current_area_red);
-				}
-				if (current_area_green!=0 && current_area_green!=previous_area_green){
-					removeConditionArea(current_area_green+25);
-				}
-				if (current_area_blue!=0 && current_area_blue!=previous_area_blue){
-					removeConditionArea(current_area_blue+50);
-				}
-			}
-			
-			// play sounds if needed
-			areas.detect(current_area_red, current_area_green, current_area_blue);
+		if (!initialSound.isSoundComplete()){
+			initialSound.playInitial();
 		}
+
+		// detect area conditions
+		if (current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
+			if (previous_area_red!=0 || previous_area_green!=0 || previous_area_blue!=0){
+				removeConditionArea(0);
+			}
+		}
+		else{	// case other areas
+			if (current_area_red!=0 && current_area_red!=previous_area_red){
+				removeConditionArea(current_area_red);
+			}
+			if (current_area_green!=0 && current_area_green!=previous_area_green){
+				removeConditionArea(current_area_green+25);
+			}
+			if (current_area_blue!=0 && current_area_blue!=previous_area_blue){
+				removeConditionArea(current_area_blue+50);
+			}
+		}
+		
+		// play sounds if needed
+		areas.detect(current_area_red, current_area_green, current_area_blue);
 		
 		if (isComplete()){		// next period
 			exitIndex=-1;
@@ -230,6 +242,15 @@ public class Age {
 				else if (current_area_blue>0 && current_area_blue +50==exitAreasId.get(a)) found=true;
 				else a++;
 			}
+			
+			if (!found && current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
+				a=0;
+				while (!found && a<ages.size()){
+					if (exitAreasId.get(a)==0) found=true;
+					else a++;
+				}
+			}
+			
 			if (found) exitIndex=a;
 			else exitIndex=-1;
 		}
@@ -255,7 +276,7 @@ public class Age {
 		
 		int key=0;
 		if (condition_button) key=main.display.keyboard.getKeyPressed();
-		
+
 		return ( condition
 			&& (!condition_button || key==96)
 			&&   condition_areas.size()==0 
@@ -349,7 +370,7 @@ public class Age {
 	public void setPicture(String img_file){
 		image.setPicture(img_file);
 		
-		if (main.display!=null) main.display.updateMiniatures(0);
+		if (main.display!=null) main.display.updateMiniatures();
 		
 		main.selected_img=-1;
 		if (img_file!=null){
@@ -363,7 +384,7 @@ public class Age {
 	public void setArea(String area_file){
 		image.setArea(area_file);
 		
-		if (main.display!=null) main.display.updateMiniatures(4);
+		if (main.display!=null) main.display.updateMiniatures();
 		
 		main.selected_area=-1;
 		if (area_file!=null){

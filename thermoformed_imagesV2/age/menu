@@ -1,0 +1,26 @@
+
+area menu1.png
+playSound gibbon.wav
+
+condition b
+
+path menu1
+playSound cat.wav
+a 25 0 1 river.wav
+a 50 0 1 wind.wav
+a 75 0 1 creepy.wav
+a 12 0 0 ufo.wav
+
+condition s
+
+a 25 0 1 river.wav
+a 50 0 1 wind2.wav
+a 75 0 1 creepy.wav
+a 12 0 0 ufo.wav
+tactile menu.png
+
+exit 25 riviere 1
+exit 50 starry 1
+exit 75 scream 1
+exit 12 RGB 1
+

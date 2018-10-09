@@ -140,8 +140,6 @@ public class Areas {
 	private void playSound(String sound){
 		
 		try{
-			//System.out.println(Main.FILES+Main.SOUND+sound);
-			
 			audioFile = new File(Main.FILES+Main.SOUND+sound);
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 			AudioFormat format = audioStream.getFormat();
@@ -180,10 +178,6 @@ public class Areas {
 		try {
 			if (audioClip!=null && audioClip.isOpen()) audioClip.close();
 			if (audioStream!=null) audioStream.close();
-			areas.clear();
-			types.clear();		// 0 stop, 1 continue , 2 forced
-			repeat.clear();		// 0 no, 1 yes
-			soundFiles.clear();
 
 			current_area=-1;
 			

@@ -88,6 +88,8 @@ public class Age {
 	
 	public void resetAge(){
 		
+		initialized=true;
+		
 		current_period=0;
 		
 		// clear age
@@ -132,7 +134,6 @@ public class Age {
 		
 		main.target_pause=history.get(0).initialPause;
 		
-		initialized=true;
 	}
 	
 	
@@ -229,27 +230,27 @@ public class Age {
 		if (!initialSound.isSoundComplete()){
 			initialSound.playInitial();
 		}
-		else{
-			if (current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
-				if (previous_area_red!=0 || previous_area_green!=0 || previous_area_blue!=0){
-					removeConditionArea(0);
-				}
+
+		if (current_area_red==0 && current_area_green==0 && current_area_blue==0){	// case area 0
+			if (previous_area_red!=0 || previous_area_green!=0 || previous_area_blue!=0){
+				removeConditionArea(0);
 			}
-			else{	// case other areas
-				if (current_area_red!=0 && current_area_red!=previous_area_red){
-					removeConditionArea(current_area_red);
-				}
-				if (current_area_green!=0 && current_area_green!=previous_area_green){
-					removeConditionArea(current_area_green+25);
-				}
-				if (current_area_blue!=0 && current_area_blue!=previous_area_blue){
-					removeConditionArea(current_area_blue+50);
-				}
-			}
-			
-			// play sounds if needed
-			areas.detect(current_area_red, current_area_green, current_area_blue);
 		}
+		else{	// case other areas
+			if (current_area_red!=0 && current_area_red!=previous_area_red){
+				removeConditionArea(current_area_red);
+			}
+			if (current_area_green!=0 && current_area_green!=previous_area_green){
+				removeConditionArea(current_area_green+25);
+			}
+			if (current_area_blue!=0 && current_area_blue!=previous_area_blue){
+				removeConditionArea(current_area_blue+50);
+			}
+		}
+		
+		// play sounds if needed
+		areas.detect(current_area_red, current_area_green, current_area_blue);
+
 		
 		if (isComplete()){		// next period
 			exitIndex=-1;
