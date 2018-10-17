@@ -13,9 +13,6 @@ public class History {
 
 	// elements to change or add
 	public String image=null;
-	public String tactile=null;
-	public String flow=null;
-	public String rail=null;
 	public String area=null;
 	
 	public ArrayList<SoundSource> sources;
@@ -24,8 +21,6 @@ public class History {
 	public String initialSound=null;
 	
 	// initial setup
-	public boolean initialPause=false;
-	public boolean clearPath=false;
 	public boolean clearSources=false;
 	
 	// area-sound associations
@@ -37,7 +32,6 @@ public class History {
 	// next history condition
 	public ArrayList<Integer> condition_areas;
 	public boolean condition_sound=false;
-	public boolean condition_target=false;
 	public boolean condition_button=false;
 	public boolean condition=false;
 	
@@ -99,7 +93,6 @@ public class History {
 	}
 	public void setConditionButton(){
 		condition_button=true;
-		condition_target=false;
 		condition_sound=false;
 		condition_areas.clear();
 		condition=true;
@@ -114,9 +107,6 @@ public class History {
 		
 		if (erase==1){
 			image="none";
-			tactile="none";
-			flow="none";
-			rail="none";
 			area="none";
 		}
 		
@@ -134,14 +124,8 @@ public class History {
 				elements=line.split(" ");
 				if (elements.length>0){
 					if (     elements.length>=2 && elements[0].equals("image")) image=elements[1];
-					else if (elements.length>=2 && elements[0].equals("tactile")) tactile=elements[1];
-					else if (elements.length>=2 && elements[0].equals("flow")) flow=elements[1];
-					else if (elements.length>=2 && elements[0].equals("rail")) rail=elements[1];
 					else if (elements.length>=2 && elements[0].equals("area")) area=elements[1];
 					else if (elements.length>=2 && elements[0].equals("source")) loadSource(elements[1]);
-					else if (elements.length>=1 && elements[0].equals("play")) initialPause=false;
-					else if (elements.length>=1 && elements[0].equals("stop")) initialPause=true;
-					else if (elements.length>=1 && elements[0].equals("clearPath")) clearPath=true;
 					else if (elements.length>=1 && elements[0].equals("clearSources")) clearSources=true;
 					else if (elements.length>=1) System.out.println("ERROR : wrong keyword "+elements[0]);
 				}
@@ -183,12 +167,6 @@ public class History {
 		String msg="";
 		if (image!=null) msg+="img: "+image;
 		else  msg+="img: none";
-		if (tactile!=null) msg+=", tact: "+tactile;
-		else  msg+=", tactile: none";
-		if (flow!=null) msg+=", flow: "+flow;
-		else  msg+=", flow: none";
-		if (rail!=null) msg+=", rail: "+rail;
-		else  msg+=", rail: none";
 		if (area!=null) msg+=", area: "+area;
 		else  msg+=", area: none";
 		

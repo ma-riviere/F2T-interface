@@ -3,6 +3,8 @@ package display;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import main.Main;
+
 public class KeyboardListener  implements KeyListener {
 
 	
@@ -24,7 +26,7 @@ public class KeyboardListener  implements KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if (!pressed){
-	    	//System.out.println("Touche pressée : " + e.getKeyCode() +" (" + e.getKeyChar() + ")");
+	    	if (Main.displayKey) System.out.println("Key pressed : " + e.getKeyCode() +" (" + e.getKeyChar() + ")");
 	    	keyPressed=e.getKeyCode();
 	    	pressed=true;
     	}

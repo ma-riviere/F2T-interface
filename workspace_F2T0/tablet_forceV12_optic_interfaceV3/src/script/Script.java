@@ -44,7 +44,7 @@ public class Script {
 			if (ageList.get(currentAge).exitIndex>=0){
 				int key=main.display.keyboard.getKeyPressed();
 				
-				if (key==96){
+				if (key==Main.button){
 					System.out.println("move to age "+ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex));
 					
 					boolean reset=(ageList.get(currentAge).reboot.get(ageList.get(currentAge).exitIndex)==1);

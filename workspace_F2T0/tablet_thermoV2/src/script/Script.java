@@ -43,7 +43,7 @@ public class Script {
 			if (ageList.get(currentAge).exitIndex>=0){
 				int key=main.display.keyboard.getKeyPressed();
 				
-				if (key==96){
+				if (key==Main.button){
 					System.out.println("move to age "+ageList.get(currentAge).ages.get(ageList.get(currentAge).exitIndex));
 					
 					boolean reset=(ageList.get(currentAge).reboot.get(ageList.get(currentAge).exitIndex)==1);
@@ -238,21 +238,6 @@ public class Script {
 					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).image="none";
 					else ageList.get(writing_age).history.get(writing_history).image=elements[1];
 				}
-				// case tactile file
-				if (elements.length>=2 && elements[0].equals("tactile")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).tactile="none";
-					else ageList.get(writing_age).history.get(writing_history).tactile=elements[1];
-				}	
-				// case flow file
-				if (elements.length>=2 && elements[0].equals("flow")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).flow="none";
-					else ageList.get(writing_age).history.get(writing_history).flow=elements[1];
-				}
-				// case rail file
-				if (elements.length>=2 && elements[0].equals("rail")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).rail="none";
-					else ageList.get(writing_age).history.get(writing_history).rail=elements[1];
-				}
 				// case area descriptor file
 				if (elements.length>=2 && elements[0].equals("area")){
 					if (elements[1].equals("none"))  ageList.get(writing_age).history.get(writing_history).area="none";
@@ -273,31 +258,19 @@ public class Script {
 				
 				//////////////////////////////////////////
 				// case erase path or sources
-				if (elements.length>=1 && elements[0].equals("clearPath")) ageList.get(writing_age).history.get(writing_history).clearPath=true;
 				if (elements.length>=1 && elements[0].equals("clearSources")) ageList.get(writing_age).history.get(writing_history).clearSources=true;
 
 				// case erase all images
 				if (elements.length>=1 && elements[0].equals("clearImages")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
-					ageList.get(writing_age).history.get(writing_history).tactile="none";
-					ageList.get(writing_age).history.get(writing_history).flow="none";
-					ageList.get(writing_age).history.get(writing_history).rail="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 				}
 				// case erase everything
 				if (elements.length>=1 && elements[0].equals("clearAll")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
-					ageList.get(writing_age).history.get(writing_history).tactile="none";
-					ageList.get(writing_age).history.get(writing_history).flow="none";
-					ageList.get(writing_age).history.get(writing_history).rail="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
-					ageList.get(writing_age).history.get(writing_history).clearPath=true;
 					ageList.get(writing_age).history.get(writing_history).clearSources=true;
 				}
-				
-				// case default play
-				if (elements.length>=1 && elements[0].equals("play")) ageList.get(writing_age).history.get(writing_history).initialPause=false;
-				if (elements.length>=1 && elements[0].equals("stop")) ageList.get(writing_age).history.get(writing_history).initialPause=true;
 				
 				
 				//////////////////////////////////////////
@@ -449,21 +422,7 @@ public class Script {
 					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).image="none";
 					else ageList.get(writing_age).history.get(writing_history).image=elements[1];
 				}
-				// case tactile file
-				if (elements.length>=2 && elements[0].equals("tactile")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).tactile="none";
-					else ageList.get(writing_age).history.get(writing_history).tactile=elements[1];
-				}	
-				// case flow file
-				if (elements.length>=2 && elements[0].equals("flow")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).flow="none";
-					else ageList.get(writing_age).history.get(writing_history).flow=elements[1];
-				}
-				// case rail file
-				if (elements.length>=2 && elements[0].equals("rail")){
-					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).rail="none";
-					else ageList.get(writing_age).history.get(writing_history).rail=elements[1];
-				}
+				
 				// case area descriptor file
 				if (elements.length>=2 && elements[0].equals("area")){
 					if (elements[1].equals("none"))  ageList.get(writing_age).history.get(writing_history).area="none";
@@ -484,31 +443,19 @@ public class Script {
 				
 				//////////////////////////////////////////
 				// case erase path or source 
-				if (elements.length>=1 && elements[0].equals("clearPath")) ageList.get(writing_age).history.get(writing_history).clearPath=true;
 				if (elements.length>=1 && elements[0].equals("clearSources")) ageList.get(writing_age).history.get(writing_history).clearSources=true;
 
 				// case erase all images
 				if (elements.length>=1 && elements[0].equals("clearImages")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
-					ageList.get(writing_age).history.get(writing_history).tactile="none";
-					ageList.get(writing_age).history.get(writing_history).flow="none";
-					ageList.get(writing_age).history.get(writing_history).rail="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 				}
 				// case erase everything
 				if (elements.length>=1 && elements[0].equals("clearAll")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
-					ageList.get(writing_age).history.get(writing_history).tactile="none";
-					ageList.get(writing_age).history.get(writing_history).flow="none";
-					ageList.get(writing_age).history.get(writing_history).rail="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
-					ageList.get(writing_age).history.get(writing_history).clearPath=true;
 					ageList.get(writing_age).history.get(writing_history).clearSources=true;
 				}
-				
-				// case default play
-				if (elements.length>=1 && elements[0].equals("play")) ageList.get(writing_age).history.get(writing_history).initialPause=false;
-				if (elements.length>=1 && elements[0].equals("stop")) ageList.get(writing_age).history.get(writing_history).initialPause=true;
 				
 				
 				//////////////////////////////////////////

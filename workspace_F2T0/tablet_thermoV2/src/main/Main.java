@@ -13,7 +13,7 @@ public class Main {
 
 	public static String FILES="../../thermoformed_imagesV2/";	// path to images
 	
-	public static String IMG="img/";								// sub paths to image types
+	public static String IMG="img/";							// sub paths to image types
 	public static String PRESET="preset/";
 	public static String AREA="area/";
 	public static String SCRIPT="script/";
@@ -21,7 +21,10 @@ public class Main {
 	public static String SOURCE="source/";
 	public static String AGE="age/";
 	
-	public static int LENGTH=500;									// length of the trace
+	public static int button=96;								// action button key code
+	public static boolean displayKey=false;
+	
+	public static int LENGTH=500;								// length of the trace
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 

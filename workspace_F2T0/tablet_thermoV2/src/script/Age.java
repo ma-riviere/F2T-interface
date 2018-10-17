@@ -278,7 +278,7 @@ public class Age {
 		if (condition_button) key=main.display.keyboard.getKeyPressed();
 
 		return ( condition
-			&& (!condition_button || key==96)
+			&& (!condition_button || key==Main.button)
 			&&   condition_areas.size()==0 
 		    && (!condition_sound || (areas.isSoundComplete() && initialSound.isSoundComplete())));
 	}

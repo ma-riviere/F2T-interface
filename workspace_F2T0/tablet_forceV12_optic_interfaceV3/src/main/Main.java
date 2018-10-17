@@ -31,11 +31,11 @@ public class Main {
 	public static boolean CAMERA_CONNECTED=true;
 	
 	
-	public static String PORT="/dev/ttyUSB";						// name of the port, without number
+	public static String PORT="/dev/ttyUSB";					// name of the port, without number
 
-	public static String FILES="../../F2T_imagesV2/";	// path to images
+	public static String FILES="../../F2T_imagesV2/";			// path to images
 	//public static String FILES="./";
-	public static String IMG="img/";								// sub paths to image types
+	public static String IMG="img/";							// sub paths to image types
 	public static String TACTILE="tactile/";
 	public static String FLOW="flow/";
 	public static String RAIL="rail/";
@@ -47,7 +47,10 @@ public class Main {
 	public static String SOURCE="source/";
 	public static String AGE="age/";
 	
-	public static int LENGTH=500;									// length of the trace
+	public static int button=96;								// action button key code
+	public static boolean displayKey=false;
+	
+	public static int LENGTH=500;								// length of the trace
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
