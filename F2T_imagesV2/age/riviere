@@ -4,7 +4,7 @@ playSound riviere1.wav
 condition b
 
 playSound riviere2.wav
-path riviere1
+path pathri1
 condition t s
 
 playSound riviere3.wav
@@ -12,15 +12,14 @@ path riviere2
 condition t s
 
 playSound riviere4.wav
-path riviere3
+path pathri2
 condition t s
 
 playSound riviere5.wav
-path riviere4
+path pathri3
 condition t s
 
 playSound riviere6.wav
-path riviere 5
 condition b
 
 flow riviere1.png

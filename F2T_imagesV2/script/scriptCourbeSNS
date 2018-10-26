@@ -1,0 +1,5 @@
+t -330 -281 200 1
+condition t
+condition b
+path pathcb3
+condition t

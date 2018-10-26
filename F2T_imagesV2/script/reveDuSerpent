@@ -1,0 +1,22 @@
+t -340 190 300 1
+playSound serpent1.wav
+condition b
+
+path pathserpent4cercles
+t 230 217 200 1
+playSound serpent2.wav
+condition t s
+
+playSound serpent3.wav
+condition s
+
+path serpentPath1
+playSound serpent4.wav
+condition t s
+
+path serpentPath2
+playSound serpent5.wav
+condition t s
+
+path serpentPath3
+playSound serpent6.wav

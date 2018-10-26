@@ -38,56 +38,41 @@
 <part id="5"/>
 <part id="6"/>
 <part id="7"/>
-<part id="8"/>
-<part id="9"/>
-<part id="10"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/main/Main.java" title="Main.java" tooltip="tablet_thermoV2/src/main/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/main/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8004" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" partName="Age.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/script/Age.java" title="Age.java" tooltip="tablet_forceV12_optic_interfaceV4/src/script/Age.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/script/Age.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6840" selectionTopPixel="466"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoundSource.java" partName="SoundSource.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/main/SoundSource.java" title="SoundSource.java" tooltip="tablet_thermoV2/src/main/SoundSource.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/main/SoundSource.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="562" selectionTopPixel="240"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Script.java" partName="Script.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/script/Script.java" title="Script.java" tooltip="tablet_forceV12_optic_interfaceV4/src/script/Script.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/script/Script.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13441" selectionTopPixel="11224"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFilePanel.java" partName="DisplayFilePanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/display/DisplayFilePanel.java" title="DisplayFilePanel.java" tooltip="tablet_thermoV2/src/display/DisplayFilePanel.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/display/DisplayFilePanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5005" selectionTopPixel="2570"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/main/Main.java" title="Main.java" tooltip="tablet_forceV12_optic_interfaceV4/src/main/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/main/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15925" selectionTopPixel="8469"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Script.java" partName="Script.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/script/Script.java" title="Script.java" tooltip="tablet_thermoV2/src/script/Script.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/script/Script.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="17149" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFrame.java" partName="DisplayFrame.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java" title="DisplayFrame.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5757" selectionTopPixel="3243"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" partName="Age.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/script/Age.java" title="Age.java" tooltip="tablet_thermoV2/src/script/Age.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/script/Age.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="376" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAreaSettingPanel.java" partName="DisplayAreaSettingPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java" title="DisplayAreaSettingPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11779" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Image.java" partName="Image.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/main/Image.java" title="Image.java" tooltip="tablet_thermoV2/src/main/Image.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/main/Image.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFilePanel.java" partName="DisplayFilePanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java" title="DisplayFilePanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="8034" selectionTopPixel="4256"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SurfacePanel.java" partName="SurfacePanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/display/SurfacePanel.java" title="SurfacePanel.java" tooltip="tablet_thermoV2/src/display/SurfacePanel.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/display/SurfacePanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3508" selectionTopPixel="1584"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplaySettingsPanel.java" partName="DisplaySettingsPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java" title="DisplaySettingsPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="721" selectionTopPixel="304"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyboardListener.java" partName="KeyboardListener.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/display/KeyboardListener.java" title="KeyboardListener.java" tooltip="tablet_thermoV2/src/display/KeyboardListener.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/display/KeyboardListener.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="246" selectionTopPixel="96"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitialSound.java" partName="InitialSound.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/script/InitialSound.java" title="InitialSound.java" tooltip="tablet_thermoV2/src/script/InitialSound.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/script/InitialSound.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="944"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="History.java" partName="History.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/script/History.java" title="History.java" tooltip="tablet_thermoV2/src/script/History.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/script/History.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFrame.java" partName="DisplayFrame.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_thermoV2/src/display/DisplayFrame.java" title="DisplayFrame.java" tooltip="tablet_thermoV2/src/display/DisplayFrame.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_thermoV2/src/display/DisplayFrame.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAreaPanel.java" partName="DisplayAreaPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java" title="DisplayAreaPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3121" selectionTopPixel="1408"/>
 </editor>
 </editors>
 <views>
@@ -96,12 +81,6 @@
 </view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
-</view>
-<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
-<viewState isPinned="false">
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
-</viewState>
 </view>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
@@ -119,7 +98,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.ui.resourcePerspective">
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.ui.resourcePerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -154,7 +133,6 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -182,12 +160,11 @@
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -207,174 +184,164 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV3/src/main/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV3/src/script/InitialSound.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/InitialSound.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingPathV2/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingArea/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV3/src/main/Interface.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/main/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/main/SoundSource.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/Areas.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/Script.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/display/DisplayFilePanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/Age.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/main/Image.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/display/SurfacePanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/display/KeyboardListener.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/InitialSound.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/script/History.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_thermoV2/src/display/DisplayFrame.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/script/Age.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/script/Script.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/main/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java"/>
 </editors>
-<item historyLabel="InitialSound.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="4831" y="0"/>
 </item>
-<item historyLabel="InitialSound.java" index="1">
-<position info="not_deleted" x="779" y="0"/>
+<item historyLabel="DisplaySettingsPanel.java" index="6">
+<position info="not_deleted" x="708" y="139"/>
 </item>
-<item historyLabel="InitialSound.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="4078" y="0"/>
 </item>
-<item historyLabel="InitialSound.java" index="1">
-<position info="not_deleted" x="779" y="0"/>
+<item historyLabel="DisplayFrame.java" index="4">
+<position info="not_deleted" x="557" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="1133" y="0"/>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="7107" y="0"/>
 </item>
-<item historyLabel="Main.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5290" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="1327" y="0"/>
+<item historyLabel="Age.java" index="2">
+<position info="not_deleted" x="6840" y="0"/>
 </item>
-<item historyLabel="Main.java" index="3">
-<position info="not_deleted" x="680" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5290" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="675" y="0"/>
+<item historyLabel="Age.java" index="2">
+<position info="not_deleted" x="6840" y="0"/>
 </item>
-<item historyLabel="Main.java" index="4">
-<position info="not_deleted" x="511" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11947" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="675" y="0"/>
+<item historyLabel="DisplaySettingsPanel.java" index="6">
+<position info="not_deleted" x="721" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11947" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11986" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplaySettingsPanel.java" index="6">
+<position info="not_deleted" x="721" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11986" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11991" y="0"/>
+</item>
+<item historyLabel="Script.java" index="3">
+<position info="not_deleted" x="39684" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplaySettingsPanel.java" index="6">
+<position info="not_deleted" x="721" y="0"/>
+</item>
+<item historyLabel="DisplayFrame.java" index="4">
+<position info="not_deleted" x="557" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11991" y="0"/>
+</item>
+<item historyLabel="DisplayFrame.java" index="4">
+<position info="not_deleted" x="557" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11991" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplaySettingsPanel.java" index="6">
+<position info="not_deleted" x="721" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="12081" y="0"/>
+</item>
+<item historyLabel="Age.java" index="2">
+<position info="not_deleted" x="6840" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="12081" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5252" y="0"/>
 </item>
 <item historyLabel="Main.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="15925" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5252" y="0"/>
+</item>
+<item historyLabel="DisplayFilePanel.java" index="1">
+<position info="not_deleted" x="8034" y="8"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5252" y="0"/>
+</item>
+<item historyLabel="Script.java" index="3">
+<position info="not_deleted" x="13441" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="5252" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11810" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11779" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11777" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11779" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11791" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11828" y="0"/>
+</item>
+<item historyLabel="DisplayAreaSettingPanel.java" index="0">
+<position info="not_deleted" x="11779" y="0"/>
+</item>
+<item historyLabel="Age.java" index="2">
+<position info="not_deleted" x="6840" y="0"/>
 </item>
 <item historyLabel="Main.java" index="5">
-<position info="not_deleted" x="235" y="0"/>
+<position info="not_deleted" x="15925" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="675" y="0"/>
+<item historyLabel="DisplayFrame.java" index="4">
+<position info="not_deleted" x="557" y="0"/>
 </item>
-<item historyLabel="Interface.java" index="6">
-<position info="not_deleted" x="1027" y="0"/>
+<item historyLabel="DisplayAreaSettingPanel.java" index="7">
+<position info="not_deleted" x="11779" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="4523" y="0"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SoundSource.java" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Areas.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SoundSource.java" index="8">
-<position info="not_deleted" x="562" y="0"/>
-</item>
-<item historyLabel="Script.java" index="10">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SoundSource.java" index="8">
-<position info="not_deleted" x="562" y="0"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="455" y="6"/>
-</item>
-<item historyLabel="DisplayFilePanel.java" index="11">
-<position info="not_deleted" x="5005" y="0"/>
-</item>
-<item historyLabel="Script.java" index="10">
-<position info="not_deleted" x="17149" y="6"/>
-</item>
-<item historyLabel="Age.java" index="12">
-<position info="not_deleted" x="8179" y="6"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="641" y="11"/>
-</item>
-<item historyLabel="Image.java" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="641" y="11"/>
-</item>
-<item historyLabel="SoundSource.java" index="8">
-<position info="not_deleted" x="562" y="0"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="8004" y="0"/>
-</item>
-<item historyLabel="Image.java" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SurfacePanel.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="KeyboardListener.java" index="15">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="InitialSound.java" index="16">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="History.java" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Script.java" index="10">
-<position info="not_deleted" x="17149" y="6"/>
-</item>
-<item historyLabel="History.java" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Script.java" index="10">
-<position info="not_deleted" x="17149" y="6"/>
-</item>
-<item historyLabel="Age.java" index="12">
-<position info="not_deleted" x="8179" y="6"/>
-</item>
-<item historyLabel="History.java" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Script.java" index="10">
-<position info="not_deleted" x="17149" y="6"/>
-</item>
-<item historyLabel="Age.java" index="12">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="History.java" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SurfacePanel.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Main.java" index="7">
-<position info="not_deleted" x="8004" y="0"/>
-</item>
-<item historyLabel="DisplayFrame.java" index="18">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SurfacePanel.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="KeyboardListener.java" index="15">
-<position info="not_deleted" x="246" y="0"/>
-</item>
-<item active="true" historyLabel="SurfacePanel.java" index="14">
+<item active="true" historyLabel="DisplayAreaPanel.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -394,50 +361,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFrame.java" tooltip="tablet_thermoV2/src/display/DisplayFrame.java">
-<persistable path="/tablet_thermoV2/src/display/DisplayFrame.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAreaPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="History.java" tooltip="tablet_thermoV2/src/script/History.java">
-<persistable path="/tablet_thermoV2/src/script/History.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplaySettingsPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplaySettingsPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitialSound.java" tooltip="tablet_thermoV2/src/script/InitialSound.java">
-<persistable path="/tablet_thermoV2/src/script/InitialSound.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Areas.java" tooltip="tablet_forceV12_optic_interfaceV4/src/script/Areas.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/script/Areas.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyboardListener.java" tooltip="tablet_thermoV2/src/display/KeyboardListener.java">
-<persistable path="/tablet_thermoV2/src/display/KeyboardListener.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFilePanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFilePanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SurfacePanel.java" tooltip="tablet_thermoV2/src/display/SurfacePanel.java">
-<persistable path="/tablet_thermoV2/src/display/SurfacePanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayValuesPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayValuesPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayValuesPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Image.java" tooltip="tablet_thermoV2/src/main/Image.java">
-<persistable path="/tablet_thermoV2/src/main/Image.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAreaSettingPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" tooltip="tablet_thermoV2/src/script/Age.java">
-<persistable path="/tablet_thermoV2/src/script/Age.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAreaSettingsPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingsPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAreaSettingsPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Script.java" tooltip="tablet_thermoV2/src/script/Script.java">
-<persistable path="/tablet_thermoV2/src/script/Script.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Image.java" tooltip="tablet_forceV12_optic_interfaceV4/src/main/Image.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/main/Image.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFilePanel.java" tooltip="tablet_thermoV2/src/display/DisplayFilePanel.java">
-<persistable path="/tablet_thermoV2/src/display/DisplayFilePanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitialSound.java" tooltip="tablet_forceV12_optic_interfaceV4/src/script/InitialSound.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/script/InitialSound.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Areas.java" tooltip="tablet_thermoV2/src/script/Areas.java">
-<persistable path="/tablet_thermoV2/src/script/Areas.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayFrame.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayFrame.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoundSource.java" tooltip="tablet_thermoV2/src/main/SoundSource.java">
-<persistable path="/tablet_thermoV2/src/main/SoundSource.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayConsolePanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayConsolePanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayConsolePanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="tablet_thermoV2/src/main/Main.java">
-<persistable path="/tablet_thermoV2/src/main/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplaySourcePanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplaySourcePanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplaySourcePanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Interface.java" tooltip="tablet_forceV12_optic_interfaceV3/src/main/Interface.java">
-<persistable path="/tablet_forceV12_optic_interfaceV3/src/main/Interface.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAgesPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayAgesPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayAgesPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingFlow/src/Main.java">
-<persistable path="/drawingFlow/src/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplaySourceSettingPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplaySourceSettingPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplaySourceSettingPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingArea/src/Main.java">
-<persistable path="/drawingArea/src/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayPathSettingPanel.java" tooltip="tablet_forceV12_optic_interfaceV4/src/display/DisplayPathSettingPanel.java">
+<persistable path="/tablet_forceV12_optic_interfaceV4/src/display/DisplayPathSettingPanel.java"/>
 </file>
 </mruList>
 </workbench>

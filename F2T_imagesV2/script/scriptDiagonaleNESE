@@ -1,0 +1,5 @@
+t -300 -275 200 1
+condition t
+condition b
+path ligneDiagonaleNESE
+condition t

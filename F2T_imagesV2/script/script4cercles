@@ -1,0 +1,5 @@
+t -175 150 200 1
+condition t
+condition b
+path pathserpent4cercles
+condition t

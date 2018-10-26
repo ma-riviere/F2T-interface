@@ -1,0 +1,5 @@
+t 300 -290 200 1
+condition t
+condition b
+path ligneDiagonaleNO
+condition t

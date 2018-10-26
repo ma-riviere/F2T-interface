@@ -1,0 +1,5 @@
+t 275 290 200 1
+condition t
+condition b
+path pathcbS
+condition t

@@ -1,0 +1,5 @@
+t -323 323 200 1 
+condition t
+condition b
+path ligneVersLeSud
+condition t

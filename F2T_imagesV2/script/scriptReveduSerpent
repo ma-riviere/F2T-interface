@@ -1,0 +1,17 @@
+t 340 190 300 1
+condition t
+condition b
+path pathserpent
+condition t
+condition b
+t -340 0 300 1
+condition t
+condition b 
+path pathserpentboucle
+condition t
+condition b
+t -340 190 300 1
+condition t
+condition b
+path pathserpent4boucles
+condition t

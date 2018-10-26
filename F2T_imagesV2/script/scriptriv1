@@ -1,0 +1,5 @@
+t -320 -268 200 1
+condition t
+condition b
+path pathri1
+condition t

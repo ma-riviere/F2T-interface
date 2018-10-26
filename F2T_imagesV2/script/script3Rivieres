@@ -1,0 +1,24 @@
+t 340 340 300 1
+condition t
+condition b
+
+path pathri1
+condition t
+condition b
+t 340 -340 300 1
+condition t
+condition b
+path pathri2
+condition t
+condition b
+t 0 -340 300 1
+condition t
+condition b
+path pathri3
+condition t
+condition b
+t 340 340 300 1
+condition t
+
+
+

@@ -1,0 +1,5 @@
+t -250 -252 200 1
+condition t
+condition b
+path triangle
+condition t
