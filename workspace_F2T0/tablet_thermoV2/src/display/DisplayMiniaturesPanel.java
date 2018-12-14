@@ -33,6 +33,9 @@ public class DisplayMiniaturesPanel extends JPanel implements MouseListener{
 	private JPanel image_view;
 	private ImageIcon image_icon;
 	
+	private JPanel tactile_view;
+	private ImageIcon tactile_icon;
+	
 	private JPanel area_view;
 	private ImageIcon area_icon;
 	
@@ -49,6 +52,12 @@ public class DisplayMiniaturesPanel extends JPanel implements MouseListener{
 		image_view.setVisible(true);
 		image_view.setBounds(0, 0, 175, 175);
 		this.add(image_view);
+
+		tactile_view=new JPanel();
+		tactile_view.setBackground(Color.lightGray);
+		tactile_view.setVisible(true);
+		tactile_view.setBounds(180, 0, 175, 175);
+		this.add(tactile_view);
 
 		area_view=new JPanel();
 		area_view.setBackground(Color.lightGray);
@@ -71,6 +80,16 @@ public class DisplayMiniaturesPanel extends JPanel implements MouseListener{
 			image_view.setVisible(false);
 			image_view.setVisible(true);
 		}
+
+		tactile_view.removeAll();
+		tactile_icon=null;
+		if (main.currentAge.image.tactile_img_miniature!=null){
+			tactile_icon=new ImageIcon(main.currentAge.image.tactile_img_miniature);
+			tactile_view.add(new JLabel(tactile_icon));
+			tactile_view.setVisible(false);
+			tactile_view.setVisible(true);
+		}
+		
 
 		area_view.removeAll();
 		area_icon=null;

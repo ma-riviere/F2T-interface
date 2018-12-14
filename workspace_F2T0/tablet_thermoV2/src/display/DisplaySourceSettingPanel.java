@@ -94,11 +94,18 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 			g.drawRect(160, 185, 20, 20);
 
 			if (frame.selected_image==1) g.setColor(Color.red);
-			else if (main.script.ageList.get(main.script.currentAge).image.area!=null) g.setColor(Color.lightGray);
+			else if (main.script.ageList.get(main.script.currentAge).image.tactile!=null) g.setColor(Color.lightGray);
 			else g.setColor(Color.gray);
 			g.fillRect(190, 185, 20, 20);
 			g.setColor(Color.black);
 			g.drawRect(190, 185, 20, 20);
+			
+			if (frame.selected_image==2) g.setColor(Color.red);
+			else if (main.script.ageList.get(main.script.currentAge).image.area!=null) g.setColor(Color.lightGray);
+			else g.setColor(Color.gray);
+			g.fillRect(220, 185, 20, 20);
+			g.setColor(Color.black);
+			g.drawRect(220, 185, 20, 20);
 		}
 	}
 	
@@ -119,7 +126,7 @@ public class DisplaySourceSettingPanel extends JPanel  implements ActionListener
 
 	public void mouseClicked(MouseEvent e) {
 		
-		for (int i=-1;i<2;i++){
+		for (int i=-1;i<3;i++){
 			if (e.getX()>160+i*30 && e.getX()<180+i*30 && e.getY()>185 && e.getY()<205) frame.selected_image=i;
 		}
 		

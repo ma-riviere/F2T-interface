@@ -30,6 +30,7 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 	private Main main;
 	
 	private JComboBox<String> list_image;
+	private JComboBox<String> list_tactile;
 	private JComboBox<String> list_area;
 	
 	private JComboBox<String> list_preset;
@@ -61,6 +62,13 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		this.add(list_image);
 		list_image.setBounds(70, 5, 150, 30);
 		
+		list_tactile=new JComboBox<String>();
+		list_tactile.addItem("none");
+		for (int i=0;i<main.listTactile.length;i++) list_tactile.addItem(main.listTactile[i]);
+		list_tactile.addActionListener(this);
+		list_tactile.addKeyListener(k);
+		this.add(list_tactile);
+		list_tactile.setBounds(70, 35, 150, 30);
 		
 		list_area=new JComboBox<String>();
 		list_area.addItem("none");
@@ -136,6 +144,7 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		// draw list names
 		g.drawRect(0, 0, 225, 160);
 		g.drawString("Image", 10, 25);
+		g.drawString("Tactile", 10, 55);
 		g.drawString("Areas", 10, 145);
 		
 		g.drawRect(0, 170, 355, 100);
@@ -163,6 +172,10 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		list_image.addItem("none");
 		for (int i=0;i<main.listImages.length;i++) list_image.addItem(main.listImages[i]);
 
+		list_tactile.removeAllItems();
+		list_tactile.addItem("none");
+		for (int i=0;i<main.listTactile.length;i++) list_tactile.addItem(main.listTactile[i]);
+
 		list_area.removeAllItems();
 		list_area.addItem("none");
 		for (int i=0;i<main.listArea.length;i++) list_area.addItem(main.listArea[i]);
@@ -187,6 +200,10 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 			if (list_image.getSelectedIndex()==0) main.setPicture(null);
 			else main.setPicture((String)list_image.getSelectedItem());
 		}
+		if (e.getSource()==list_tactile){
+			if (list_tactile.getSelectedIndex()==0) main.setTactile(null);
+			else main.setTactile((String)list_tactile.getSelectedItem());
+		}
 		if (e.getSource()==list_area){
 			if (list_area.getSelectedIndex()==0) main.setArea(null);
 			else main.setArea((String)list_area.getSelectedItem());
@@ -208,6 +225,7 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 	
 	public void updateIndex(int id){
 		if (id==0 || id==-1) list_image.setSelectedIndex(main.selected_img+1);
+		if (id==1 || id==-1) list_tactile.setSelectedIndex(main.selected_tactile+1);
 		if (id==4 || id==-1) list_area.setSelectedIndex(main.selected_area+1);
 	}
 

@@ -1,0 +1,33 @@
+
+area menu1.png
+playSound menu2_1_PL.wav
+
+condition b
+
+path menu1
+playSound menu2_2_PL.wav
+
+condition s t
+
+path menu2
+playSound menu2_3_PL.wav
+
+condition s t
+
+path menu4
+playSound menu2_5_PL.wav
+
+condition s t
+
+path menu5
+playSound menu2_6_PL.wav
+
+a 25 0 1 wind1.wav
+a 50 0 1 river.wav
+a 75 0 1 creepy.wav
+tactile menu1.png
+
+exit 25 starry_PL 1
+exit 50 riviere_PL 1
+exit 75 scream 1
+

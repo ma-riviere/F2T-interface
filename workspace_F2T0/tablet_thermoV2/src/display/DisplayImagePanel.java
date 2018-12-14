@@ -53,6 +53,17 @@ public class DisplayImagePanel extends JPanel{
 				}
 			}
 			else if (frame.selected_image==1){
+				if (main.script.ageList.get(main.script.currentAge).image.tactile!=null) g.drawImage(main.script.ageList.get(main.script.currentAge).image.tactile_img, 0, 0, this);
+				else{
+					g.setColor(Color.gray);
+					g.fillRect(0, 0, 699, 699);
+					g.setColor(Color.black);
+					g.drawRect(0, 0, 699, 699);
+					g.drawLine(350,0,350,700);
+					g.drawLine(0,350,700,350);
+				}
+			}
+			else if (frame.selected_image==2){
 				if (main.script.ageList.get(main.script.currentAge).image.area!=null) g.drawImage(main.script.ageList.get(main.script.currentAge).image.area_img, 0, 0, this);
 				else{
 					g.setColor(Color.gray);

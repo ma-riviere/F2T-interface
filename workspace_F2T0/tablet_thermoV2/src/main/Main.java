@@ -14,6 +14,7 @@ public class Main {
 	public static String FILES="../../thermoformed_imagesV2/";	// path to images
 	
 	public static String IMG="img/";							// sub paths to image types
+	public static String TACTILE="tactile/";
 	public static String PRESET="preset/";
 	public static String AREA="area/";
 	public static String SCRIPT="script/";
@@ -77,12 +78,14 @@ public class Main {
 	public String sourceName="source";
 	
 	public String[] listImages;
+	public String[] listTactile;
 	public String[] listPreset;
 	public String[] listArea;
 	public String[] listScript;
 	public String[] listSource;
 	
 	public int selected_img=-1;
+	public int selected_tactile=-1;
 	public int selected_area=-1;
 	
 	
@@ -170,6 +173,12 @@ public class Main {
 		}
 		else System.out.println("Image file directory does not exist");
 
+		repertoire = new File(FILES+TACTILE);
+		if (repertoire.exists()){
+			listTactile=repertoire.list();
+		}
+		else System.out.println("Tactile file directory does not exist");
+
 		repertoire = new File(FILES+AREA);
 		if (repertoire.exists()){
 			listArea=repertoire.list();
@@ -236,6 +245,7 @@ public class Main {
 	public void savePreset(){
 		
 		if (currentAge.image.view==null
+		 && currentAge.image.tactile==null 
 		 && currentAge.image.area==null){
 			System.out.println("No element selected, pre-set not saved");
 		}
@@ -244,6 +254,7 @@ public class Main {
 			try {
 				PrintWriter file  = new PrintWriter(new FileWriter(fileName));
 				if (currentAge.image.view!=null)    file.println("image "+currentAge.image.view);
+				if (currentAge.image.tactile!=null) file.println("tactile "+currentAge.image.tactile);
 				if (currentAge.image.area!=null)    file.println("area "+currentAge.image.area);
 				file.close();
 				System.out.println("preset saved : "+presetName);
@@ -279,6 +290,11 @@ public class Main {
 	// picture
 	public void setPicture(String img_file){
 		script.ageList.get(script.currentAge).setPicture(img_file);
+	}
+	
+	// tactile image
+	public void setTactile(String tactile_file){
+		script.ageList.get(script.currentAge).setTactile(tactile_file);
 	}
 	
 	// area descriptor file

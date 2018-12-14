@@ -13,6 +13,7 @@ public class History {
 
 	// elements to change or add
 	public String image=null;
+	public String tactile=null;
 	public String area=null;
 	
 	public ArrayList<SoundSource> sources;
@@ -167,6 +168,8 @@ public class History {
 		String msg="";
 		if (image!=null) msg+="img: "+image;
 		else  msg+="img: none";
+		if (tactile!=null) msg+=", tact: "+tactile;
+		else  msg+=", tactile: none";
 		if (area!=null) msg+=", area: "+area;
 		else  msg+=", area: none";
 		

@@ -48,6 +48,18 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 		}
 		
 		else if (frame.selected_image==1){
+			if (main.script.ageList.get(main.script.currentAge).image.tactile!=null) g.drawImage(main.script.ageList.get(main.script.currentAge).image.tactile_img_miniature, 300, 300, this);
+			else{
+				g.setColor(Color.gray);
+				g.fillRect(300, 300, 200, 200);
+				g.setColor(Color.black);
+				g.drawRect(300, 300, 200, 200);
+				g.drawLine(300, 400, 500, 400);
+				g.drawLine(400, 300, 400, 500);
+			}
+		}
+		
+		else if (frame.selected_image==2){
 			if (main.script.ageList.get(main.script.currentAge).image.area!=null) g.drawImage(main.script.ageList.get(main.script.currentAge).image.area_img_miniature, 300, 300, this);
 			else{
 				g.setColor(Color.gray);
@@ -94,13 +106,14 @@ public class DisplaySourcePanel extends JPanel implements MouseListener , MouseM
 		
 		for (int i=0;i<main.script.ageList.get(main.script.currentAge).sourceList.size();i++){
 			if ( (main.script.ageList.get(main.script.currentAge).sourceList.get(i).px-x)*(main.script.ageList.get(main.script.currentAge).sourceList.get(i).px-x) + (main.script.ageList.get(main.script.currentAge).sourceList.get(i).py-y)*(main.script.ageList.get(main.script.currentAge).sourceList.get(i).py-y)<1600){
+				main.script.ageList.get(main.script.currentAge).sourceList.get(i).close();
 				main.script.ageList.get(main.script.currentAge).sourceList.remove(i);
 				i--;
 				found=true;
 			}
 		}
 		
-		if (!found) main.script.ageList.get(main.script.currentAge).sourceList.add(new SoundSource("t "+x+" "+y+" "+frame.getSourceParameters() ));
+		if (!found) main.script.ageList.get(main.script.currentAge).sourceList.add(new SoundSource("s "+x+" "+y+" "+frame.getSourceParameters() ));
 	}
 	
 	

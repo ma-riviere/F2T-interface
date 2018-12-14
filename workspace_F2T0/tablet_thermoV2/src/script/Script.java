@@ -238,6 +238,11 @@ public class Script {
 					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).image="none";
 					else ageList.get(writing_age).history.get(writing_history).image=elements[1];
 				}
+				// case tactile file
+				else if (elements.length>=2 && elements[0].equals("tactile")){
+					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).tactile="none";
+					else ageList.get(writing_age).history.get(writing_history).tactile=elements[1];
+				}	
 				// case area descriptor file
 				if (elements.length>=2 && elements[0].equals("area")){
 					if (elements[1].equals("none"))  ageList.get(writing_age).history.get(writing_history).area="none";
@@ -263,11 +268,13 @@ public class Script {
 				// case erase all images
 				if (elements.length>=1 && elements[0].equals("clearImages")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
+					ageList.get(writing_age).history.get(writing_history).tactile="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 				}
 				// case erase everything
 				if (elements.length>=1 && elements[0].equals("clearAll")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
+					ageList.get(writing_age).history.get(writing_history).tactile="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 					ageList.get(writing_age).history.get(writing_history).clearSources=true;
 				}
@@ -423,6 +430,12 @@ public class Script {
 					else ageList.get(writing_age).history.get(writing_history).image=elements[1];
 				}
 				
+				// case tactile file
+				else if (elements.length>=2 && elements[0].equals("tactile")){
+					if (elements[1].equals("none")) ageList.get(writing_age).history.get(writing_history).tactile="none";
+					else ageList.get(writing_age).history.get(writing_history).tactile=elements[1];
+				}	
+				
 				// case area descriptor file
 				if (elements.length>=2 && elements[0].equals("area")){
 					if (elements[1].equals("none"))  ageList.get(writing_age).history.get(writing_history).area="none";
@@ -448,11 +461,13 @@ public class Script {
 				// case erase all images
 				if (elements.length>=1 && elements[0].equals("clearImages")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
+					ageList.get(writing_age).history.get(writing_history).tactile="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 				}
 				// case erase everything
 				if (elements.length>=1 && elements[0].equals("clearAll")){
 					ageList.get(writing_age).history.get(writing_history).image="none";
+					ageList.get(writing_age).history.get(writing_history).tactile="none";
 					ageList.get(writing_age).history.get(writing_history).area="none";
 					ageList.get(writing_age).history.get(writing_history).clearSources=true;
 				}

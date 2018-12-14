@@ -90,9 +90,11 @@ public class Age {
 		
 		// clear age
 		setPicture(null);
+		setTactile(null);
 		setArea(null);
 		
 		if (history.get(0).image  !=null && !history.get(0).image.equals("none")  ) setPicture(history.get(0).image);
+		if (history.get(0).tactile!=null && !history.get(0).tactile.equals("none")) setTactile(history.get(0).tactile);
 		if (history.get(0).area   !=null && !history.get(0).area.equals("none")   ) setArea(history.get(0).area);
 		
 		areas.close();
@@ -137,6 +139,10 @@ public class Age {
 		if (history.get(current_period).image  !=null){
 			if (history.get(current_period).image.equals("none")) setPicture(null);
 			else setPicture(history.get(current_period).image);
+		}
+		if (history.get(current_period).tactile!=null){
+			if (history.get(current_period).tactile.equals("none")) setTactile(null);
+			else setTactile(history.get(current_period).tactile);
 		}
 		if (history.get(current_period).area!=null){
 			if (history.get(current_period).area.equals("none")) setArea(null);
@@ -316,6 +322,10 @@ public class Age {
 						if (elements[0].equals("none")) setPicture(null);
 						else setPicture(elements[1]);
 					}
+					if (     elements.length>=2 && elements[0].equals("tactile")){
+						if (elements[0].equals("none")) setTactile(null);
+						else setTactile(elements[1]);
+					}
 					else if (elements.length>=2 && elements[0].equals("area")){
 						if (elements[0].equals("none")) setArea(null);
 						else							setArea(elements[1]);
@@ -380,6 +390,18 @@ public class Age {
 		}
 	}
 	
+	// tactile image
+	public void setTactile(String tactile_file){
+		image.setTactile(tactile_file);
+		if (main.display!=null) main.display.updateMiniatures();
+		main.selected_tactile=-1;
+		if (tactile_file!=null){
+			for (int i=0;i<main.listTactile.length;i++){
+				if (tactile_file.equals(main.listTactile[i])) main.selected_tactile=i;
+			}
+		}
+	}
+	
 	// area descriptor file
 	public void setArea(String area_file){
 		image.setArea(area_file);
@@ -401,6 +423,8 @@ public class Age {
 		String msg="";
 		if (image.view!=null) msg+="img: "+image.view;
 		else  msg+="img: none";
+		if (image.tactile!=null) msg+=", tact: "+image.tactile;
+		else  msg+=", tactile: none";
 		if (image.area!=null) msg+=", area: "+image.area;
 		else  msg+=", area: none";
 		

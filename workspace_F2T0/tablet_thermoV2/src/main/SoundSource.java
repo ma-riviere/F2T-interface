@@ -25,15 +25,15 @@ public class SoundSource {
 	
 	public SoundSource(String args){
 		String[] elements=args.split(" ");
-		
-		px=Float.parseFloat(elements[1]);
-		py=Float.parseFloat(elements[2]);
-		
-		for (int i=3;i<elements.length;i++) System.out.println(" param : "+elements[i]);
+		setParams(elements);
 	}
 	
 	public SoundSource(String[] args){
-		
+		setParams(args);
+	}
+	
+	
+	public void setParams(String[] args){
 		px=Float.parseFloat(args[1]);
 		py=Float.parseFloat(args[2]);
 		
@@ -43,6 +43,13 @@ public class SoundSource {
 	
 	public void activate(boolean activity){
 		active=activity;
+	}
+	
+	
+	public void close(){
+		
+		// TODO
+		System.out.println("GOODBYE");
 	}
 	
 }

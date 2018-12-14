@@ -1,0 +1,42 @@
+image rivieres.jpg
+
+playSound riviere1_PL.wav
+condition b
+
+t 319 318 190 1
+condition t
+
+playSound riviere2_PL.wav
+path pathri1
+condition t s
+
+t -149 30 500 1
+condition t
+
+playSound riviere3_PL.wav
+path riviere2
+condition t s
+
+t 301 -264 200 1
+condition t
+
+playSound riviere4_PL.wav
+path pathri2
+condition t s
+
+t 0 -298 200 1
+condition t
+
+playSound riviere5_PL.wav
+path pathri3
+condition t s
+
+playSound riviere6_PL.wav
+condition b
+
+flow riviere1.png
+tactile riviere.png
+area riviere.png
+a 25 0 1 river.wav
+exit 0 menu 0
+exit 25 menu 0

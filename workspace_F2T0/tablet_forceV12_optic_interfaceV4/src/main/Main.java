@@ -206,7 +206,7 @@ public class Main {
 		
 		
 		if (CAMERA_CONNECTED){
-			camera=new VideoCapture(CAMERA);
+			camera=new VideoCapture(1);
 			
 			// get first frame
 			camera.read(webcam1);
