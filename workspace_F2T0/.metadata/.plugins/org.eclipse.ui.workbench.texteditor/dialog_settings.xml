@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Load Age" key="selection"/>
+		<item value="friction_solid" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="friction_solid"/>
+			<item value="y+dy"/>
+			<item value="x+dx"/>
 			<item value="Load Age"/>
 			<item value="96"/>
 			<item value="setSource"/>
 			<item value="loadSource"/>
 			<item value="preset"/>
-			<item value="close"/>
-			<item value="test"/>
-			<item value="1.2.1"/>
 		</list>
 		<list key="replacehistory">
+			<item value="y2"/>
+			<item value="x2"/>
 			<item value="currentAge"/>
 			<item value=".script.ageList.get(main.script.currentAge)"/>
 			<item value=""/>
@@ -26,9 +28,9 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="339" key="DIALOG_WIDTH"/>
+		<item value="343" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="455" key="DIALOG_HEIGHT"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
 		<item value="1495" key="DIALOG_X_ORIGIN"/>
 		<item value="457" key="DIALOG_Y_ORIGIN"/>
 	</section>

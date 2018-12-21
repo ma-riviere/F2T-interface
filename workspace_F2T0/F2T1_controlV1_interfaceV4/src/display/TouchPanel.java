@@ -37,30 +37,36 @@ public class TouchPanel extends JPanel implements MouseListener{
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 1300, 700);
 		
-		for (int i=0;i<25;i++){
-			for (int j=0;j<25;j++){
+		for (int i=0;i<51;i++){
+			for (int j=0;j<51;j++){
 				
 				float val=(main.sphere[i][j]);
 				if (val<0) val=0;
 				if (val>1) val=1;
 				
 				g.setColor(new Color(val, 0,1-val));
-				g.drawRect(20+i*20, 20+j*20, 19, 19);
+				g.drawRect(20+i*10, 20+j*10, 9, 9);
 				
 				val=main.heighMap[i][j];
 				g.setColor(new Color(0, val,0));
-				g.fillRect(21+i*20, 21+j*20, 18, 18);
+				g.fillRect(21+i*10, 21+j*10, 8, 8);
 				
-				val=main.contactMap[i][j];
+				val=main.contactMap[i][j]/2;
 				if (val<0) val=0;
-				g.setColor(new Color(val, 0,0));
-				g.fillRect(620+i*20, 20+j*20, 20, 20);
+				if (val>1) val=1;
+				g.setColor(new Color(val, 1-val,0));
+				g.fillRect(620+i*10, 20+j*10, 10, 10);
 				
 			}
 		}
+		
+		g.setColor(Color.blue);
+		for (int i=0;i<main.contactsX.size();i++){
+			g.fillOval(620+(main.contactsX.get(i)+25)*10, 20+(main.contactsY.get(i)+25)*10, 10, 10);
+		}
 	
 		g.setColor(new Color(0, 1, 0));
-		g.fillOval(620+(int)((main.contactX*12)+12)*20, 20+(int)((main.contactY*12)+12)*20, 20, 20);
+		g.fillOval(620+(int)((main.contactX*12)+25)*10, 20+(int)((main.contactY*12)+25)*10, 10, 10);
 		
 		g.setColor(Color.gray);
 		g.fillRect(550, 20, 10, 500);

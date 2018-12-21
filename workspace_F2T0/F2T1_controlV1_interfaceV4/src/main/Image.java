@@ -62,15 +62,15 @@ public class Image {
 		
 		for (int i=0;i<SIZE;i++){
 			for (int j=0;j<SIZE;j++){
-				flow_mat[i][j][0]=125;
-				flow_mat[i][j][1]=125;
+				flow_mat[i][j][0]=128;
+				flow_mat[i][j][1]=128;
 			}
 		}
 		
 		for (int i=0;i<SIZE;i++){
 			for (int j=0;j<SIZE;j++){
-				rail_mat[i][j][0]=125;
-				rail_mat[i][j][1]=125;
+				rail_mat[i][j][0]=128;
+				rail_mat[i][j][1]=128;
 			}
 		}
 		

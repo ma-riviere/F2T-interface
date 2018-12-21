@@ -85,12 +85,12 @@ public class Interface  implements SerialPortEventListener {
 		if (F2T_connected){
 			try {
 				
-				System.out.println("sent : "+(msg[0]& 0xff) +" , "+(msg[1]& 0xff)+" , "+(msg[2]& 0xff)+" , "+(msg[3]& 0xff));
+				//System.out.println("sent : "+(msg[0]& 0xff) +" , "+(msg[1]& 0xff)+" , "+(msg[2]& 0xff)+" , "+(msg[3]& 0xff));
 				serialPort.writeBytes(msg);
 			} catch (SerialPortException e) {e.printStackTrace();}
 		}
 		else{
-			System.out.println("message : "+msg);
+			//System.out.println("message : "+msg);
 		}
 	}
 
@@ -154,23 +154,23 @@ public class Interface  implements SerialPortEventListener {
                 			counterY+=(received[i] & 0xff);
                 			message_type=0;
                 			
-                			joystickX=-((float)movementY-100)/20;
-                			joystickY=-((float)movementX-100)/20;
+                			joystickX=((float)movementX-100)/20;
+                			joystickY=((float)movementY-100)/20;
                 			
-                			posx=(counterX-30000);
-                			posy=(counterY-30000);
+                			posx=(counterX-30000+535);
+                			posy=(counterY-30000-535);
                 			
                 			ready=false;
                 					
-                			main.dx=-joystickX;
-            				main.dy=-joystickY;
+                			main.dx=joystickX;
+            				main.dy=joystickY;
             				
             				if (main.dx<0.2 && main.dx>-0.2) main.dx=0;
             				if (main.dy<0.2 && main.dy>-0.2) main.dy=0;
             				
             				
-            				main.x=-(float)posx/2;
-            				main.y=(float)posy/2;;
+            				main.x=(float)posx/1.55f;
+            				main.y=(float)posy/1.55f;
                 			
             				ready=true;
             				

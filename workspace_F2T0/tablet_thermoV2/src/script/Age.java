@@ -191,7 +191,7 @@ public class Age {
 		
 		// compute sound sources
 		for (int s=0;s<sourceList.size();s++){
-			sourceList.get(s).compute(i-350, j-350);
+			sourceList.get(s).compute(i-350, 350-j);
 		}
 		
 		

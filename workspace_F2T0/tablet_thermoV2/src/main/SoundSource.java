@@ -19,6 +19,9 @@ public class SoundSource {
 	
 	
 	public void compute(float x, float y){
+		
+		System.out.println(x+" , "+y);
+		
 		rx=px-x;
 		ry=py-y;
 	}
