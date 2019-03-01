@@ -186,6 +186,10 @@ public class Main {
 	
 	public boolean processing=false;
 	
+	public ArrayList<Integer> jx;
+	public ArrayList<Integer> jy;
+	public MainFrame mainFrame;
+	
 	///////////////////////////////////////////////////////////////
 	public Main(){
 		
@@ -193,6 +197,11 @@ public class Main {
 		time=0;
 		count=0;
 		trace=new float[LENGTH][2];
+		
+		jx=new ArrayList<Integer>();
+		jy=new ArrayList<Integer>();
+		mainFrame=new MainFrame(this);
+		
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -603,19 +612,23 @@ public class Main {
 		float deltaY=dy;
 		
 		//System.out.println(deltaX+" , "+deltaY );
-		if (deltaX<1.4 && deltaX>-1.4) deltaX=0;
-		if (deltaY<1.4 && deltaY>-1.4) deltaY=0;
-		//if (deltaX>0) deltaX+=1.4;
-		//else if (deltaX<0) deltaX-=1.4;
-		//else deltaX=0;
+		if (deltaX<1 && deltaX>-1) deltaX=0;
+		if (deltaY<1 && deltaY>-1) deltaY=0;
 		
-		//if (deltaY>0) deltaY+=1.4;
-		//else if (deltaY<0) deltaY-=1.4;
-		//else deltaY=0;
+		deltaX=deltaX/1.5f;
+		if (deltaX>0) deltaX+=1;
+		else if (deltaX<0) deltaX-=1;
+		else deltaX=0;
 		
 		
-		float sX=deltaX*56;
-		float sY=deltaY*56;
+		deltaY=deltaY/1.5f;
+		if (deltaY>0) deltaY+=1;
+		else if (deltaY<0) deltaY-=1;
+		else deltaY=0;
+		
+		
+		float sX=deltaX*55;
+		float sY=deltaY*55;
 		
 		
 
@@ -861,6 +874,8 @@ public class Main {
 		
 		x_prev=x;
 		y_prev=y;
+		
+		mainFrame.repaint();
 	}
 	
 	

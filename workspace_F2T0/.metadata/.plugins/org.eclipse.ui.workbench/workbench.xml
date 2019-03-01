@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="770" maximized="true" width="998" x="283" y="286">
+<window height="770" maximized="true" width="984" x="808" y="128">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -12,7 +12,8 @@
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
-<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -24,7 +25,7 @@
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1537443185664" focus="true" label="Workspace - Resource">
+<page aggregateWorkingSetId="Aggregate for window 1537443185664" focus="true" label="Workspace - Java">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -36,44 +37,106 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/main/Main.java" title="Main.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/main/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15693" selectionTopPixel="8595"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/main/Main.java" title="Main.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/main/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/main/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8943" selectionTopPixel="6064"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Interface.java" partName="Interface.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/main/Interface.java" title="Interface.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Interface.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/main/Interface.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4744" selectionTopPixel="2196"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayPathEditPanel.java" partName="DisplayPathEditPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathEditPanel.java" title="DisplayPathEditPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathEditPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathEditPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6522" selectionTopPixel="796"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Target.java" partName="Target.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/main/Target.java" title="Target.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Target.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/main/Target.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="93"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAttractorEditPanel.java" partName="DisplayAttractorEditPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java" title="DisplayAttractorEditPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20828" selectionTopPixel="10021"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayValuesPanel.java" partName="DisplayValuesPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java" title="DisplayValuesPanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="940" selectionTopPixel="586"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Attraction.java" partName="Attraction.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java" title="Attraction.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1545" selectionTopPixel="898"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Image.java" partName="Image.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/main/Image.java" title="Image.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Image.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/main/Image.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1552" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Script.java" partName="Script.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/script/Script.java" title="Script.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Script.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/script/Script.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="39491" selectionTopPixel="15190"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TouchPanel.java" partName="TouchPanel.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV1_interfaceV4/src/display/TouchPanel.java" title="TouchPanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/TouchPanel.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV1_interfaceV4/src/display/TouchPanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="783" selectionTopPixel="513"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Attractor.java" partName="Attractor.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java" title="Attractor.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="18"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="History.java" partName="History.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/script/History.java" title="History.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/History.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/script/History.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="2818"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Areas.java" partName="Areas.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/script/Areas.java" title="Areas.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Areas.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/script/Areas.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="2370"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" partName="Age.java" path="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV5_sound/src/script/Age.java" title="Age.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Age.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/F2T1_controlV2_interfaceV5_sound/src/script/Age.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="5" selectionOffset="10372" selectionTopPixel="4896"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (49 items)"/>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="712" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -93,7 +156,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.ui.resourcePerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -130,49 +193,143 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="topLeft">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1e8823d2" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1e8823d2" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.15924568" ratioLeft="304" ratioRight="1605" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6592675" ratioLeft="594" ratioRight="307" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<info folder="true" part="bottomRight" ratio="0.6592675" ratioLeft="594" ratioRight="307" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@6598caab" ratio="0.75" ratioLeft="678" ratioRight="226" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6598caab" ratio="0.75" ratioLeft="678" ratioRight="226" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomLeft" ratio="0.9588889" ratioLeft="863" ratioRight="37" relationship="4" relative="topLeft">
+<info folder="true" part="bottomLeft" ratio="0.9588889" ratioLeft="863" ratioRight="37" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.15819801" ratioLeft="302" ratioRight="1607" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.65704775" ratioLeft="592" ratioRight="309" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.7854251" ratioLeft="388" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
@@ -186,161 +343,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV1_interfaceV4/src/main/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV1_interfaceV4/src/display/TouchPanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/drawingFlow/src/Main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV1_interfaceV4/src/main/Interface.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/main/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathEditPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/script/Script.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/script/History.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/script/Areas.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/F2T1_controlV2_interfaceV5_sound/src/script/Age.java"/>
 </editors>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="5339" y="0"/>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="5411" y="0"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="5369" y="0"/>
 </item>
-<item historyLabel="Main.java" index="2">
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="4800" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="10645" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="10678" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="10774" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1626" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="10774" y="0"/>
+</item>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11100" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1626" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11100" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1626" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1545" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11351" y="0"/>
+</item>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1545" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11282" y="0"/>
+</item>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1545" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11282" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11250" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="11480" y="0"/>
+</item>
+<item historyLabel="Script.java" index="4">
+<position info="not_deleted" x="25580" y="0"/>
+</item>
+<item historyLabel="Attractor.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="5411" y="0"/>
+<item historyLabel="Script.java" index="4">
+<position info="not_deleted" x="39491" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1093" y="0"/>
+<item historyLabel="History.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1227" y="0"/>
+<item historyLabel="Areas.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1182" y="0"/>
+<item historyLabel="Age.java" index="8">
+<position info="not_deleted" x="15004" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1269" y="0"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="16536" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1314" y="0"/>
+<item historyLabel="Age.java" index="8">
+<position info="not_deleted" x="616" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1321" y="0"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="16536" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1230" y="91"/>
+<item historyLabel="Script.java" index="4">
+<position info="not_deleted" x="39491" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="5411" y="0"/>
+<item historyLabel="Age.java" index="8">
+<position info="not_deleted" x="616" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1230" y="91"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="16536" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18314" y="0"/>
-</item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1151" y="0"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="20822" y="0"/>
 </item>
 <item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19490" y="0"/>
+<position info="not_deleted" x="11012" y="0"/>
 </item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1308" y="0"/>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
 </item>
-<item historyLabel="Interface.java" index="3">
-<position info="not_deleted" x="5214" y="60"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18234" y="0"/>
-</item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="1155" y="0"/>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="20828" y="0"/>
 </item>
 <item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18234" y="0"/>
+<position info="not_deleted" x="9017" y="0"/>
+</item>
+<item historyLabel="Age.java" index="8">
+<position info="not_deleted" x="616" y="0"/>
 </item>
 <item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="17411" y="0"/>
+<position info="not_deleted" x="9017" y="0"/>
+</item>
+<item historyLabel="Age.java" index="8">
+<position info="not_deleted" x="10372" y="5"/>
 </item>
 <item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="17519" y="87"/>
+<position info="not_deleted" x="9017" y="0"/>
+</item>
+<item historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="20828" y="0"/>
+</item>
+<item historyLabel="Attraction.java" index="3">
+<position info="not_deleted" x="1545" y="0"/>
+</item>
+<item historyLabel="Script.java" index="4">
+<position info="not_deleted" x="39491" y="0"/>
 </item>
 <item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18460" y="0"/>
+<position info="not_deleted" x="8943" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18518" y="0"/>
+<item historyLabel="DisplayPathEditPanel.java" index="1">
+<position info="not_deleted" x="6522" y="0"/>
 </item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18535" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19068" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19353" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18580" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19420" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19407" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19416" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19174" y="0"/>
-</item>
-<item historyLabel="TouchPanel.java" index="1">
-<position info="not_deleted" x="783" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="19174" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15232" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18902" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="17693" y="0"/>
-</item>
-<item historyLabel="DisplayValuesPanel.java" index="4">
-<position info="not_deleted" x="940" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="17016" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15375" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15381" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15392" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15019" y="0"/>
-</item>
-<item historyLabel="Interface.java" index="3">
-<position info="not_deleted" x="4744" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15019" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="18375" y="0"/>
-</item>
-<item historyLabel="Main.java" index="0">
-<position info="not_deleted" x="22498" y="0"/>
-</item>
-<item active="true" historyLabel="Main.java" index="0">
-<position info="not_deleted" x="15427" y="120"/>
+<item active="true" historyLabel="DisplayAttractorEditPanel.java" index="2">
+<position info="not_deleted" x="20828" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -359,50 +520,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TouchPanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/TouchPanel.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/display/TouchPanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Age.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/script/Age.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="drawingFlow/src/Main.java">
-<persistable path="/drawingFlow/src/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Areas.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Areas.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/script/Areas.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Image.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Image.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/main/Image.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="History.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/History.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/script/History.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayValuesPanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/display/DisplayValuesPanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Attractor.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/main/Attractor.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Target.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Target.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/main/Target.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Script.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/script/Script.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/script/Script.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Interface.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Interface.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/main/Interface.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Attraction.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/modules/Attraction.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="F2T1_controlV1_interfaceV4/src/main/Main.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/main/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAttractorSettingPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorSettingPanel.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorSettingPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Age.java" tooltip="tablet_thermoV2/src/script/Age.java">
-<persistable path="/tablet_thermoV2/src/script/Age.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAgesPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayAgesPanel.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAgesPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoundSource.java" tooltip="tablet_thermoV2/src/main/SoundSource.java">
-<persistable path="/tablet_thermoV2/src/main/SoundSource.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayWorldPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayWorldPanel.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayWorldPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="tablet_thermoV2/src/main/Main.java">
-<persistable path="/tablet_thermoV2/src/main/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayAttractorEditPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayAttractorEditPanel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="tablet_forceV12_optic_interfaceV4/src/main/Main.java">
-<persistable path="/tablet_forceV12_optic_interfaceV4/src/main/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Attractor.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Attractor.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/modules/Attractor.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Areas.java" tooltip="tablet_forceV12_optic_interfaceV4/src/script/Areas.java">
-<persistable path="/tablet_forceV12_optic_interfaceV4/src/script/Areas.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Flow.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Flow.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/modules/Flow.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoundSource.java" tooltip="tablet_forceV12_optic_interfaceV4/src/main/SoundSource.java">
-<persistable path="/tablet_forceV12_optic_interfaceV4/src/main/SoundSource.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Magnetic.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Magnetic.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/modules/Magnetic.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplaySourcePanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/DisplaySourcePanel.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/display/DisplaySourcePanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Path.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/modules/Path.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/modules/Path.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayMiniaturesPanel.java" tooltip="F2T1_controlV1_interfaceV4/src/display/DisplayMiniaturesPanel.java">
-<persistable path="/F2T1_controlV1_interfaceV4/src/display/DisplayMiniaturesPanel.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisplayPathSettingPanel.java" tooltip="F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathSettingPanel.java">
+<persistable path="/F2T1_controlV2_interfaceV5_sound/src/display/DisplayPathSettingPanel.java"/>
 </file>
 </mruList>
 </workbench>
