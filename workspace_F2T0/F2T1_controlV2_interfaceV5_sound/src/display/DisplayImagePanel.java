@@ -188,6 +188,10 @@ public class DisplayImagePanel extends JPanel implements MouseListener, MouseMot
 					}
 				}
 			}
+			
+			// draw virtual position
+			g.setColor(Color.cyan);
+			g.drawOval(325+(int)(main.edges.virtualX), 325-(int)(main.edges.virtualY), 50, 50);
 	}
 
 	

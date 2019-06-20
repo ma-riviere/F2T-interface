@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="close" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="main.flow_dispersion" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="close"/>
-			<item value="&quot;attractor&quot;"/>
-			<item value=".get(0)"/>
-			<item value="path"/>
-			<item value="list"/>
-			<item value="path_buffer[selected_slot]"/>
-			<item value="path[selected_slot]"/>
-			<item value="strength"/>
+			<item value="main.dispersion"/>
+			<item value="main.width2"/>
+			<item value="main.width1"/>
+			<item value="main.angle"/>
+			<item value="main.length"/>
+			<item value=".width1"/>
+			<item value=".width2"/>
+			<item value="save"/>
 		</list>
 		<list key="replacehistory">
-			<item value="attractor_buffer"/>
-			<item value="attractors"/>
-			<item value="distance"/>
-			<item value="y2"/>
-			<item value="x2"/>
-			<item value="currentAge"/>
-			<item value=".script.ageList.get(main.script.currentAge)"/>
-			<item value=""/>
+			<item value="main.flow_dispersion"/>
+			<item value="main.flow_range2"/>
+			<item value="main.flow_range1"/>
+			<item value="main.flow_angle"/>
+			<item value="main.flow_speed"/>
+			<item value=".flow_range1"/>
+			<item value=".flow_range2"/>
+			<item value="rail"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="345" key="DIALOG_WIDTH"/>
+		<item value="349" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="458" key="DIALOG_HEIGHT"/>
-		<item value="1232" key="DIALOG_X_ORIGIN"/>
-		<item value="506" key="DIALOG_Y_ORIGIN"/>
+		<item value="460" key="DIALOG_HEIGHT"/>
+		<item value="77" key="DIALOG_X_ORIGIN"/>
+		<item value="403" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

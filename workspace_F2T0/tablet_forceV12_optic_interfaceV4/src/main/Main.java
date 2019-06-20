@@ -32,7 +32,7 @@ public class Main {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static boolean CAMERA_CONNECTED=true;
-	private static int CAMERA=0;
+	private static int CAMERA=1;
 	
 	private static String OS = System.getProperty("os.name").toLowerCase();
 	public static String PORT="/dev/ttyUSB";					// name of the port, without number
@@ -206,7 +206,7 @@ public class Main {
 		
 		
 		if (CAMERA_CONNECTED){
-			camera=new VideoCapture(1);
+			camera=new VideoCapture(2);
 			
 			// get first frame
 			camera.read(webcam1);

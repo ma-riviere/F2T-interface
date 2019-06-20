@@ -59,7 +59,7 @@ public class Main {
 	
 	
 	// main display frames
-	//public TouchFrame touchFrame;
+	public TouchFrame touchFrame;
 	public DisplayFrame display;
 	
 	
@@ -232,7 +232,7 @@ public class Main {
 		
 		//////////////////////////////////////////////////////////////////////////////////////////
 		// initialization of main display panels
-		//touchFrame=new TouchFrame(this);
+		touchFrame=new TouchFrame(this);
 		display=new DisplayFrame(this);
 	}
 	
@@ -243,7 +243,7 @@ public class Main {
 		
 		counter++;
 		if (counter>=1000){
-		//System.out.println("+++ "+((System.nanoTime()-time3))/1000);
+		System.out.println("+++ "+((System.nanoTime()-time3))/1000);
 		time3=System.nanoTime();
 		counter=0;
 		}
@@ -265,8 +265,8 @@ public class Main {
 		dy_prev=dy;
 				
 		// P
-		mX +=dx*45;
-		mY +=dy*45;
+		mX +=dx*65;
+		mY +=dy*65;
 		
 		// I
 		//mX+=0.001*Idx;
@@ -348,7 +348,7 @@ public class Main {
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// update display panels
 		if (displayCounter==0){
-			//touchFrame.repaint();
+			touchFrame.repaint();
 			display.repaint();
 		}
 		displayCounter++;
@@ -364,6 +364,9 @@ public class Main {
 		script.play(Math.min(699,Math.max(0,350+(int)(px))),Math.min(699,Math.max(0,350-(int)(py))));
 		
 
+		area_red_read=currentAge.current_area_red;
+		area_green_read=currentAge.current_area_green;
+		area_blue_read=currentAge.current_area_blue;
 		
 		
 		//try {Thread.sleep(0,5000);

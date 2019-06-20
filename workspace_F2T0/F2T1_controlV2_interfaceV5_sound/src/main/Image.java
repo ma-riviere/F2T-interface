@@ -12,6 +12,7 @@ public class Image {
 
 	public static int SIZE=700;
 	
+	private Main main;
 	
 	public String view=null;
 	public String tactile=null;
@@ -45,7 +46,10 @@ public class Image {
 	public int[][] magnetic_mat;
 	
 	// initialize empty images
-	public Image(){
+	public Image(Main m){
+		
+		main=m;
+		
 		view=null;
 		tactile=null;
 		flow=null;
@@ -126,6 +130,7 @@ public class Image {
 					tactile_mat[i][j][2]=(tactile_img.getRGB(i, j)     ) & 0x000000FF;
 				}
 			}
+			//main.edges.setMap();
 		}
 		else{
 			tactile_img_miniature=null;
@@ -136,6 +141,7 @@ public class Image {
 					tactile_mat[i][j][2]=0;
 				}
 			}
+			//main.edges.clearMap();
 		}
 	}
 	

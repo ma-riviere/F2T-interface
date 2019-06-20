@@ -1,0 +1,44 @@
+image rivieres.jpg
+
+
+playSound riviere1.wav
+condition b
+
+t 344 231 400 1
+
+condition t
+
+playSound riviere2.wav
+path riviere1V2
+condition t s
+
+condition b
+
+playSound riviere3.wav
+path riviere2V2
+condition t s
+
+condition b
+
+playSound riviere4.wav
+path riviere3V2
+condition t s
+
+condition b
+
+playSound riviere5.wav
+path riviere4V2
+condition t s
+
+condition b
+
+playSound riviere6.wav
+
+condition b
+
+flow riviereV2.png
+area riviere.png
+a 25 0 1 river.wav
+
+exit 0 menu 0
+exit 25 menu 0

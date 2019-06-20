@@ -5,9 +5,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
+import main.Image;
 import main.Main;
 import modules.Edges;
 
@@ -21,15 +23,21 @@ import modules.Edges;
 /* - inherited from EnvPanel :
  *   Agent agent      : pointer to the agent
  */
-public class TouchPanel extends JPanel implements MouseListener{
+public class TouchPanel extends JPanel implements MouseListener, MouseMotionListener{
 	
 	private static final long serialVersionUID = 1L;
 
 	public Main main;
 	
+	public int p1x=0;
+	public int p2x=0;
+	public int p1y=0;
+	public int p2y=0;
+	
 	public TouchPanel(Main m){
 		main=m;
 		addMouseListener(this);
+		addMouseMotionListener(this);
 	}
 	
 	public void paintComponent(Graphics g){
@@ -38,7 +46,7 @@ public class TouchPanel extends JPanel implements MouseListener{
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 1300, 700);
 		
-		for (int i=0;i<Edges.SIZE2;i++){
+		/*for (int i=0;i<Edges.SIZE2;i++){
 			for (int j=0;j<Edges.SIZE2;j++){
 				
 				float val=(main.edges.sphere[i][j]);
@@ -72,7 +80,28 @@ public class TouchPanel extends JPanel implements MouseListener{
 		g.setColor(Color.gray);
 		g.fillRect(550, 20, 10, 500);
 		g.setColor(Color.green);
-		g.fillRect(540, 15+500-(int)(main.edges.contactHeight*500), 30, 5);
+		g.fillRect(540, 15+500-(int)(main.edges.contactHeight*500), 30, 5);*/
+		
+		int val1=0;
+		int val2=0;
+		for (int i=0;i<Image.SIZE;i++){
+			for (int j=0;j<Image.SIZE;j++){
+				//val=(int)(main.edges.map[i][j]*255);
+				val1=(int)(main.edges.grad[i][j][0]*127)+127;
+				val2=(int)(main.edges.grad[i][j][1]*127)+127;
+				if (val1>255) val1=255;
+				if (val1<0) val1=0;
+				if (val2>255) val2=255;
+				if (val2<0) val2=0;
+				g.setColor(new Color(val1,val2,0));
+				
+				//if (main.edges.grad[i][j]>=0.15) g.setColor(Color.red);
+				g.drawLine(i, 699-j, i+1, 699-j);
+			}
+		}
+		
+		g.setColor(Color.red);
+		g.drawLine(p1x, p1y, p2x, p2y);
 		
 	}
 
@@ -83,4 +112,29 @@ public class TouchPanel extends JPanel implements MouseListener{
 	public void mouseReleased(MouseEvent e) {}
 	public void mouseEntered(MouseEvent e) {}
 	public void mouseExited(MouseEvent e) {}
+
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		int ex=e.getX();
+		int ey=e.getY();
+		
+		if (ex>0 && ex<699 && ey>0 && ey<699){
+			//System.out.println("### "+main.edges.grad[ex][ey]);
+			
+			p1x=ex;
+			p1y=ey;
+			
+			p2x=ex+(int)(main.edges.grad[ex][ey][0]*100);
+			p2y=ey+(int)(main.edges.grad[ex][ey][1]*100);
+		}
+		
+		this.repaint();
+		
+		
+		
+	}
 }

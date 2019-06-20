@@ -2,69 +2,41 @@ image rivieres.jpg
 
 
 playSound riviere1.wav
-
 condition b
-
-
 
 playSound riviere2.wav
-
 path riviere1
-
 condition t s
 
-
 condition b
-
 
 playSound riviere3.wav
-
 path riviere2
-
 condition t s
 
-
 condition b
-
 
 playSound riviere4.wav
-
 path riviere3
-
 condition t s
-
 
 condition b
 
-
 playSound riviere5.wav
-
 path riviere4
-
 condition t s
-
-
 
 condition b
 
 playSound riviere6.wav
-
-path riviere 5
+path riviere5
 
 condition b
 
-
-
 flow riviere1.png
-
 tactile riviere.png
-
 area riviere.png
-
 a 25 0 1 river.wav
 
-exit 0 
-menu 0
-
-exit 25 
-menu 0
+exit 0 menu 0
+exit 25 menu 0
