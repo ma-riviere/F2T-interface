@@ -50,7 +50,7 @@ public class Edges extends Module{
 					
 					if (i2*i2+j2*j2<225){
 					
-						float coeff=0;
+						float coeff=6;
 					if ((int)(virtual.px+i2+coeff*main.jx)>-350 && (int)(virtual.px+i2+coeff*main.jx)<350 && (int)(virtual.py+j2+coeff*main.jy)>-350 && (int)(virtual.py+j2+coeff*main.jy)<350){
 						if (/*height2>height1 
 								&&*/ (   main.currentAge.image.gradient[350+(int)(virtual.px+coeff*main.jx+i2)][350+(int)(virtual.py+coeff*main.jy+j2)][0]!=0 

@@ -17,6 +17,7 @@ import script.Age;
 import script.Script;
 import structures.Symbol;
 import structures.TargetPoint;
+import developmentDisplay.DeltaFrame;
 import display.*;
 
 import org.urish.openal.OpenAL;
@@ -25,7 +26,11 @@ public class Main {
 
 	
 	private static float ALPHA=5;
+	private static float BETA=0;
 	private static float GAMMA=100;
+	
+	public float test_speed=80;
+	public boolean test_dir=false;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -69,6 +74,7 @@ public class Main {
 	
 	// display frames
 	//public TouchFrame touchFrame;
+	public DeltaFrame deltaFrame;
 	public DisplayFrame display;
 	// update display counter
 	public int displayCounter=0;
@@ -95,6 +101,12 @@ public class Main {
 	public float px=0;
 	public float py=0;
 	
+	// virtual speed
+	public float vx=0;
+	public float vy=0;
+	
+	public float vx_prev=0;
+	public float vy_prev=0;
 	
 	// joystick input values
 	public float jx=0;
@@ -103,9 +115,14 @@ public class Main {
 	public float jx_prev=0;
 	public float jy_prev=0;
 
+
 	// motor speed
 	public float vmX=0;
 	public float vmY=0;
+	
+	public float vmX_prev=0;
+	public float vmY_prev=0;
+	
 	
 	// difference between virtual and real position
 	public float deltaX=0;
@@ -122,10 +139,17 @@ public class Main {
 	
 	public float DdeltaX=0;
 	public float DdeltaY=0;
+	
+	public float integX=0;
+	public float integY=0;
 
 	// trace buffer
 	public float[][] trace;
 	public int time;
+	
+	public int[] deltaX_buff;
+	public int[] deltaY_buff;
+	public int deltaCount;
 	
 
 	// target properties
@@ -212,6 +236,9 @@ public class Main {
 		symbolList=new ArrayList<Symbol>();
 		
 		
+		deltaX_buff=new int[1000];
+		deltaY_buff=new int[1000];
+		
 		///////////////////////////////////////////////////////////////////////////////////////////////
 
 		// sequence of Ages
@@ -226,12 +253,15 @@ public class Main {
 		//////////////////////////////////////////////////////////////////////////////////////////
 		// initialization of main display panels
 		//touchFrame=new TouchFrame(this);
+		deltaFrame=new DeltaFrame(this);
 		display=new DisplayFrame(this);
 		
 		// F2T interface
 		inter=new Interface(this);
 
 		virtual.start();
+		
+		vmX=-100;
 	}
 	
 	
@@ -252,76 +282,95 @@ public class Main {
 		
 		vmX=0;
 		vmY=0;
-
-
+		
+		
+		vx=virtual.mx;
+		vy=virtual.my;
 				
 		// P
-		vmX +=jx*20 + 500*(jx-jx_prev);
-		vmY +=jy*20 + 500*(jy-jy_prev);
+		vmX +=jx*50+ 1000*(jx-jx_prev);
+		vmY +=jy*50+ 1000*(jy-jy_prev);
+		
+		//vmX=(vx+vx_prev)/2*0.4f;
+		//vmY=(vy+vy_prev)/2*0.4f;
+		
+		//vmX+=1000*(jx-jx_prev);
+		//vmY+=1000*(jy-jy_prev);
+		
+		//System.out.print(vmX+ " , ");
+		if (vmX>0)vmX=(float) ((Math.sqrt(vmX/2/255+0.5)-0.65) *255)*2;
+		else if (vmX<0)vmX=-(float) ((Math.sqrt(-vmX/2/255+0.5)-0.65) *255)*2;
+		//System.out.println(vmX+ " , ");
+
 		
 
-		if (vmX>-5 && vmX<5) vmX=0;
+		/*if (vmX>-5 && vmX<5) vmX=0;
 		if (vmY>-5 && vmY<5) vmY=0;
 		
 		if (vmX>255) vmX=255;
 		if (vmX<-255) vmX=-255;
 		if (vmY>255) vmY=255;
-		if (vmY<-255) vmY=-255;
+		if (vmY<-255) vmY=-255;*/
 
 		px=x+3*jx;
 		py=y+3*jy;
-
 		//px=x;
 		//py=y;
-		
+
 		if (px>349) px=349;
 		if (px<-349) px=-349;
 		if (py>349) py=349;
 		if (py<-349) py=-349;
 		
-		float speed2=vmX*vmX+vmY*vmY;
+		/*float speed2=vmX*vmX+vmY*vmY;
 		
 		if (speed2>64516){ // 254²
 			float speed=(float) Math.sqrt(speed2);
 			vmX=vmX*254/speed;
 			vmY=vmY*254/speed;
-		}
+		}*/
 		
 		jx_prev=jx;
 		jy_prev=jy;
-
+		
+		vx_prev=vx;
+		vy_prev=vy;
+		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		//vmX=0;//virtual.mx/10;
-		//vmY=0;//virtual.my/10;
+		//vx=virtual.mx;
+		//vy=virtual.my;
+
+		
+		//vmX= 10000*(vx-vx_prev);
+		//vmY= 10000*(vy-vy_prev);
+		
+		//System.out.println((vx-vx_prev));
 		
 		deltaX=px-virtual.px;
 		deltaY=py-virtual.py;
+		
+
 		
 		
 		DdeltaX=deltaX - deltaX_prev1;
 		DdeltaY=deltaY - deltaY_prev1;
 		
-		//System.out.println(DdeltaX+" , "+DdeltaY);
+		integX+=deltaX;
+		integY+=deltaY;
+		//System.out.println(integX+"  ,  "+integY);
 		
-		
+
 		deltaX_prev2=deltaX_prev1;
 		deltaY_prev2=deltaY_prev1;
 		deltaX_prev1=deltaX;
 		deltaY_prev1=deltaY;
 
 		
-		/*if (deltaX>30) vmX+=254;
-		else if (deltaX<-30) vmX-=254;
-		else*/ vmX-=ALPHA*deltaX + GAMMA*DdeltaX;
+		vmX-=(ALPHA*deltaX + BETA*integX + GAMMA*DdeltaX);
+		vmY-=(ALPHA*deltaY + BETA*integY + GAMMA*DdeltaY);
 		
-		/*if (deltaY>30) vmY+=254;
-		else if (deltaY<-30) vmY-=254;
-		else*/ vmY-=ALPHA*deltaY + GAMMA*DdeltaY;
-		
-		
-		//for (int i=0;i<virtual.moduleList.size();i++) virtual.moduleList.get(i).compute2();
-		
+
 		if (vmX*vmX+vmY*vmY<100){
 			vmX=0;
 			vmY=0;
@@ -330,40 +379,61 @@ public class Main {
 		if (vmX<5 && vmX>-5) vmX=0;
 		if (vmY<5 && vmY>-5) vmY=0;
 		
-		/*float speed2=vmX*vmX+vmY*vmY;
-		if (speed2>64516){ // 254²
-			float speed=(float) Math.sqrt(speed2);
-			vmX=vmX*254/speed;
-			vmY=vmY*254/speed;
-		}*/
+
 		
 		//vmX=0;
 		//vmY=0;
+		
+
+		
+		//System.out.println((x-virtual.px)+" ; "+(y-virtual.py));
+		deltaX_buff[deltaCount]=(int)((x-virtual.px+3*jx)*100);
+		deltaY_buff[deltaCount]=(int)((y-virtual.py)*100);
+		deltaCount++;
+		if (deltaCount>=1000) deltaCount=0;
+		
+		deltaFrame.repaint();
+		
+
+		/*if (test_dir){
+			if (x<300) vmX=test_speed;
+			else{
+				vmX=-test_speed;
+				test_dir=false;
+			}
+		}
+		else{
+			if (x>-300) vmX=-test_speed;
+			else{
+				vmX=test_speed;
+				test_dir=true;
+			}
+		}*/
+		
+
+		
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// send motor commands
 		int speedX=(int) Math.abs(vmX);
 		if (speedX>255) speedX=254;
-		else if (speedX<2) speedX=0;
+		else if (speedX<35) speedX=0;
 		else speedX=speedX-1;
 		
 		int speedY=(int) Math.abs(vmY);
 		if (speedY>255) speedY=254;
-		else if (speedY<2) speedY=0;
+		else if (speedY<35) speedY=0;
 		else speedY=speedY-1;
 		
 		int directions=0;
 		if (vmX<=0) directions+=2;
 		if (vmY<=0) directions+=1;
 		
-		//System.out.println(speedX+" , "+speedY+" -> "+(int)(Math.sqrt(speedX*speedX+speedY*speedY)));
-		
+		//System.out.println(x+" , "+speedX);
+
 		//speedX=0;
 		//speedY=0;
-		
-		//System.out.println(vmX+" , "+vmY);
-		//System.out.println(virtual.mx+" , "+virtual.my);
-		//System.out.println(speedX+" , "+speedY);
+
 		
 		byte[] msg=new byte[4];
 		msg[0]=(byte) 255;
@@ -372,20 +442,16 @@ public class Main {
 		msg[3]=(byte)speedY;
 		inter.sendMsg(msg);
 		
+		
+		vmX_prev=vmX;
+		vmY_prev=vmY;
+		
 		////////////////////////////////////////////////////////
 		
 		for (int i=0;i<symbolList.size();i++){
 			
 			int rec=symbolList.get(i).recognize();
-			
 			if (rec==-1) System.out.println(symbolList.get(i).name);
-			
-			/*System.out.print(symbolList.get(i).name+" , "+symbolList.get(i).sequence.size()+" -> ");
-			for (int j=0;j<rec.length;j++){
-				System.out.print(rec[j]+ ", ");
-			}
-			System.out.println();*/
-			
 		}
 		
 		
@@ -859,8 +925,8 @@ public class Main {
 	public void updateTrace(){
 		trace[time][0]=x-3*jx;
 		trace[time][1]=y-3*jy;
-		trace[time][2]=virtual.px;
-		trace[time][3]=virtual.py;
+		trace[time][2]=virtual.px-3*jx;
+		trace[time][3]=virtual.py-3*jy;
 		time++;
 		if (time>=LENGTH) time=0;
 	}

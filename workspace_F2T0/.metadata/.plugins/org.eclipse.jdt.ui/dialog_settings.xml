@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV2_interfaceV4_sound" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/workspace_F2T0/F2T1_controlV5_interfaceV6" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
@@ -41,17 +41,17 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="FatJarPackageWizard">
-		<item value="/home/simon/Bureau/workspace_F2T0" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="Main (10) - tablet_forceV12_optic_interfaceV4" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/F2T_imagesV2/F2T0_V4.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="/home/simon/Bureau/workspace_F2T0.xml" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="Main (22) - F2T1_controlV5_interfaceV6_light" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="/home/simon/Bureau/jar_test/F2T1_V6_light.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/simon/Bureau/jar_test/F2T1_V6_light.jar"/>
+			<item value="/home/simon/Bureau/jar_test/F2T1_V6.jar"/>
+			<item value="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/F2T_imagesV2/F2T1_V6.jar"/>
 			<item value="/home/simon/Bureau/GitKraken/F2T_project/F2T-interface/F2T_imagesV2/F2T0_V4.jar"/>
 			<item value="/home/simon/Bureau/jar/F2T0_V4.jar"/>
-			<item value="/home/simon/Bureau/F2T_images/F2T0_V4.jar"/>
-			<item value="/home/simon/Bureau/F2T_images/DrawPath.jar"/>
-			<item value="/home/simon/Bureau/F2T_images/DrawFlow.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
 			<item value="/home/simon/Bureau/workspace_F2T0.xml"/>

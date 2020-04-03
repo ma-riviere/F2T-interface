@@ -1,0 +1,14 @@
+tactile room2.png
+t 0 -300 300 1
+condition b
+
+path room2_1
+condition t
+
+condition b
+
+path room2_2
+condition t
+
+area room2.png
+exit 25 room3_guide 1

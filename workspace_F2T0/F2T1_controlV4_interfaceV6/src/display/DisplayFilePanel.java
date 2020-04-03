@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.util.Comparator;
 
@@ -67,77 +68,124 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		list_image.addItem("none");
 		for (int i=0;i<main.listImages.length;i++) list_image.addItem(main.listImages[i]);
 		list_image.addActionListener(this);
-		list_image.addKeyListener(k);
 		this.add(list_image);
 		list_image.setBounds(70, 5, 150, 30);
-		
+		KeyListener[] lis = list_image.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_image.removeKeyListener(lis[i]);
+		}
+		list_image.addKeyListener(k);
+
 		list_tactile=new JComboBox<String>();
 		list_tactile.addItem("none");
 		for (int i=0;i<main.listTactile.length;i++) list_tactile.addItem(main.listTactile[i]);
 		list_tactile.addActionListener(this);
-		list_tactile.addKeyListener(k);
 		this.add(list_tactile);
 		list_tactile.setBounds(70, 35, 150, 30);
+		lis = list_tactile.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_tactile.removeKeyListener(lis[i]);
+		}
+		list_tactile.addKeyListener(k);
 		
 		list_flow=new JComboBox<String>();
 		list_flow.addItem("none");
 		for (int i=0;i<main.listFlow.length;i++) list_flow.addItem(main.listFlow[i]);
 		list_flow.addActionListener(this);
-		list_flow.addKeyListener(k);
 		this.add(list_flow);
 		list_flow.setBounds(70,65, 150, 30);
+		lis = list_flow.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_flow.removeKeyListener(lis[i]);
+		}
+		list_flow.addKeyListener(k);
 		
 		list_rail=new JComboBox<String>();
 		list_rail.addItem("none");
 		for (int i=0;i<main.listRail.length;i++) list_rail.addItem(main.listRail[i]);
 		list_rail.addActionListener(this);
-		list_rail.addKeyListener(k);
 		this.add(list_rail);
 		list_rail.setBounds(70,95, 150, 30);
+		lis = list_rail.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_rail.removeKeyListener(lis[i]);
+		}
+		list_rail.addKeyListener(k);
+		
 		
 		list_area=new JComboBox<String>();
 		list_area.addItem("none");
 		for (int i=0;i<main.listArea.length;i++) list_area.addItem(main.listArea[i]);
 		list_area.addActionListener(this);
-		list_area.addKeyListener(k);
 		this.add(list_area);
 		list_area.setBounds(70,125, 150, 30);
+		lis = list_area.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_area.removeKeyListener(lis[i]);
+		}
+		list_area.addKeyListener(k);
+		
 		
 		list_magnetic=new JComboBox<String>();
 		list_magnetic.addItem("none");
 		for (int i=0;i<main.listMagnetic.length;i++) list_magnetic.addItem(main.listMagnetic[i]);
 		list_magnetic.addActionListener(this);
-		list_magnetic.addKeyListener(k);
 		this.add(list_magnetic);
 		list_magnetic.setBounds(70,155, 150, 30);
+		lis = list_magnetic.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_magnetic.removeKeyListener(lis[i]);
+		}
+		list_magnetic.addKeyListener(k);
+		
 		
 		list_preset=new JComboBox<String>();
 		for (int i=0;i<main.listPreset.length;i++) list_preset.addItem(main.listPreset[i]);
 		list_preset.addActionListener(this);
-		list_preset.addKeyListener(k);
 		this.add(list_preset);
 		list_preset.setBounds(70,205, 170, 30);
+		lis = list_preset.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_preset.removeKeyListener(lis[i]);
+		}
+		list_preset.addKeyListener(k);
+		
 		
 		list_path=new JComboBox<String>();
 		for (int i=0;i<main.listPath.length;i++) list_path.addItem(main.listPath[i]);
 		list_path.addActionListener(this);
-		list_path.addKeyListener(k);
 		this.add(list_path);
 		list_path.setBounds(70,235, 170, 30);
+		lis = list_path.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_path.removeKeyListener(lis[i]);
+		}
+		list_path.addKeyListener(k);
+		
 		
 		list_source=new JComboBox<String>();
 		for (int i=0;i<main.listSource.length;i++) list_source.addItem(main.listSource[i]);
 		list_source.addActionListener(this);
-		list_source.addKeyListener(k);
 		this.add(list_source);
 		list_source.setBounds(70,265, 170, 30);
+		lis = list_source.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_source.removeKeyListener(lis[i]);
+		}
+		list_source.addKeyListener(k);
+		
 		
 		list_association=new JComboBox<String>();
 		for (int i=0;i<main.listAssociation.length;i++) list_association.addItem(main.listAssociation[i]);
 		list_association.addActionListener(this);
-		list_association.addKeyListener(k);
 		this.add(list_association);
 		list_association.setBounds(70,295, 170, 30);
+		lis = list_association.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_association.removeKeyListener(lis[i]);
+		}
+		list_association.addKeyListener(k);
+		
 		
 		
 		preset=new JButton("Load");
@@ -168,9 +216,14 @@ public class DisplayFilePanel extends JPanel implements ActionListener{
 		list_script=new JComboBox<String>();
 		for (int i=0;i<main.listScript.length;i++) list_script.addItem(main.listScript[i]);
 		list_script.addActionListener(this);
-		list_script.addKeyListener(k);
 		this.add(list_script);
 		list_script.setBounds(70,345, 170, 30);
+		lis = list_script.getKeyListeners();
+		for (int i = 0; i < lis.length; i++) {
+			list_script.removeKeyListener(lis[i]);
+		}
+		list_script.addKeyListener(k);
+		
 		
 		script=new JButton("Load");
 		script.addActionListener(this);

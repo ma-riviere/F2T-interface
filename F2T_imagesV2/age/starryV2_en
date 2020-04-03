@@ -1,0 +1,34 @@
+image starry.jpg
+
+playSound starry1_en.wav
+
+condition b
+
+playSound starry2_en.wav
+path starry1V2
+condition s t
+
+playSound starry3_en.wav
+path starry2V2
+condition s t
+
+playSound starry4_en.wav
+path starry3V2
+condition s t
+
+playSound starry5_en.wav
+path starry4V2
+condition s t
+
+playSound starry6_en.wav
+path starry5V2
+condition s t
+
+playSound starry7_en.wav
+condition b
+
+
+flow starry2.png
+area starry.png
+a 25 0 1 wind1.wav
+a 50 0 1 tornado.wav

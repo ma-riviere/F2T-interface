@@ -1,4 +1,4 @@
-package display;
+package developmentDisplay;
 import javax.swing.JFrame;
 
 import main.Main;
@@ -6,18 +6,10 @@ import main.Main;
 
 
 /**
- * Display the probe input
+ * Display height map
  * @author simon gay
  */
 
-/* - inherited from EnvFrame :
- *   Agent agent      : pointer to the agent
- *   EnvPanel panel   : panel of this frame
- *   
- * - inherited from PrintableFrame :
- *   boolean printable   : define if the frame can be printed
- *   int indexImage      : counter for image name
- */
 public class TouchFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;

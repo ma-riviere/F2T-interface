@@ -79,21 +79,11 @@ public class Virtual  extends Thread {
 			try {Thread.sleep(1);
 			} catch (InterruptedException e) {e.printStackTrace();}
 			
-			mx_temp=0;
-			my_temp=0;
-			
-			mx_temp+=main.jx*80;
-			my_temp+=main.jy*80;
+			mx_temp=main.jx*80;
+			my_temp=main.jy*80;
 
 			for (int i=0;i<moduleList.size();i++) moduleList.get(i).compute();
 			
-			//friction.compute();
-			//edges.compute();
-			//flow.compute();
-			//rail.compute();
-			//magnetic.compute();
-			//attraction.compute();
-			//path.compute();
 			
 			if (mx_temp<5 && mx_temp>-5) mx_temp=0;
 			if (my_temp<5 && my_temp>-5) my_temp=0;
@@ -112,8 +102,8 @@ public class Virtual  extends Thread {
 			if (my_temp>254) my_temp=254;
 			if (my_temp<-254) my_temp=-254;
 			
-			mx=mx_temp*2f;
-			my=my_temp*2f;
+			if (mx_temp<10 && mx_temp>-10) mx_temp=0;;
+			if (my_temp<10 && my_temp>-10) my_temp=0;
 			
 			//System.out.println(mx_temp);
 			
@@ -127,6 +117,14 @@ public class Virtual  extends Thread {
 			if (px0<-350) px0=-350;
 			if (py0>350) py0=350;
 			if (py0<-350) py0=-350;
+			
+			// border protections
+			if (mx_temp>0 && px0>320) mx_temp=mx_temp/(Math.abs(320-px0+1)/2);
+			if (my_temp<0 && py0<-320) my_temp=my_temp/(Math.abs(320+py0+1)/2);
+			
+			
+			mx=mx_temp*1.8f;
+			my=my_temp*1.8f;
 			
 			px=px0;
 			py=py0;

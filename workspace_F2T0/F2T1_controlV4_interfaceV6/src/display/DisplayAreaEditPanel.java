@@ -625,6 +625,8 @@ public class DisplayAreaEditPanel  extends JPanel implements ActionListener, Mou
 	public void mouseReleased(MouseEvent e) {
 		if (write) pushBuffer();
 		write=false;
+		
+		this.repaint();
 	}
 
 

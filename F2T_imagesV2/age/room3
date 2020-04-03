@@ -1,0 +1,5 @@
+tactile room3.png
+area room3.png
+t 110 -300 300 1
+
+exit 25 room4 1
